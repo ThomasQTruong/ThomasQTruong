@@ -1,4 +1,4 @@
-> Cal Poly Pomona CS Alumni
+> ## Cal Poly Pomona CS Alumni
 ### Hi there 👋
 
 <!--
