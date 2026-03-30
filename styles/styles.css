@@ -1,4 +1,6 @@
-
+a {
+  text-decoration: none;
+}
 
 html {
   scroll-behavior: smooth;
@@ -15,4 +17,20 @@ nav {
   align-items: center;
   padding: 0 50px;
   height: 40px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;  /* Hide menu. */
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;  /* Show menu when hovered. */
 }
