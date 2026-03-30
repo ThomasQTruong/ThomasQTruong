@@ -1,5 +1,7 @@
-a {
-  text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -10,27 +12,60 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Nav Bar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  height: 40px;
+  height: 60px;
+  background-color: paleturquoise;
+}
+
+nav a {
+  margin: 0 10px;
+  color: black;
+}
+
+nav .left > a:first-child {
+  font-weight: 600;
+}
+
+nav .right a:last-child {
+  color: white;
+  background-color: black;
+  padding: 5px 15px;
+  border-radius: 5px;
 }
 
 /* Dropdown Menu */
-.dropdown {
-  position: relative;
+.dropdown-container {
+  position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
   display: inline-block;
 }
 
-.dropdown-menu {
+.dropdown-items {
   display: none;  /* Hide menu. */
   position: absolute;
   z-index: 1;
+  width: 10em;
+  background-color: aliceblue;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-items a {
+  background-color: red;
+  height: 3em;
+  display: block;         /* Display each link vertically. */
+  flex: 1;                /* Expand each link horizontally. */
+  text-align: center;     /* Horizontally align. */
+  align-content: center;  /* Vertically align. */
+  margin: 0;
+}
+
+.dropdown-container:hover .dropdown-items {
   display: block;  /* Show menu when hovered. */
 }
