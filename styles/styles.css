@@ -1,3 +1,19 @@
+:root {
+  --primary-color: paleturquoise;
+  --text-color: black;
+  --background-color: white;
+
+  /* Utopia-generated dynamic font sizes. */
+  --step--2: clamp(0.7813rem, 0.752rem + 0.1463vw, 0.88rem);
+  --step--1: clamp(0.9375rem, 0.8894rem + 0.2407vw, 1.1rem);
+  --step-0: clamp(1.125rem, 1.0509rem + 0.3704vw, 1.375rem);
+  --step-1: clamp(1.35rem, 1.2407rem + 0.5463vw, 1.7188rem);
+  --step-2: clamp(1.62rem, 1.4634rem + 0.7829vw, 2.1484rem);
+  --step-3: clamp(1.944rem, 1.7243rem + 1.0986vw, 2.6855rem);
+  --step-4: clamp(2.3328rem, 2.0294rem + 1.5172vw, 3.3569rem);
+  --step-5: clamp(2.7994rem, 2.3855rem + 2.0693vw, 4.1962rem);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,12 +34,18 @@ a {
 
 /* Nav Bar */
 nav {
+  background-color: var(--primary-color);
+  padding: 0 50px;
+}
+
+nav .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  height: 60px;
-  background-color: paleturquoise;
+  height: 5rem;
 }
 
 nav a {
@@ -31,15 +53,62 @@ nav a {
   color: black;
 }
 
-nav .left > a:first-child {
+nav .left a {
+  font-size: var(--step-1);
   font-weight: 600;
 }
 
-nav .right a:last-child {
-  color: white;
-  background-color: black;
+nav .right > a,
+.dropdown-container > a {
+  font-size: var(--step--1);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+nav .right > a:last-child {
+  color: var(--background-color);
+  background-color: var(--text-color);
   padding: 5px 15px;
   border-radius: 5px;
+}
+
+@media (max-width: 1010px) {
+  /* Nav bar. */
+  nav {
+    padding: 0 20px;
+  }
+
+  nav a {
+    margin: 0 5px;
+  }
+
+  nav .right > a span,
+  .dropdown-container > a span {
+    display: none;
+  }
+
+  nav .right > a:last-child {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 422px) {
+  /* Nav bar. */
+  nav {
+    padding: 0 10px;
+  }
+
+  nav .right > a,
+  .dropdown-container > a {
+    margin: 0;
+  }
+
+  nav .left a span {
+    display: none;
+  }
 }
 
 /* Dropdown Menu */
@@ -68,4 +137,20 @@ nav .right a:last-child {
 
 .dropdown-container:hover .dropdown-items {
   display: block;  /* Show menu when hovered. */
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+  color: inherit;  /* Make icon color match text color. */
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
 }
