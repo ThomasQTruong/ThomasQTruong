@@ -10,57 +10,59 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
 
     <title>Thomas Truong</title>
   </head>
   <body>
     <!-- Navigation bar. -->
     <nav>
-      <div class="container">
-        <div class="left">
-          <a href="/">Thomas<span> Truong</span></a>
-        </div>
-        <div class="right">
-          <a href="/">
+      <ul>
+        <li class="hero-li">
+          <a href="/">Thomas Truong</a>
+        </li>
+        <li>
+          <a href="/" class="nav-item">
             <i class="fa-solid fa-user"></i>
             <span>Experience</span>
           </a>
-          <a href="/">
+        </li>
+        <li>
+          <a href="/" class="nav-item">
             <i class="fa-solid fa-code"></i>
             <span>Skills</span>
           </a>
-          <div class="dropdown-container">
-            <a href="/">
-              <i class="fa-solid fa-folder-open"></i>
-              <span>Projects</span>
-            </a>
-            <div class="dropdown-items">
-              <a href="#">Test1</a>
-              <a href="#">Test2</a>
-              <a href="#">Test3</a>
-            </div>
+        </li>
+        <li class="dropdown-container">
+          <a href="javascript:void(0)" class="nav-item dropdown-trigger">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>Projects</span>
+          </a>
+          <div class="dropdown-items">
+            <a href="#">Test1</a>
+            <a href="#">Test2</a>
+            <a href="#">Test3</a>
           </div>
-          <!-- Open GitHub in a new tab (_blank). -->
-          <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer">
+        </li>
+        <li>
+          <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer" class="nav-item">
             <i class="fa-brands fa-github"></i>
             <span>GitHub</span>
           </a>
-          <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer">
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer" class="nav-item">
             <i class="fa-brands fa-linkedin"></i>
             <span>LinkedIn</span>
           </a>
-          <a href="mailto:TruongThomasQ@gmail.com" target="_blank" rel="noopener noreferrer">
+        </li>
+        <li class="email-li">
+          <a href="mailto:TruongThomasQ@gmail.com" target="_blank" rel="noopener noreferrer" class="nav-item">
             <i class="fa-solid fa-envelope"></i>
             <span>Email</span>
           </a>
-          <!--
-          <button class="theme-toggle" aria-label="Toggle Theme">
-            <i class="fa-solid fa-circle-half-stroke"></i>
-          </button>
-          -->
-        </div>
-      </div>
+        </li>
+      </ul>
     </nav>
 
     <main>
