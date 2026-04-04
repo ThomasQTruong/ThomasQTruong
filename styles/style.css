@@ -14,6 +14,8 @@
   --step-5: clamp(2.7994rem, 2.3855rem + 2.0693vw, 4.1962rem);
   --step-icon: clamp(1.125rem, 1.287rem + -0.1852vw, 1.25rem);
   --nav-padding: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
+
+  --nav-height: 5rem;
 }
 
 * {
@@ -32,23 +34,28 @@ body {
   background-color: var(--background-color);
 }
 
-/* Nav Bar */
+/* Nav bar. */
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: var(--primary-color);
-  padding: 0 var(--nav-padding);
 }
 
-nav ul {
-  list-style: none;
+nav .nav-container {
   display: flex;
   max-width: 1400px;
   width: 100%;
   align-items: center;
-  height: 5rem;
+  height: var(--nav-height);
+  padding: 0 var(--nav-padding);
+}
+
+#nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
@@ -68,18 +75,6 @@ nav .hero-li {
   transition: margin 0.2s ease;
 }
 
-/*
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5rem;
-}
-*/
-
 nav .hero-li a {
   font-size: var(--step-1);
   font-weight: 600;
@@ -90,6 +85,10 @@ nav .hero-li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-item i {
@@ -98,6 +97,7 @@ nav .hero-li a {
 
 .nav-item span {
   font-size: var(--step--1);
+  font-weight: 400;
 }
 
 .email-li a {
@@ -107,56 +107,64 @@ nav .hero-li a {
   border-radius: 5px;
 }
 
-/* Dropdown Menu */
+/* Nav sidebar toggle. */
+#toggle-sidebar-button {
+  display: none;
+  min-height: 44px;
+  min-width: 44px;
+  background: none;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+#toggle-sidebar-button i {
+  font-size: var(--step-icon);
+}
+
+/* Dropdown menu. */
 .dropdown-container {
   position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
-  display: inline-block;
+  display: flex;
 }
 
 .dropdown-items {
-  display: none;  /* Hide menu. */
-  position: absolute;
-  z-index: 1;
-  width: 10em;
   background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 10em;
+  max-height: 0;
+  pointer-events: none;
+  overflow-y: hidden;
+  transition: max-height 0.4s ease-in-out, overflow 0s 0.4s;
+}
+
+.dropdown-container:hover .dropdown-items {
+  max-height: 60vh;
+  pointer-events: auto;
+  overflow-y: auto;
 }
 
 .dropdown-items a {
   background-color: red;
   height: 3em;
   display: block;         /* Display each link vertically. */
-  flex: 1;                /* Expand each link horizontally. */
   text-align: center;     /* Horizontally align. */
   align-content: center;  /* Vertically align. */
   margin: 0;
+  font-size: var(--step--1);
+  font-weight: 400;
 }
 
-.dropdown-container:hover .dropdown-items {
-  display: block;  /* Show menu when hovered. */
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  background: transparent;
-  padding: 8px;
-  cursor: pointer;
-  color: inherit;  /* Make icon color match text color. */
-}
-
-.theme-toggle i {
-  font-size: 1.2rem;
-}
-
-.theme-toggle:hover {
-  opacity: 0.7;
-}
-
-
-/* Format: Tablet */
-@media (max-width: 1024px) {
+/* Format: Tablet. */
+@media screen and (max-width: 1024px) {
   /* Nav bar. */
   nav li {
-    margin: 0px;
+    margin: 0;
   }
 
   .nav-item {
@@ -175,7 +183,60 @@ nav .hero-li a {
   }
 }
 
-/* Format: Mobile */
-@media (max-width: 480px) {
-  /* TODO: make a hamburger menu. */
+/* Format: Mobile. */
+@media screen and (max-width: 480px) {
+  #toggle-sidebar-button,
+  #toggle-sidebar-button.show #nav-close {
+    display: inline-block;
+  }
+
+  #toggle-sidebar-button #nav-close,
+  #toggle-sidebar-button.show #nav-hamburger {
+    display: none;
+  }
+
+  nav .nav-container {
+    padding: 0 25px;
+  }
+
+  nav #nav-list {
+    background-color: palegoldenrod;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    right: -100%;
+    top: 5em;
+    z-index: 1;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+  }
+
+  nav li,
+  .nav-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-item span {
+    display: inline-block;
+  }
+
+  #nav-list.show {
+    right: 0;
+  }
+
+  /* Dropdown menu. */
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-items {
+    width: 100%;
+    position: static;
+    top: auto;
+    left: auto;
+  }
 }

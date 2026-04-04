@@ -11,58 +11,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="styles/style.css">
+    <script src="js/main.js" defer></script>
 
     <title>Thomas Truong</title>
   </head>
   <body>
     <!-- Navigation bar. -->
     <nav>
-      <ul>
-        <li class="hero-li">
+      <div class="nav-container">
+        <div class="hero-li">
           <a href="/">Thomas Truong</a>
-        </li>
-        <li>
-          <a href="/" class="nav-item">
-            <i class="fa-solid fa-user"></i>
-            <span>Experience</span>
-          </a>
-        </li>
-        <li>
-          <a href="/" class="nav-item">
-            <i class="fa-solid fa-code"></i>
-            <span>Skills</span>
-          </a>
-        </li>
-        <li class="dropdown-container">
-          <a href="javascript:void(0)" class="nav-item dropdown-trigger">
-            <i class="fa-solid fa-folder-open"></i>
-            <span>Projects</span>
-          </a>
-          <div class="dropdown-items">
-            <a href="#">Test1</a>
-            <a href="#">Test2</a>
-            <a href="#">Test3</a>
-          </div>
-        </li>
-        <li>
-          <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer" class="nav-item">
-            <i class="fa-brands fa-github"></i>
-            <span>GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer" class="nav-item">
-            <i class="fa-brands fa-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
-        </li>
-        <li class="email-li">
-          <a href="mailto:TruongThomasQ@gmail.com" target="_blank" rel="noopener noreferrer" class="nav-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Email</span>
-          </a>
-        </li>
-      </ul>
+        </div>
+        <ul id="nav-list">
+          <li>
+            <a href="/" class="nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span>Experience</span>
+            </a>
+          </li>
+          <li>
+            <a href="/" class="nav-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+          </li>
+          <li class="dropdown-container">
+            <button class="nav-item dropdown-trigger">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>Projects</span>
+            </button>
+            <div class="dropdown-items">
+              <a href="#">Test1</a>
+              <a href="#">Test2</a>
+              <a href="#">Test3</a>
+            </div>
+          </li>
+          <li>
+            <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer" class="nav-item">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer" class="nav-item">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li class="email-li">
+            <a href="mailto:TruongThomasQ@gmail.com" target="_blank" rel="noopener noreferrer" class="nav-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </a>
+          </li>
+        </ul>
+
+        <button id="toggle-sidebar-button" onclick="toggleSideBar(this)">
+          <i id="nav-hamburger" class="fa-solid fa-bars"></i>
+          <i id="nav-close" class="fa-solid fa-x"></i>
+        </button>
+      </div>
     </nav>
 
     <main>
