@@ -20,24 +20,28 @@
     <nav>
       <div class="nav-container">
         <div class="hero-li">
-          <a href="/">Thomas Truong</a>
+          <a href="index.html" aria-current="page">Thomas Truong</a>
         </div>
         <ul id="nav-list">
           <li>
             <a href="/" class="nav-item">
-              <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
               <span>Experience</span>
             </a>
           </li>
           <li>
             <a href="/" class="nav-item">
-              <i class="fa-solid fa-code"></i>
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
               <span>Skills</span>
             </a>
           </li>
           <li class="projects-container">
-            <button class="nav-item" onclick="toggleProjects()">
-              <i class="fa-solid fa-folder-open"></i>
+            <button id="projects-btn" class="nav-item" onclick="toggleProjects()"
+                    aria-label="Projects"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-controls="projects-list">
+              <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
               <span>Projects</span>
             </button>
             <div id="projects-list">
@@ -48,27 +52,30 @@
           </li>
           <li>
             <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer" class="nav-item">
-              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
               <span>GitHub</span>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer" class="nav-item">
-              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
               <span>LinkedIn</span>
             </a>
           </li>
           <li class="email-li">
             <a href="mailto:TruongThomasQ@gmail.com" target="_blank" rel="noopener noreferrer" class="nav-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <span>Email</span>
             </a>
           </li>
         </ul>
 
-        <button id="toggle-sidebar-button" onclick="toggleSideBar(this)">
-          <i id="nav-hamburger" class="fa-solid fa-bars"></i>
-          <i id="nav-close" class="fa-solid fa-x"></i>
+        <button id="toggle-sidebar-button" onclick="toggleSideBar(this)"
+                aria-label="Menu"
+                aria-expanded="false"
+                aria-controls="nav-list">
+          <i id="nav-hamburger" class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i id="nav-close" class="fa-solid fa-x" aria-hidden="true"></i>
         </button>
       </div>
     </nav>
