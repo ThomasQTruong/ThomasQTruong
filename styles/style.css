@@ -34,6 +34,10 @@ body {
   background-color: var(--background-color);
 }
 
+main section {
+  height: 500px;
+}
+
 /* Nav bar. */
 nav {
   display: flex;
@@ -108,7 +112,7 @@ nav .hero-li a {
 }
 
 /* Nav sidebar toggle. */
-#toggle-sidebar-button {
+#sidebar-button {
   display: none;
   min-height: 44px;
   min-width: 44px;
@@ -119,7 +123,7 @@ nav .hero-li a {
   position: relative;  /* Enables icon stacking. */
 }
 
-#toggle-sidebar-button i {
+#sidebar-button i {
   font-size: var(--step-icon);
   position: absolute;  /* Stack icons. */
   top: 50%;
@@ -137,12 +141,12 @@ nav .hero-li a {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-#toggle-sidebar-button.show #nav-hamburger {
+#sidebar-button.show #nav-hamburger {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-#toggle-sidebar-button.show #nav-close {
+#sidebar-button.show #nav-close {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(0deg);
 }
@@ -239,7 +243,7 @@ nav .hero-li a {
 
 /* Format: Mobile. */
 @media screen and (max-width: 480px) {
-  #toggle-sidebar-button {
+  #sidebar-button {
     display: inline-block;
   }
 

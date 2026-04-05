@@ -20,17 +20,17 @@
     <nav>
       <div class="nav-container">
         <div class="hero-li">
-          <a href="index.html" aria-current="page">Thomas Truong</a>
+          <a href="#hero" aria-current="page">Thomas Truong</a>
         </div>
         <ul id="nav-list" class="y-scrollable">
           <li>
-            <a href="/" class="nav-item">
+            <a href="#experience" class="nav-item">
               <i class="fa-solid fa-user" aria-hidden="true"></i>
               <span>Experience</span>
             </a>
           </li>
           <li>
-            <a href="/" class="nav-item">
+            <a href="#skills" class="nav-item">
               <i class="fa-solid fa-code" aria-hidden="true"></i>
               <span>Skills</span>
             </a>
@@ -44,10 +44,10 @@
               <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
               <span>Projects</span>
             </button>
-            <div id="projects-list">
-              <a href="#">Test1</a>
-              <a href="#">Test2</a>
-              <a href="#">Test3</a>
+        <div id="projects-list" inert>
+              <a href="#projects">Test1</a>
+              <a href="#projects">Test2</a>
+              <a href="#projects">Test3</a>
             </div>
           </li>
           <li>
@@ -70,7 +70,7 @@
           </li>
         </ul>
 
-        <button id="toggle-sidebar-button" onclick="toggleSideBar(this)"
+        <button id="sidebar-button" onclick="toggleSideBar()"
                 aria-label="Menu"
                 aria-expanded="false"
                 aria-controls="nav-list">
@@ -84,13 +84,16 @@
       <!-- Section 1: Hero. -->
       <section id="hero"></section>
 
-      <!-- Section 2: Skills. -->
+      <!-- Section 2: Experience. -->
+      <section id="experience"></section>
+
+      <!-- Section 3: Skills. -->
       <section id="skills"></section>
 
-      <!-- Section 3: Projects. -->
+      <!-- Section 4: Projects. -->
       <section id="projects"></section>
 
-      <!-- Section 4: Contact. -->
+      <!-- Section 5: Contact. -->
       <section id="contact"></section>
     </main>
   </body>
