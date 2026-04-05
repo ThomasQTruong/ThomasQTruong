@@ -74,6 +74,13 @@ nav a {
   transition: background-color 150ms ease;
 }
 
+nav button {
+  color: var(--text-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 nav .hero-li {
   margin-right: auto;
   transition: margin 0.2s ease;
@@ -116,14 +123,12 @@ nav .hero-li a {
   display: none;
   min-height: 44px;
   min-width: 44px;
-  background: none;
-  border: none;
   margin-left: auto;
-  cursor: pointer;
   position: relative;  /* Enables icon stacking. */
 }
 
 #sidebar-button i {
+  color: var(--text-color);
   font-size: var(--step-icon);
   position: absolute;  /* Stack icons. */
   top: 50%;
@@ -155,6 +160,7 @@ nav .hero-li a {
 .projects-container {
   position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
   display: flex;
+  flex-direction: column;
 }
 
 #projects-list {
@@ -179,14 +185,16 @@ nav .hero-li a {
 }
 
 #projects-list a {
-  background-color: red;
-  height: 3em;
-  display: block;         /* Display each link vertically. */
-  text-align: center;     /* Horizontally align. */
-  align-content: center;  /* Vertically align. */
+  background-color: palevioletred;
+  min-height: 44px;
+  display: flex;            /* Display each link vertically. */
+  justify-content: center;  /* Horizontally align. */
+  align-items: center;      /* Vertically align. */
   margin: 0;
   font-size: var(--step--1);
   font-weight: 400;
+  width: 100%;
+  padding: 0.5rem 1rem;
 }
 
 /* Customzie scrollbar. */
@@ -281,11 +289,6 @@ nav .hero-li a {
   }
 
   /* Projects menu. */
-  .projects-container {
-    display: flex;
-    flex-direction: column;
-  }
-
   #projects-list {
     width: 100%;
     position: static;
