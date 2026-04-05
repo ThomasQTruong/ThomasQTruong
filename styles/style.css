@@ -122,13 +122,13 @@ nav .hero-li a {
   font-size: var(--step-icon);
 }
 
-/* Dropdown menu. */
-.dropdown-container {
+/* Projects menu. */
+.projects-container {
   position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
   display: flex;
 }
 
-.dropdown-items {
+#projects-list {
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
@@ -143,13 +143,14 @@ nav .hero-li a {
   transition: max-height 0.4s ease-in-out, overflow 0s 0.4s;
 }
 
-.dropdown-container:hover .dropdown-items {
+/* Tablet/Mobile: Tap to expand. */
+#projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
   overflow-y: auto;
 }
 
-.dropdown-items a {
+#projects-list a {
   background-color: red;
   height: 3em;
   display: block;         /* Display each link vertically. */
@@ -158,6 +159,15 @@ nav .hero-li a {
   margin: 0;
   font-size: var(--step--1);
   font-weight: 400;
+}
+
+/* PC / Mouse: Hover to expand. */
+@media (hover: hover) and (pointer: fine) {
+  .projects-container:hover #projects-list {
+    max-height: 60vh;
+    pointer-events: auto;
+    overflow-y: auto;
+  }
 }
 
 /* Format: Tablet. */
@@ -207,8 +217,8 @@ nav .hero-li a {
     position: fixed;
     right: -100%;
     top: 5em;
-    z-index: 1;
-    max-height: calc(100vh - var(--nav-height));
+    z-index: 10;
+    height: calc(100vh - var(--nav-height));
     overflow-y: auto;
     transition: right 0.3s ease-in-out;
   }
@@ -227,13 +237,13 @@ nav .hero-li a {
     right: 0;
   }
 
-  /* Dropdown menu. */
-  .dropdown-container {
+  /* Projects menu. */
+  .projects-container {
     display: flex;
     flex-direction: column;
   }
 
-  .dropdown-items {
+  #projects-list {
     width: 100%;
     position: static;
     top: auto;
