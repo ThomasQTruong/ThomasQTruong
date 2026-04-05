@@ -165,14 +165,13 @@ nav .hero-li a {
   max-height: 0;
   pointer-events: none;
   overflow-y: hidden;
-  transition: max-height 0.4s ease-in-out, overflow 0s 0.4s;
+  transition: max-height 0.4s ease-in-out;
 }
 
 /* Tablet/Mobile: Tap to expand. */
 #projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
-  overflow-y: auto;
 }
 
 #projects-list a {
@@ -186,12 +185,32 @@ nav .hero-li a {
   font-weight: 400;
 }
 
+/* Customzie scrollbar. */
+.y-scrollable::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.y-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.y-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.y-scrollable::-webkit-scrollbar-button {
+  display: none;
+}
+
 /* PC / Mouse: Hover to expand. */
 @media (hover: hover) and (pointer: fine) {
   .projects-container:hover #projects-list {
     max-height: 60vh;
     pointer-events: auto;
-    overflow-y: auto;
   }
 }
 
@@ -228,7 +247,7 @@ nav .hero-li a {
     padding: 0 25px;
   }
 
-  nav #nav-list {
+  #nav-list {
     background-color: palegoldenrod;
     display: flex;
     flex-direction: column;
@@ -239,6 +258,7 @@ nav .hero-li a {
     z-index: 10;
     height: calc(100vh - var(--nav-height));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transition: right 0.3s ease-in-out;
   }
 
