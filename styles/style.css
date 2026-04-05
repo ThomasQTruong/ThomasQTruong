@@ -116,10 +116,35 @@ nav .hero-li a {
   border: none;
   margin-left: auto;
   cursor: pointer;
+  position: relative;  /* Enables icon stacking. */
 }
 
 #toggle-sidebar-button i {
   font-size: var(--step-icon);
+  position: absolute;  /* Stack icons. */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* Center the icons. */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#nav-hamburger {
+  opacity: 1;
+}
+
+#nav-close {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+#toggle-sidebar-button.show #nav-hamburger {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+#toggle-sidebar-button.show #nav-close {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 /* Projects menu. */
@@ -195,14 +220,8 @@ nav .hero-li a {
 
 /* Format: Mobile. */
 @media screen and (max-width: 480px) {
-  #toggle-sidebar-button,
-  #toggle-sidebar-button.show #nav-close {
+  #toggle-sidebar-button {
     display: inline-block;
-  }
-
-  #toggle-sidebar-button #nav-close,
-  #toggle-sidebar-button.show #nav-hamburger {
-    display: none;
   }
 
   nav .nav-container {
