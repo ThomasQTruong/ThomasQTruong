@@ -26,6 +26,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -45,6 +46,9 @@ nav {
   align-items: center;
   width: 100%;
   background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav .nav-container {
@@ -266,7 +270,7 @@ nav .hero-li a {
     width: 100%;
     position: fixed;
     right: -100%;
-    top: 5em;
+    top: var(--nav-height);
     z-index: 10;
     height: calc(100vh - var(--nav-height));
     overflow-y: auto;
