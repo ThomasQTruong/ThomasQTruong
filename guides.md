@@ -4,6 +4,7 @@
 - [The Easy Way to Build Responsive Websites](https://www.youtube.com/watch?v=l04dDYW-QaI)
 - [5 CSS Tips & Tricks for better Responsive Web Design](https://www.youtube.com/watch?v=2IV08sP9m3U)
 - [Build Navbar Menus That Actually Work for Everyone](https://www.youtube.com/watch?v=m7YDWNz65iI)
+- [New CSS viewport units and minimum heights — Webflow tutorial](https://www.youtube.com/watch?v=7judyqwqmKo)
 
 # Tools
 - [Clamp Calculator](https://utopia.fyi/type/calculator/)
