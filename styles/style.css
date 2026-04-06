@@ -268,7 +268,7 @@ nav .hero-li a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    position: fixed;
+    position: absolute;
     right: -100%;
     top: var(--nav-height);
     z-index: 10;
