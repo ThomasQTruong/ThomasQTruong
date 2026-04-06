@@ -16,7 +16,7 @@ media.addEventListener("change", (e) => {
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
-    if (isMobile && navList.classList.contains("show")) {
+    if (navList.classList.contains("show")) {
       toggleSideBar();
     }
   });
