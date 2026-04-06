@@ -1,4 +1,5 @@
 const navList = document.getElementById("nav-list");
+const navListOverlay = document.getElementById("nav-list-overlay");
 const navBtn = document.getElementById("sidebar-button");
 const projectsList = document.getElementById("projects-list");
 const projectsBtn = document.getElementById("projects-btn");
@@ -25,6 +26,7 @@ navLinks.forEach(link => {
 function toggleSideBar() {
   const isOpen = navList.classList.toggle("show");
   navBtn.classList.toggle("show");
+  navListOverlay.classList.toggle("show");
   // Prevent scrolling page when sidebar is open.
   document.body.classList.toggle("no-scroll");
 
