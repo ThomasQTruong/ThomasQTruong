@@ -25,6 +25,8 @@ navLinks.forEach(link => {
 function toggleSideBar() {
   const isOpen = navList.classList.toggle("show");
   navBtn.classList.toggle("show");
+  // Prevent scrolling page when sidebar is open.
+  document.body.classList.toggle("no-scroll");
 
   if (isOpen) {
     // Update ARIA.

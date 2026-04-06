@@ -255,6 +255,11 @@ nav .hero-li a {
 
 /* Format: Mobile. */
 @media screen and (max-width: 480px) {
+  body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
   #sidebar-button {
     display: inline-block;
   }
