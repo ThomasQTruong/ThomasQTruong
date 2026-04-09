@@ -34,7 +34,7 @@
   - Use the [Utopia Clamp Calculator](https://utopia.fyi/type/calculator/).
   - 'rem' recommended for font sizes.
     - 1 rem = 16px by default.
-- @media screen and (max-width: `...`px)
+- @media screen and (width <= `...`px)
   - For layout shifts per screen size.
   - Standard breakpoints:
     - 480px = Mobile
