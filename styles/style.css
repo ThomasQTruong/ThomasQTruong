@@ -1,20 +1,34 @@
 :root {
+  /*
+    === BREAKPOINTS (Reference only) ===
+    Mobile: width <= 480px
+    Tablet/Laptop: width <= 1024px
+    Desktop: width > 1024px
+  */
+
+  /* === COLORS === */
   --primary-color: paleturquoise;
   --text-color: black;
   --background-color: white;
 
-  /* Utopia-generated dynamic font sizes. */
-  --step--2: clamp(0.7813rem, 0.752rem + 0.1463vw, 0.88rem);
-  --step--1: clamp(0.9375rem, 0.8894rem + 0.2407vw, 1.1rem);
-  --step-0: clamp(1.125rem, 1.0509rem + 0.3704vw, 1.375rem);
-  --step-1: clamp(1.35rem, 1.2407rem + 0.5463vw, 1.7188rem);
-  --step-2: clamp(1.62rem, 1.4634rem + 0.7829vw, 2.1484rem);
-  --step-3: clamp(1.944rem, 1.7243rem + 1.0986vw, 2.6855rem);
-  --step-4: clamp(2.3328rem, 2.0294rem + 1.5172vw, 3.3569rem);
-  --step-5: clamp(2.7994rem, 2.3855rem + 2.0693vw, 4.1962rem);
-  --step-icon: clamp(1.125rem, 1.287rem + -0.1852vw, 1.25rem);
-  --nav-padding: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
+  /*
+    === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
+    --step-n1: Small text (nav texts / projects texts).
+    --step-1: Big text (nav page logo).
+    --step-icon: Icon sizing.
+  */
+  --step-n2: clamp(0.7813rem, 0.7297rem + 0.1717vw, 0.88rem);
+  --step-n1: clamp(0.9375rem, 0.8527rem + 0.2826vw, 1.1rem);
+  --step-0: clamp(1.125rem, 0.9946rem + 0.4348vw, 1.375rem);
+  --step-1: clamp(1.35rem, 1.1576rem + 0.6413vw, 1.7188rem);
+  --step-2: clamp(1.62rem, 1.3443rem + 0.919vw, 2.1484rem);
+  --step-3: clamp(1.944rem, 1.5571rem + 1.2896vw, 2.6855rem);
+  --step-4: clamp(2.3328rem, 1.7985rem + 1.7811vw, 3.3569rem);
+  --step-5: clamp(2.7994rem, 2.0706rem + 2.4292vw, 4.1962rem);
+  --step-icon: clamp(1.125rem, 1.3152rem + -0.2174vw, 1.25rem);
 
+  /* --- SPACING & UI --- */
+  --nav-padding: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
 }
 
@@ -26,12 +40,11 @@
 
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   color: var(--text-color);
   overflow-x: hidden;
   position: relative;
@@ -55,22 +68,6 @@ nav {
   z-index: 1000;
 }
 
-nav .nav-container {
-  display: flex;
-  max-width: 1400px;
-  width: 100%;
-  align-items: center;
-  height: var(--nav-height);
-  padding: 0 var(--nav-padding);
-  position: relative;
-}
-
-#nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
 nav li {
   display: flex;
   margin: 0 10px;
@@ -90,12 +87,28 @@ nav button {
   cursor: pointer;
 }
 
-nav .hero-li {
+.nav-container {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 var(--nav-padding);
+  position: relative;
+}
+
+#nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero-li {
   margin-right: auto;
   transition: margin 0.2s ease;
 }
 
-nav .hero-li a {
+.hero-li a {
   font-size: var(--step-1);
   font-weight: 600;
 }
@@ -116,7 +129,7 @@ nav .hero-li a {
 }
 
 .nav-item span {
-  font-size: var(--step--1);
+  font-size: var(--step-n1);
   font-weight: 400;
 }
 
@@ -208,7 +221,7 @@ nav .hero-li a {
   justify-content: center;  /* Horizontally align. */
   align-items: center;      /* Vertically align. */
   margin: 0;
-  font-size: var(--step--1);
+  font-size: var(--step-n1);
   font-weight: 400;
   width: 100%;
   padding: 0.5rem 1rem;
@@ -221,14 +234,14 @@ nav .hero-li a {
 }
 
 .y-scrollable::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgb(0 0 0 / 20%);
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 
 .y-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(0 0 0 / 40%);
 }
 
 .y-scrollable::-webkit-scrollbar-button {
@@ -243,8 +256,8 @@ nav .hero-li a {
   }
 }
 
-/* Format: Tablet. */
-@media screen and (max-width: 1024px) {
+/* Format: Tablet / Laptops. */
+@media screen and (width <= 1024px) {
   /* Nav bar. */
   nav li {
     margin: 0;
@@ -267,7 +280,7 @@ nav .hero-li a {
 }
 
 /* Format: Mobile. */
-@media screen and (max-width: 480px) {
+@media screen and (width <= 480px) {
   body.no-scroll {
     overflow: hidden;
     height: 100dvh;
@@ -277,7 +290,8 @@ nav .hero-li a {
     display: inline-block;
   }
 
-  nav .nav-container {
+  /* Nav bar. */
+  .nav-container {
     padding: 0 25px;
   }
 
