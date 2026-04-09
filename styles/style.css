@@ -141,7 +141,7 @@ nav button {
   display: none;
 }
 
-.email-li a {
+.nav-cta a {
   color: var(--background-color);
   background-color: var(--text-color);
   padding: 5px 15px;
@@ -271,7 +271,7 @@ nav button {
     display: none;
   }
 
-  .email-li a {
+  .nav-cta a {
     color: var(--text-color);
     background-color: transparent;
     padding: 0;
