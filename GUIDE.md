@@ -26,6 +26,7 @@
   - Code for referring in HTML: [FontAwesome CDN](https://cdnjs.com/libraries/font-awesome).
 - Free fonts to use: [GoogleFonts](https://fonts.google.com/).
   - This site uses: [Poppins](https://fonts.google.com/specimen/Poppins) (Regular 400 and SemiBold 600).
+- Avoid using onclick() for buttons use addEventListener() instead.
 
 ### Responsive Techniques
 

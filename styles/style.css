@@ -133,7 +133,7 @@ nav button {
   font-weight: 400;
 }
 
-#nav-list-overlay {
+#nav-list-background {
   background-color: palegoldenrod;
   position: fixed;
   inset: 0;
@@ -323,7 +323,7 @@ nav button {
     right: 0;
   }
 
-  #nav-list-overlay.show {
+  #nav-list-background.show {
     display: block;
   }
 
