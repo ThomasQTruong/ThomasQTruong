@@ -4,6 +4,7 @@ const navListBackground = document.getElementById("nav-list-background");
 const navBtn = document.getElementById("sidebar-button");
 const projectsList = document.getElementById("projects-list");
 const projectsBtn = document.getElementById("projects-btn");
+const projectsContainer = document.querySelector(".projects-container");
 
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
@@ -27,6 +28,18 @@ navLinks.forEach((link) => {
       toggleSideBar();
     }
   });
+});
+
+// Add listener for hovering Projects menu, hover = no inert.
+projectsContainer.addEventListener("mouseenter", () => {
+  projectsList.inert = false;
+});
+
+// Add listener for when user stops hovering Projects menu, no hover = inert.
+projectsContainer.addEventListener("mouseleave", () => {
+  if (!projectsList.classList.contains("show")) {
+    projectsList.inert = true;
+  }
 });
 
 /**
@@ -102,13 +115,13 @@ function closeProjects(event = null) {
 
     // User toggled or clicked somewhere else, close.
     projectsList.classList.remove("show");
+    projectsList.inert = true;
   }
 
   // Continuing closing process including for non-events.
   document.removeEventListener("click", closeProjects);
-  // Update ARIA and inert.
+  // Update ARIA.
   projectsBtn.setAttribute("aria-expanded", "false");
-  projectsList.inert = true;
 }
 
 /**
@@ -124,6 +137,5 @@ function updateScreen() {
   } else {
     // User"s screen size is not mobile, remove inert attribute.
     navList.inert = false;
-    projectsList.inert = false;
   }
 }
