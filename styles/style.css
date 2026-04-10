@@ -7,9 +7,23 @@
   */
 
   /* === COLORS === */
+  --text-color: white;
+  --background-color: #3c3c3c;
+  --primary-color: #252526;
+  --secondary-color: #4f4f4f;
+  --tertiary-color: #363636;
+
+  /*
   --primary-color: paleturquoise;
-  --text-color: black;
-  --background-color: white;
+  --secondary-color: azure;
+  --tertiary-color: lightcyan;
+
+  slateblue
+  
+  deepskyblue
+  cornflowerblue
+  dodgerblue
+  */
 
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
@@ -51,6 +65,14 @@ body {
   position: relative;
   background-color: var(--background-color);
   width: 100%;
+}
+
+body.light-mode {
+  --text-color: black;
+  --background-color: white;
+  --primary-color: paleturquoise;
+  --secondary-color: azure;
+  --tertiary-color: lightcyan;
 }
 
 main section {
@@ -139,7 +161,7 @@ nav button {
 }
 
 #nav-list-background {
-  background-color: palegoldenrod;
+  background-color: var(--tertiary-color);
   position: fixed;
   inset: 0;
   z-index: 9;
@@ -157,11 +179,16 @@ nav button {
   width: 1px;
   height: var(--step-1);
   background-color: var(--text-color);
-  opacity: 0.2;
+  opacity: 0.15;
   margin-left: 1rem;
   margin-right: 0.5rem;
   display: inline-block;
   vertical-align: middle;
+}
+
+body.light-mode .nav-divider {
+  background-color: var(--text-color);
+  opacity: 0.2;
 }
 
 /* Nav sidebar toggle. */
@@ -210,7 +237,6 @@ nav button {
 }
 
 #projects-list {
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -231,7 +257,7 @@ nav button {
 }
 
 #projects-list a {
-  background-color: palevioletred;
+  background-color: var(--secondary-color);
   min-height: 44px;
   display: flex;            /* Display each link vertically. */
   justify-content: center;  /* Horizontally align. */
