@@ -13,6 +13,7 @@
 
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
+    --step-n2: Chevron-down icon size.
     --step-n1: Small text (nav texts / projects texts).
     --step-1: Big text (nav page logo).
     --step-icon: Icon sizing.
@@ -133,6 +134,10 @@ nav button {
   font-weight: 400;
 }
 
+.nav-item i.dropdown-icon {
+  font-size: var(--step-n2);
+}
+
 #nav-list-background {
   background-color: palegoldenrod;
   position: fixed;
@@ -148,8 +153,19 @@ nav button {
   border-radius: 5px;
 }
 
+.nav-divider {
+  width: 1px;
+  height: var(--step-1);
+  background-color: var(--text-color);
+  opacity: 0.2;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Nav sidebar toggle. */
-#sidebar-button {
+#sidebar-btn {
   display: none;
   min-height: 44px;
   min-width: 44px;
@@ -157,7 +173,7 @@ nav button {
   position: relative;  /* Enables icon stacking. */
 }
 
-#sidebar-button i {
+#sidebar-btn i {
   color: var(--text-color);
   font-size: var(--step-icon);
   position: absolute;  /* Stack icons. */
@@ -176,12 +192,12 @@ nav button {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-#sidebar-button.show #nav-hamburger {
+#sidebar-btn.show #nav-hamburger {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-#sidebar-button.show #nav-close {
+#sidebar-btn.show #nav-close {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(0deg);
 }
@@ -286,7 +302,7 @@ nav button {
     height: 100dvh;
   }
 
-  #sidebar-button {
+  #sidebar-btn {
     display: inline-block;
   }
 
@@ -333,5 +349,13 @@ nav button {
     position: static;
     top: auto;
     left: auto;
+  }
+
+  .nav-divider {
+    display: none;
+  }
+
+  #nav-right-btns {
+    display: flex;
   }
 }
