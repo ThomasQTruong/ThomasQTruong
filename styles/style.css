@@ -227,7 +227,6 @@ nav button {
   font-weight: 400;
   width: 100%;
   padding: 0.5rem 1rem;
-  
 }
 
 /* Global: focus. */
@@ -340,7 +339,7 @@ body.no-scroll {
   max-height: 0;
   pointer-events: none;
   overflow-y: hidden;
-  transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out, color 0.2s ease;
 }
 
 /* Mobile: Right side buttons (menu/theme). */
@@ -353,7 +352,6 @@ body.no-scroll {
   max-height: 60vh;
   pointer-events: auto;
   color: var(--hover-color);
-  transition: color 0.2s ease;
 }
 
 /* Global: Light mode settings. */
