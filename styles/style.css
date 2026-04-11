@@ -1,9 +1,9 @@
 :root {
   /*
     === BREAKPOINTS (Reference only) ===
-    Mobile: width <= 480px
-    Tablet/Laptop: width <= 1024px
-    Desktop: width > 1024px
+    Mobile: width < 32em
+    Tablet/Laptop: width >= 32em
+    Desktop: width >= 64em
   */
 
   /* === COLORS === */
@@ -12,6 +12,7 @@
   --primary-color: #252526;
   --secondary-color: #4f4f4f;
   --tertiary-color: #363636;
+  --hover-color: paleturquoise;
 
   /*
   --primary-color: paleturquoise;
@@ -43,9 +44,12 @@
   --step-icon: clamp(1.125rem, 1.3152rem + -0.2174vw, 1.25rem);
 
   /* --- SPACING & UI --- */
-  --nav-padding: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
+  --nav-padding-mobile: 1.5625rem;
+  --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
 }
+
+/* Global: general. */
 
 * {
   margin: 0;
@@ -76,10 +80,31 @@ body.light-mode {
 }
 
 main section {
-  height: 500px;
+  height: 32rem;
 }
 
-/* Nav bar. */
+/* Global: Customzie scrollbar. */
+.y-scrollable::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.y-scrollable::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.y-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgb(0 0 0 / 40%);
+}
+
+.y-scrollable::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Global: nav bar. */
 nav {
   display: flex;
   justify-content: center;
@@ -93,7 +118,8 @@ nav {
 
 nav li {
   display: flex;
-  margin: 0 10px;
+  width: 100%;
+  justify-content: center;
 }
 
 nav a {
@@ -112,18 +138,12 @@ nav button {
 
 .nav-container {
   display: flex;
-  max-width: 1400px;
+  max-width: 90em;
   width: 100%;
   align-items: center;
   height: var(--nav-height);
-  padding: 0 var(--nav-padding);
+  padding: 0 var(--nav-padding-mobile);
   position: relative;
-}
-
-#nav-list {
-  list-style: none;
-  display: flex;
-  align-items: center;
 }
 
 .hero-li {
@@ -138,13 +158,19 @@ nav button {
 
 .nav-item {
   min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 0.25em;
   background: none;
   border: none;
   cursor: pointer;
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: var(--hover-color);
 }
 
 .nav-item i {
@@ -154,25 +180,11 @@ nav button {
 .nav-item span {
   font-size: var(--step-n1);
   font-weight: 400;
+  display: inline-block;
 }
 
 .nav-item i.dropdown-icon {
   font-size: var(--step-n2);
-}
-
-#nav-list-background {
-  background-color: var(--tertiary-color);
-  position: fixed;
-  inset: 0;
-  z-index: 9;
-  display: none;
-}
-
-.nav-cta a {
-  color: var(--background-color);
-  background-color: var(--text-color);
-  padding: 5px 15px;
-  border-radius: 5px;
 }
 
 .nav-divider {
@@ -180,20 +192,69 @@ nav button {
   height: var(--step-1);
   background-color: var(--text-color);
   opacity: 0.15;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   margin-right: 0.5rem;
-  display: inline-block;
+  display: none;
   vertical-align: middle;
 }
 
-body.light-mode .nav-divider {
-  background-color: var(--text-color);
-  opacity: 0.2;
+.nav-cta a {
+  color: var(--text-color);
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
-/* Nav sidebar toggle. */
+.projects-container {
+  position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
+  display: flex;
+  flex-direction: column;
+}
+
+#projects-list a {
+  background-color: var(--secondary-color);
+  min-height: 44px;
+  display: flex;            /* Display each link vertically. */
+  justify-content: center;  /* Horizontally align. */
+  align-items: center;      /* Vertically align. */
+  margin: 0;
+  font-size: var(--step-n1);
+  font-weight: 400;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+#projects-list a:hover {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+/* Global: focus. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+#projects-list a:focus-visible {
+  outline: none;
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+/* Mobile: general. */
+body.no-scroll {
+  overflow: hidden;
+  height: 100dvh;
+}
+
+/* Mobile: nav sidebar toggle. */
 #sidebar-btn {
-  display: none;
+  display: inline-block;
   min-height: 44px;
   min-width: 44px;
   margin-left: auto;
@@ -229,65 +290,68 @@ body.light-mode .nav-divider {
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-/* Projects menu. */
-.projects-container {
-  position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
+#nav-list {
+  list-style: none;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
+  height: calc(100dvh - var(--nav-height));
+  position: absolute;
+  right: -100%;
+  top: var(--nav-height);
+  z-index: 10;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: right 0.3s ease-in-out;
 }
 
+#nav-list.show {
+  right: 0;
+}
+
+#nav-list-background {
+  background-color: var(--tertiary-color);
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: none;
+}
+
+#nav-list-background.show {
+  display: block;
+}
+
+/* Mobile: projects menu. */
 #projects-list {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: static;
+  top: auto;
+  left: auto;
   z-index: 10;
-  width: 10em;
+  width: 100%;
   max-height: 0;
   pointer-events: none;
   overflow-y: hidden;
   transition: max-height 0.4s ease-in-out;
 }
 
-/* Tablet/Mobile: Tap to expand. */
+/* Mobile: Right side buttons (menu/theme). */
+#nav-right-btns {
+  display: flex;
+}
+
+/* Tablet/Mobile: tap to expand. */
 #projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
+  color: var(--hover-color);
 }
 
-#projects-list a {
-  background-color: var(--secondary-color);
-  min-height: 44px;
-  display: flex;            /* Display each link vertically. */
-  justify-content: center;  /* Horizontally align. */
-  align-items: center;      /* Vertically align. */
-  margin: 0;
-  font-size: var(--step-n1);
-  font-weight: 400;
-  width: 100%;
-  padding: 0.5rem 1rem;
-}
-
-/* Customzie scrollbar. */
-.y-scrollable::-webkit-scrollbar {
-  width: 8px;
-  background: transparent;
-}
-
-.y-scrollable::-webkit-scrollbar-thumb {
-  background: rgb(0 0 0 / 20%);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-.y-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgb(0 0 0 / 40%);
-}
-
-.y-scrollable::-webkit-scrollbar-button {
-  display: none;
+body.light-mode .nav-divider {
+  background-color: var(--text-color);
+  opacity: 0.2;
 }
 
 /* PC / Mouse: Hover to expand. */
@@ -299,89 +363,75 @@ body.light-mode .nav-divider {
 }
 
 /* Format: Tablet / Laptops. */
-@media screen and (width <= 1024px) {
-  /* Nav bar. */
-  nav li {
-    margin: 0;
-  }
-
-  .nav-item {
-    min-height: 44px;
-  }
-
-  .nav-item span {
-    display: none;
-  }
-
-  .nav-cta a {
-    color: var(--text-color);
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
-  }
-}
-
-/* Format: Mobile. */
-@media screen and (width <= 480px) {
+@media screen and (width >= 32em) {
   body.no-scroll {
-    overflow: hidden;
-    height: 100dvh;
-  }
-
-  #sidebar-btn {
-    display: inline-block;
-  }
-
-  /* Nav bar. */
-  .nav-container {
-    padding: 0 25px;
+    overflow: visible;
+    height: auto;
   }
 
   #nav-list {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    right: -100%;
-    top: var(--nav-height);
-    z-index: 10;
-    height: calc(100dvh - var(--nav-height));
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transition: right 0.3s ease-in-out;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    right: 0;
+    overflow-y: visible;
+    gap: 0.8em;
   }
 
-  nav li,
+  .nav-container {
+    padding: 0 var(--nav-padding-fluid);
+  }
+
+  nav li {
+    width: auto;
+  }
+
   .nav-item {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+  }
+
+  .nav-item span {
+    display: none;
+  }
+
+  .nav-divider {
+    display: inline-block;
+    align-self: center;
+  }
+
+  #projects-list {
+    width: 10em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  #sidebar-btn {
+    display: none;
+  }
+}
+
+/* Format: Desktops. */
+@media screen and (width >= 64em) {
+  #nav-list {
+    gap: 1.25em;
   }
 
   .nav-item span {
     display: inline-block;
   }
 
-  #nav-list.show {
-    right: 0;
+  .nav-cta a {
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding: 0.3125rem 0.9375rem;
+    border-radius: 5px;
   }
 
-  #nav-list-background.show {
-    display: block;
-  }
-
-  /* Projects menu. */
-  #projects-list {
-    width: 100%;
-    position: static;
-    top: auto;
-    left: auto;
-  }
-
-  .nav-divider {
-    display: none;
-  }
-
-  #nav-right-btns {
-    display: flex;
+  .nav-cta a:hover {
+    color: var(--background-color);
+    background-color: var(--hover-color);
+    transition: 0.2s ease;
   }
 }

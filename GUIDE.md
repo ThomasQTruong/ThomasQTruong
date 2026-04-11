@@ -10,6 +10,7 @@
 # Tools
 
 - [Clamp Calculator](https://utopia.fyi/type/calculator/)
+- [What Unit To Use](https://whatunit.com/)
 
 # Portfolio Examples
 
@@ -30,17 +31,27 @@
 
 ### Responsive Techniques
 
+- Recommended approach is to do mobile-first design.
+  - Building for mobile and media queries set for larger screens.
+- Recommended units (or [What Unit To Use](https://whatunit.com/)):
+  | Property | Unit |
+  | :------: | :--: |
+  | Media Queries | `em` |
+  | Borders | `px` |
+  | Typography | `rem` or `clamp` |
+  | Layout Spacing | `rem` |
+  | Component Gaps | `em` |
+  | Touch Targets | `px` |
+  | Border Radius | `px` |
 - clamp()
   - For dynamic font sizes and padding.
   - Use the [Utopia Clamp Calculator](https://utopia.fyi/type/calculator/).
-  - 'rem' recommended for font sizes.
-    - 1 rem = 16px by default.
-- @media screen and (width <= `...`px)
+- @media screen and (min-width: `...`em)
   - For layout shifts per screen size.
-  - Standard breakpoints:
-    - 480px = Mobile
-    - 768px = Tablets
-    - 1024px = Laptops / Small PC
+  - Breakpoints:
+    - 32em = Mobile
+    - 48em = Tablets
+    - 64em = Laptops / Small PC
 
 ### Accessibility (A11y) Standards
 
