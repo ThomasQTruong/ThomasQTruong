@@ -6,11 +6,13 @@
 - [5 CSS Tips & Tricks for better Responsive Web Design](https://www.youtube.com/watch?v=2IV08sP9m3U)
 - [Build Navbar Menus That Actually Work for Everyone](https://www.youtube.com/watch?v=m7YDWNz65iI)
 - [New CSS viewport units and minimum heights — Webflow tutorial](https://www.youtube.com/watch?v=7judyqwqmKo)
+- [Stop Animations During Window Resizing](https://css-tricks.com/stop-animations-during-window-resizing/)
 
 # Tools
 
 - [Clamp Calculator](https://utopia.fyi/type/calculator/)
 - [What Unit To Use](https://whatunit.com/)
+- [Responsive Tester](https://responsivetesttool.com/)
 
 # Portfolio Examples
 
@@ -28,6 +30,7 @@
 - Free fonts to use: [GoogleFonts](https://fonts.google.com/).
   - This site uses: [Poppins](https://fonts.google.com/specimen/Poppins) (Regular 400 and SemiBold 600).
 - Avoid using onclick() for buttons use addEventListener() instead.
+- Transitions should usually be in the base CSS selector (not in i.e. `:hover`).
 
 ### Responsive Techniques
 
@@ -46,12 +49,16 @@
 - clamp()
   - For dynamic font sizes and padding.
   - Use the [Utopia Clamp Calculator](https://utopia.fyi/type/calculator/).
-- @media screen and (min-width: `...`em)
+- ``@media screen and (min-width: `...`em)``
   - For layout shifts per screen size.
   - Breakpoints:
     - 32em = Mobile
     - 48em = Tablets
     - 64em = Laptops / Small PC
+- `@media (hover: hover) and (pointer: fine)`
+  - For decorating hover effects for mouse.
+- `@media (pointer: coarse)`
+  - For decorating touch effects for mobile.
 
 ### Accessibility (A11y) Standards
 
