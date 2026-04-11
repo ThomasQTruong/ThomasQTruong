@@ -11,12 +11,22 @@ navBtn.addEventListener("click", toggleSideBar);
 projectsBtn.addEventListener("click", toggleProjects);
 
 // Listen to page size changes and update accordingly.
-const media = window.matchMedia("(width < 480px)");
+const media = window.matchMedia("(width < 32em)");
 let isMobile = media.matches;
+let resizeTimer;
 updateScreen(); // Initialize inert state.
 media.addEventListener("change", (e) => {
+  // Stop all animations while resizing.
+  document.body.classList.add("resize-animation-stopper");
+
   isMobile = e.matches;
   updateScreen();
+
+  // Debounce: Remove the stopper once resizing stops.
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
 });
 
 // Add listener to each nav link.

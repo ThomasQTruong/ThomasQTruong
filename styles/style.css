@@ -50,11 +50,15 @@
 }
 
 /* Global: general. */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
 }
 
 html {
