@@ -1,4 +1,5 @@
 // DOM element selectors.
+const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
 const navListBackground = document.getElementById("nav-list-background");
 const navBtn = document.getElementById("sidebar-btn");
@@ -9,6 +10,7 @@ const projectsContainer = document.querySelector(".projects-container");
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
 projectsBtn.addEventListener("click", toggleProjects);
+themeBtn.addEventListener("click", toggleTheme);
 
 // Listen to page size changes and update accordingly.
 const media = window.matchMedia("(width < 32em)");
@@ -132,6 +134,14 @@ function closeProjects(event = null) {
   document.removeEventListener("click", closeProjects);
   // Update ARIA.
   projectsBtn.setAttribute("aria-expanded", "false");
+}
+
+/**
+ * Toggles the theme (light/dark mode).
+ * @returns {void}
+ */
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
 }
 
 /**

@@ -8,23 +8,11 @@
 
   /* === COLORS === */
   --text-color: white;
-  --background-color: #3c3c3c;
+  --background-color: #3C3C3C;
   --primary-color: #252526;
-  --secondary-color: #4f4f4f;
+  --secondary-color: #4F4F4F;
   --tertiary-color: #363636;
   --hover-color: paleturquoise;
-
-  /*
-  --primary-color: paleturquoise;
-  --secondary-color: azure;
-  --tertiary-color: lightcyan;
-
-  slateblue
-  
-  deepskyblue
-  cornflowerblue
-  dodgerblue
-  */
 
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
@@ -73,6 +61,7 @@ body {
   position: relative;
   background-color: var(--background-color);
   width: 100%;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 body.light-mode {
@@ -81,6 +70,7 @@ body.light-mode {
   --primary-color: paleturquoise;
   --secondary-color: azure;
   --tertiary-color: lightcyan;
+  --hover-color: #00CED1;
 }
 
 main section {
