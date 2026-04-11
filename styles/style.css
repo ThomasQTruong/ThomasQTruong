@@ -178,10 +178,6 @@ nav button {
   color: var(--hover-color);
 }
 
-.nav-item:hover {
-  color: var(--hover-color);
-}
-
 .nav-item i {
   font-size: var(--step-icon);
 }
@@ -234,11 +230,6 @@ nav button {
   
 }
 
-#projects-list a:hover {
-  color: var(--background-color);
-  background-color: var(--text-color);
-}
-
 /* Global: focus. */
 :focus {
   outline: none;
@@ -253,7 +244,7 @@ nav button {
 #projects-list a:focus-visible {
   outline: none;
   color: var(--background-color);
-  background-color: var(--text-color);
+  background-color: var(--hover-color);
 }
 
 /* Mobile: general. */
@@ -283,10 +274,6 @@ body.no-scroll {
 }
 
 #sidebar-btn:focus-visible i {
-  color: var(--hover-color);
-}
-
-#sidebar-btn:hover i {
   color: var(--hover-color);
 }
 
@@ -361,7 +348,7 @@ body.no-scroll {
   display: flex;
 }
 
-/* Tablet/Mobile: tap to expand. */
+/* Global: tap/click to expand. */
 #projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
@@ -375,11 +362,39 @@ body.light-mode .nav-divider {
   opacity: 0.2;
 }
 
-/* PC / Mouse: Hover to expand. */
+/* Mobile: tap effects. */
+@media (pointer: coarse) {
+  .nav-item:active {
+    color: var(--hover-color);
+  }
+
+  #sidebar-btn:active i {
+    color: var(--hover-color);
+  }
+
+  #projects-list a:active {
+    color: var(--hover-color);
+  }
+}
+
+/* PC / Mouse: Hover and expand effects. */
 @media (hover: hover) and (pointer: fine) {
   .projects-container:hover #projects-list {
     max-height: 60vh;
     pointer-events: auto;
+  }
+
+  .nav-item:hover {
+    color: var(--hover-color);
+  }
+
+  #sidebar-btn:hover i {
+    color: var(--hover-color);
+  }
+
+  #projects-list a:hover {
+    color: var(--background-color);
+    background-color: var(--hover-color);
   }
 }
 
