@@ -178,10 +178,6 @@ nav button {
   display: inline-block;
 }
 
-.nav-item i.dropdown-icon {
-  font-size: var(--step-n2);
-}
-
 .nav-divider {
   width: 1px;
   height: var(--step-1);
@@ -317,6 +313,34 @@ body.no-scroll {
   display: block;
 }
 
+/* Global: Projects dropdown icon. */
+#projects-btn .fa-stack {
+  min-width: auto;
+  width: 1em;
+}
+
+#projects-btn .fa-stack i {
+  font-size: var(--step-n2);
+  transition: opacity 0.2s ease;
+}
+
+#dropdown-icon-up {
+  position: relative;
+  opacity: 0;
+}
+
+#dropdown-icon-down {
+  position: absolute;
+}
+
+#projects-btn[aria-expanded="true"] #dropdown-icon-up {
+  opacity: 1;
+}
+
+#projects-btn[aria-expanded="true"] #dropdown-icon-down {
+  opacity: 0;
+}
+
 /* Mobile: projects menu. */
 #projects-list {
   display: flex;
@@ -383,6 +407,14 @@ body.light-mode .nav-divider {
   #projects-list a:hover {
     color: var(--background-color);
     background-color: var(--hover-color);
+  }
+
+  #projects-btn:hover #dropdown-icon-up {
+    opacity: 1;
+  }
+
+  #projects-btn:hover #dropdown-icon-down {
+    opacity: 0;
   }
 }
 

@@ -43,7 +43,10 @@
                     aria-controls="projects-list">
               <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
               <span>Projects</span>
-              <i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+              <span class="fa-stack">
+                <i id="dropdown-icon-up" class="fa-solid fa-chevron-up fa-stack-1x" aria-hidden="true"></i>
+                <i id="dropdown-icon-down" class="fa-solid fa-chevron-down fa-stack-1x" aria-hidden="true"></i>
+              </span>
             </button>
             <div id="projects-list" inert>
               <a href="#projects">Test1</a>
