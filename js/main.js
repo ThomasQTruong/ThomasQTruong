@@ -141,7 +141,13 @@ function closeProjects(event = null) {
  * @returns {void}
  */
 function toggleTheme() {
-  document.body.classList.toggle("light-mode");
+  const isLightMode = document.body.classList.toggle("light-mode");
+
+  if (isLightMode) {
+    themeBtn.setAttribute("aria-pressed", "true");
+  } else {
+    themeBtn.setAttribute("aria-pressed", "false");
+  }
 }
 
 /**

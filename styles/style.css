@@ -225,7 +225,7 @@ nav button {
 
 #dropdown-icons i {
   font-size: var(--step-n2);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.4s ease;
 }
 
 #dropdown-icon-up {
@@ -343,6 +343,31 @@ body.no-scroll {
 #nav-list-background.show {
   display: block;
 }
+
+#theme-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#theme-btn .fa-sun {
+  color: #eeda68;
+}
+
+#theme-btn .fa-moon {
+  position: absolute;
+  color: mediumslateblue;
+  opacity: 0;
+}
+
+#theme-btn[aria-pressed="true"] .fa-sun {
+  opacity: 0;
+}
+
+#theme-btn[aria-pressed="true"] .fa-moon {
+  opacity: 1;
+}
+
 
 /* Mobile: projects menu. */
 #projects-list {
