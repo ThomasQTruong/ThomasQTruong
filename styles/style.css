@@ -123,6 +123,18 @@ nav a {
   transition: background-color 0.2s ease;
 }
 
+/* !!! [WIP] Work in progress display. !!! */
+.wip {
+  display: block;
+  text-align: center;
+}
+
+.wip a {
+  color: deepskyblue;
+}
+
+/* !!! [WIP] End of WIP. !!! */
+
 nav button {
   color: var(--text-color);
   background: none;
@@ -424,9 +436,14 @@ body.light-mode .nav-divider {
     pointer-events: auto;
   }
 
-  .nav-item:hover {
+  .nav-item:hover:not(#theme-btn) {
     color: var(--hover-color);
+
+    /* Add hover background color for mobile-size screens. */
+    background-color: var(--background-color);
   }
+
+  
 
   #sidebar-btn:hover i {
     color: var(--hover-color);
@@ -473,6 +490,11 @@ body.light-mode .nav-divider {
 
   .nav-item {
     width: auto;
+  }
+  
+  .nav-item:hover {
+    /* Remove hover background color for non-mobile sized screens. */
+    background-color: transparent;
   }
 
   .nav-item span {
