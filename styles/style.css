@@ -492,7 +492,7 @@ body.light-mode .nav-divider {
     width: auto;
   }
   
-  .nav-item:hover {
+  .nav-item:hover:not(#theme-btn) {
     /* Remove hover background color for non-mobile sized screens. */
     background-color: transparent;
   }
