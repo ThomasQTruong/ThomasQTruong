@@ -207,7 +207,7 @@ nav button {
   vertical-align: middle;
 }
 
-.nav-cta a {
+.nav-item.nav-cta {
   color: var(--text-color);
   background-color: transparent;
   padding: 0;
@@ -220,7 +220,7 @@ nav button {
   flex-direction: column;
 }
 
-#projects-list a {
+.projects-list a {
   background-color: var(--secondary-color);
   min-height: 44px;
   display: flex;            /* Display each link vertically. */
@@ -234,33 +234,33 @@ nav button {
 }
 
 /* Global: Projects dropdown icon. */
-#dropdown-icons {
+.dropdown-icons {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
 }
 
-#dropdown-icons i {
+.dropdown-icons i {
   font-size: var(--step-n2);
   transition: opacity 0.4s ease;
 }
 
-#dropdown-icon-up {
+.dropdown-icon-up {
   opacity: 0;
 }
 
-#dropdown-icon-down {
+.dropdown-icon-down {
   position: absolute;
   left: 0;
   opacity: 1;
 }
 
-#projects-btn[aria-expanded="true"] #dropdown-icon-up {
+.projects-btn[aria-expanded="true"] .dropdown-icon-up {
   opacity: 1;
 }
 
-#projects-btn[aria-expanded="true"] #dropdown-icon-down {
+.projects-btn[aria-expanded="true"] .dropdown-icon-down {
   opacity: 0;
 }
 
@@ -275,7 +275,7 @@ nav button {
   border-radius: 4px;
 }
 
-#projects-list a:focus-visible {
+.projects-list a:focus-visible {
   outline: none;
   color: var(--background-color);
   background-color: var(--hover-color);
@@ -288,7 +288,7 @@ body.no-scroll {
 }
 
 /* Mobile: nav sidebar toggle. */
-#sidebar-btn {
+.sidebar-btn {
   display: inline-block;
   min-height: 44px;
   min-width: 44px;
@@ -297,7 +297,7 @@ body.no-scroll {
   transition: color 0.2s ease;
 }
 
-#sidebar-btn i {
+.sidebar-btn i {
   color: var(--text-color);
   font-size: var(--step-icon);
   position: absolute;  /* Stack icons. */
@@ -307,30 +307,30 @@ body.no-scroll {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#sidebar-btn:focus-visible i {
+.sidebar-btn:focus-visible i {
   color: var(--hover-color);
 }
 
-#nav-hamburger {
+.nav-hamburger {
   opacity: 1;
 }
 
-#nav-close {
+.nav-close {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-#sidebar-btn.show #nav-hamburger {
+.sidebar-btn.show .nav-hamburger {
   opacity: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-#sidebar-btn.show #nav-close {
+.sidebar-btn.show .nav-close {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-#nav-list {
+.nav-list {
   list-style: none;
   display: flex;
   align-items: center;
@@ -347,37 +347,37 @@ body.no-scroll {
   background-color: var(--tertiary-color);
 }
 
-#nav-list.show {
+.nav-list.show {
   right: 0;
 }
 
-#theme-btn {
+.theme-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#theme-btn .fa-sun {
+.theme-btn .fa-sun {
   color: #eeda68;
 }
 
-#theme-btn .fa-moon {
+.theme-btn .fa-moon {
   position: absolute;
   color: mediumslateblue;
   opacity: 0;
 }
 
-#theme-btn[aria-pressed="true"] .fa-sun {
+.theme-btn[aria-pressed="true"] .fa-sun {
   opacity: 0;
 }
 
-#theme-btn[aria-pressed="true"] .fa-moon {
+.theme-btn[aria-pressed="true"] .fa-moon {
   opacity: 1;
 }
 
 
 /* Mobile: projects menu. */
-#projects-list {
+.projects-list {
   display: flex;
   flex-direction: column;
   position: static;
@@ -392,12 +392,12 @@ body.no-scroll {
 }
 
 /* Mobile: Right side buttons (menu/theme). */
-#nav-right-btns {
+.nav-right-btns {
   display: flex;
 }
 
 /* Global: tap/click to expand. */
-#projects-list.show {
+.projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
   color: var(--hover-color);
@@ -415,43 +415,43 @@ body.light-mode .nav-divider {
     color: var(--hover-color);
   }
 
-  #sidebar-btn:active i {
+  .sidebar-btn:active i {
     color: var(--hover-color);
   }
 
-  #projects-list a:active {
+  .projects-list a:active {
     color: var(--hover-color);
   }
 }
 
 /* PC / Mouse: Hover and expand effects. */
 @media (hover: hover) and (pointer: fine) {
-  .projects-container:hover #projects-list {
+  .projects-container:hover .projects-list {
     max-height: 60vh;
     pointer-events: auto;
   }
 
-  .nav-item:hover:not(#theme-btn) {
+  .nav-item:hover:not(.theme-btn) {
     color: var(--hover-color);
 
     /* Add hover background color for mobile-size screens. */
     background-color: var(--background-color);
   }
 
-  #sidebar-btn:hover i {
+  .sidebar-btn:hover i {
     color: var(--hover-color);
   }
 
-  #projects-list a:hover {
+  .projects-list a:hover {
     color: var(--background-color);
     background-color: var(--hover-color);
   }
 
-  #projects-btn:hover #dropdown-icon-up {
+  .projects-btn:hover .dropdown-icon-up {
     opacity: 1;
   }
 
-  #projects-btn:hover #dropdown-icon-down {
+  .projects-btn:hover .dropdown-icon-down {
     opacity: 0;
   }
 }
@@ -463,7 +463,7 @@ body.light-mode .nav-divider {
     height: auto;
   }
 
-  #nav-list {
+  .nav-list {
     position: static;
     flex-direction: row;
     width: auto;
@@ -486,7 +486,7 @@ body.light-mode .nav-divider {
     width: auto;
   }
   
-  .nav-item:hover:not(#theme-btn) {
+  .nav-item:hover:not(.theme-btn) {
     /* Remove hover background color for non-mobile sized screens. */
     background-color: transparent;
   }
@@ -500,21 +500,21 @@ body.light-mode .nav-divider {
     align-self: center;
   }
 
-  #projects-list {
+  .projects-list {
     width: 10em;
     position: absolute;
     top: 100%;
     left: 0;
   }
 
-  #sidebar-btn {
+  .sidebar-btn {
     display: none;
   }
 }
 
 /* Format: Desktops. */
 @media screen and (width >= 64em) {
-  #nav-list {
+  .nav-list {
     gap: 1.25em;
   }
 
@@ -522,7 +522,7 @@ body.light-mode .nav-divider {
     display: inline-block;
   }
 
-  .nav-cta a {
+  .nav-item.nav-cta {
     color: var(--background-color);
     background-color: var(--text-color);
     padding: 0.3125rem 0.9375rem;
@@ -530,13 +530,13 @@ body.light-mode .nav-divider {
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .nav-cta a:focus-visible {
+  .nav-item.nav-cta:focus-visible {
     outline: none;
     color: var(--background-color);
     background-color: var(--hover-color);
   }
 
-  .nav-cta a:hover {
+  .nav-item.nav-cta:hover {
     color: var(--background-color);
     background-color: var(--hover-color);
   }

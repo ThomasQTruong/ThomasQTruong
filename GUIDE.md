@@ -31,6 +31,7 @@
   - This site uses: [Poppins](https://fonts.google.com/specimen/Poppins) (Regular 400 and SemiBold 600).
 - Avoid using onclick() for buttons use addEventListener() instead.
 - Transitions should usually be in the base CSS selector (not in i.e. `:hover`).
+- Use `class` for styling and `id` for behaviors.
 
 ### Responsive Techniques
 
