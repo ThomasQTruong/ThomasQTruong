@@ -1,7 +1,6 @@
 // DOM element selectors.
 const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
-const navListBackground = document.getElementById("nav-list-background");
 const navBtn = document.getElementById("sidebar-btn");
 const projectsList = document.getElementById("projects-list");
 const projectsBtn = document.getElementById("projects-btn");
@@ -63,7 +62,6 @@ projectsContainer.addEventListener("mouseleave", () => {
 function toggleSideBar() {
   const isOpen = navList.classList.toggle("show");
   navBtn.classList.toggle("show");
-  // navListBackground.classList.toggle("show");
   // Prevent scrolling page when sidebar is open.
   document.body.classList.toggle("no-scroll");
 

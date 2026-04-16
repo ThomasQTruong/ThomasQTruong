@@ -338,23 +338,11 @@ body.no-scroll {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition: right 0.3s ease-in-out;
-  background-color: red;
+  background-color: var(--tertiary-color);
 }
 
 #nav-list.show {
   right: 0;
-}
-
-#nav-list-background {
-  background-color: var(--tertiary-color);
-  position: fixed;
-  inset: 0;
-  z-index: 9;
-  display: none;
-}
-
-#nav-list-background.show {
-  display: block;
 }
 
 #theme-btn {
