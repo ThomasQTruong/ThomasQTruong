@@ -432,7 +432,7 @@ body.light-mode .nav-divider {
     pointer-events: auto;
   }
 
-  .nav-item:hover:not(.theme-btn) {
+  .nav-item:not(.nav-cta, .theme-btn):hover {
     color: var(--hover-color);
 
     /* Add hover background color for mobile-size screens. */
@@ -492,7 +492,7 @@ body.light-mode .nav-divider {
     width: auto;
   }
   
-  .nav-item:hover:not(.theme-btn) {
+  .nav-item:not(.nav-cta, .theme-btn):hover {
     /* Remove hover background color for non-mobile sized screens. */
     background-color: transparent;
   }
