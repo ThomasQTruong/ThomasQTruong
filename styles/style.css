@@ -432,8 +432,6 @@ body.light-mode .nav-divider {
     background-color: var(--background-color);
   }
 
-  
-
   #sidebar-btn:hover i {
     color: var(--hover-color);
   }
@@ -467,6 +465,7 @@ body.light-mode .nav-divider {
     right: 0;
     overflow-y: visible;
     gap: 0.8em;
+    background-color: transparent;
   }
 
   .nav-container {
