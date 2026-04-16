@@ -73,6 +73,11 @@ body.light-mode {
   --hover-color: #00CED1;
 }
 
+main {
+  max-width: 90em;
+  margin: 0 auto;
+}
+
 main section {
   height: 32rem;
 }
@@ -149,6 +154,7 @@ nav button {
   align-items: center;
   height: var(--nav-height);
   padding: 0 var(--nav-padding-mobile);
+  margin: 0 auto;
   position: relative;
 }
 
