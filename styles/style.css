@@ -104,15 +104,44 @@ main section {
 }
 
 /* Global: nav bar. */
-nav {
+header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: var(--primary-color);
-  position: sticky;
+  background-color: transparent;
+  position: absolute;
   top: 0;
   z-index: 1000;
+}
+
+header.slidedown {
+  background-color: var(--primary-color);
+  position: fixed;
+  animation: slidedown .4s forwards;
+}
+
+/* Animation starting from -100% of the nav bar to 0. */
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%);
+  }
+  
+  to {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+  }
+}
+
+nav {
+  display: flex;
+  max-width: 90em;
+  width: 100%;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 var(--nav-padding-mobile);
+  margin: 0 auto;
+  position: relative;
 }
 
 nav li {
@@ -132,6 +161,7 @@ nav a {
 .wip {
   display: block;
   text-align: center;
+  margin-top: calc(var(--nav-height) * 2);
 }
 
 .wip a {
@@ -145,17 +175,6 @@ nav button {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.nav-container {
-  display: flex;
-  max-width: 90em;
-  width: 100%;
-  align-items: center;
-  height: var(--nav-height);
-  padding: 0 var(--nav-padding-mobile);
-  margin: 0 auto;
-  position: relative;
 }
 
 .hero-li {
@@ -469,6 +488,10 @@ body.light-mode .nav-divider {
     height: auto;
   }
 
+  nav {
+    padding: 0 var(--nav-padding-fluid);
+  }
+
   .nav-list {
     position: static;
     flex-direction: row;
@@ -478,10 +501,6 @@ body.light-mode .nav-divider {
     overflow-y: visible;
     gap: 0.8em;
     background-color: transparent;
-  }
-
-  .nav-container {
-    padding: 0 var(--nav-padding-fluid);
   }
 
   nav li {

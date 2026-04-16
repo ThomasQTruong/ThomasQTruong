@@ -1,4 +1,5 @@
 // DOM element selectors.
+const header = document.getElementById("header");
 const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
 const navBtn = document.getElementById("sidebar-btn");
@@ -28,6 +29,14 @@ media.addEventListener("change", (e) => {
   resizeTimer = setTimeout(() => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
+});
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 200) {
+    header.classList.add("slidedown");
+  } else {
+    header.classList.remove("slidedown");
+  }
 });
 
 // Add listener to each nav link.

@@ -7,6 +7,7 @@
 - [Build Navbar Menus That Actually Work for Everyone](https://www.youtube.com/watch?v=m7YDWNz65iI)
 - [New CSS viewport units and minimum heights — Webflow tutorial](https://www.youtube.com/watch?v=7judyqwqmKo)
 - [Stop Animations During Window Resizing](https://css-tricks.com/stop-animations-during-window-resizing/)
+- [How to create sticky navbar | Sticky navbar on scroll using HTML CSS & Javascript](https://www.youtube.com/watch?v=0s9e2JfV010&list=PLu-PQA1gogYIvYjh-RX7CLTjCw2wR65ci)
 
 # Tools
 
