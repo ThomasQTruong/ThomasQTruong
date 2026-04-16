@@ -13,15 +13,15 @@ projectsBtn.addEventListener("click", toggleProjects);
 themeBtn.addEventListener("click", toggleTheme);
 
 // Listen to page size changes and update accordingly.
-const media = window.matchMedia("(width < 32em)");
-let isMobile = media.matches;
+const media = window.matchMedia("(width >= 32em)");
+let isLargeScreen = media.matches;
 let resizeTimer;
 updateScreen(); // Initialize inert state.
 media.addEventListener("change", (e) => {
   // Stop all animations while resizing.
   document.body.classList.add("resize-animation-stopper");
 
-  isMobile = e.matches;
+  isLargeScreen = e.matches;
   updateScreen();
 
   // Debounce: Remove the stopper once resizing stops.
@@ -76,7 +76,7 @@ function toggleSideBar() {
     closeProjects();
     // Update ARIA and inert.
     navBtn.setAttribute("aria-expanded", "false");
-    if (isMobile) {
+    if (!isLargeScreen) {
       // User is on mobile, add inert.
       navList.inert = true;
     }
@@ -110,7 +110,7 @@ function toggleProjects() {
  * Closes the projects dropdown menu depending on event.
  * Hides the Projects menu, updates ARIA attributes, and enables inert
  * if the user clicked outside of the menu OR if no event was passed.
- * @param {MouseEvent|nul} [event=null] - The click event.
+ * @param {MouseEvent|null} [event=null] - The click event.
  * @returns {void}
  */
 function closeProjects(event = null) {
@@ -143,11 +143,7 @@ function closeProjects(event = null) {
 function toggleTheme() {
   const isLightMode = document.body.classList.toggle("light-mode");
 
-  if (isLightMode) {
-    themeBtn.setAttribute("aria-pressed", "true");
-  } else {
-    themeBtn.setAttribute("aria-pressed", "false");
-  }
+  themeBtn.setAttribute("aria-pressed", String(isLightMode));
 }
 
 /**
@@ -157,11 +153,10 @@ function toggleTheme() {
  */
 function updateScreen() {
   // User"s screen size is mobile AND navList is hidden.
-  if (isMobile && !navList.classList.contains("show")) {
-    navList.inert = true;
+  const isHidden = !isLargeScreen && !navList.classList.contains("show");
+
+  navList.inert = isHidden;
+  if (isHidden) {
     closeProjects();
-  } else {
-    // User"s screen size is not mobile, remove inert attribute.
-    navList.inert = false;
   }
 }
