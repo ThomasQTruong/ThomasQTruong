@@ -438,6 +438,11 @@ body.light-mode .nav-divider {
     background-color: var(--background-color);
   }
 
+  .nav-item.nav-cta:hover {
+    color: var(--background-color);
+    background-color: var(--hover-color);
+  }
+
   .sidebar-btn:hover i {
     color: var(--hover-color);
   }
@@ -532,11 +537,6 @@ body.light-mode .nav-divider {
 
   .nav-item.nav-cta:focus-visible {
     outline: none;
-    color: var(--background-color);
-    background-color: var(--hover-color);
-  }
-
-  .nav-item.nav-cta:hover {
     color: var(--background-color);
     background-color: var(--hover-color);
   }
