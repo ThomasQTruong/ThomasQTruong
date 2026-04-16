@@ -161,19 +161,6 @@ nav a {
   transition: background-color 0.2s ease;
 }
 
-/* !!! [WIP] Work in progress display. !!! */
-.wip {
-  display: block;
-  text-align: center;
-  margin-top: calc(var(--nav-height));
-}
-
-.wip a {
-  color: deepskyblue;
-}
-
-/* !!! [WIP] End of WIP. !!! */
-
 nav button {
   color: var(--text-color);
   background: none;
