@@ -233,60 +233,6 @@ nav button {
   padding: 0.5rem 1rem;
 }
 
-/* Global: Projects dropdown icon. */
-.dropdown-icons {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
-.dropdown-icons i {
-  font-size: var(--step-n2);
-  transition: opacity 0.4s ease;
-}
-
-.dropdown-icon-up {
-  opacity: 0;
-}
-
-.dropdown-icon-down {
-  position: absolute;
-  left: 0;
-  opacity: 1;
-}
-
-.projects-btn[aria-expanded="true"] .dropdown-icon-up {
-  opacity: 1;
-}
-
-.projects-btn[aria-expanded="true"] .dropdown-icon-down {
-  opacity: 0;
-}
-
-/* Global: focus. */
-:focus {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 2px solid var(--text-color);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-.projects-list a:focus-visible {
-  outline: none;
-  color: var(--background-color);
-  background-color: var(--hover-color);
-}
-
-/* Mobile: general. */
-body.no-scroll {
-  overflow: hidden;
-  height: 100dvh;
-}
-
 /* Mobile: nav sidebar toggle. */
 .sidebar-btn {
   display: inline-block;
@@ -351,6 +297,61 @@ body.no-scroll {
   right: 0;
 }
 
+/* Global: Projects dropdown icon. */
+.projects-btn .dropdown-icons {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-btn .dropdown-icons i {
+  font-size: var(--step-n2);
+  transition: opacity 0.4s ease;
+}
+
+.dropdown-icon-up {
+  opacity: 0;
+}
+
+.dropdown-icon-down {
+  position: absolute;
+  left: 0;
+  opacity: 1;
+}
+
+.projects-btn[aria-expanded="true"] .dropdown-icon-up {
+  opacity: 1;
+}
+
+.projects-btn[aria-expanded="true"] .dropdown-icon-down {
+  opacity: 0;
+}
+
+/* Global: focus. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.projects-list a:focus-visible {
+  outline: none;
+  color: var(--background-color);
+  background-color: var(--hover-color);
+}
+
+/* Mobile: general. */
+body.no-scroll {
+  overflow: hidden;
+  height: 100dvh;
+}
+
+/* Global: Theme button. */
 .theme-btn {
   display: flex;
   justify-content: center;

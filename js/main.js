@@ -4,7 +4,7 @@ const navList = document.getElementById("nav-list");
 const navBtn = document.getElementById("sidebar-btn");
 const projectsList = document.getElementById("projects-list");
 const projectsBtn = document.getElementById("projects-btn");
-const projectsContainer = document.querySelector(".projects-container");
+const projectsContainer = document.getElementById("projects-container");
 
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
@@ -37,6 +37,17 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     if (navList.classList.contains("show")) {
       toggleSideBar();
+    }
+  });
+});
+
+// Add listener to each project button.
+const projectLinks = document.querySelectorAll("projects-list a");
+projectLinks.forEach((link) => {
+  // User clicked link and projects list is shown, hide projects list.
+  link.addEventListener("click", () => {
+    if (projectsList.classList.contains("show")) {
+      closeProjects();
     }
   });
 });
@@ -108,30 +119,15 @@ function toggleProjects() {
  * Closes the projects dropdown menu depending on event.
  * Hides the Projects menu, updates ARIA attributes, and enables inert
  * if the user clicked outside of the menu OR if no event was passed.
- * @param {MouseEvent|null} [event=null] - The click event.
  * @returns {void}
  */
-function closeProjects(event = null) {
-  // Valid event.
-  if (event) {
-    // Clicked on one of the project related items.
-    if (
-      projectsBtn.contains(event.target) ||
-      projectsList.contains(event.target)
-    ) {
-      // Do nothing.
-      return;
-    }
-
-    // User toggled or clicked somewhere else, close.
-    projectsList.classList.remove("show");
-    projectsList.inert = true;
-  }
-
-  // Continuing closing process including for non-events.
+function closeProjects() {
+  projectsList.classList.remove("show");
   document.removeEventListener("click", closeProjects);
-  // Update ARIA.
+
+  // Update ARIA and inert.
   projectsBtn.setAttribute("aria-expanded", "false");
+  projectsList.inert = true;
 }
 
 /**
