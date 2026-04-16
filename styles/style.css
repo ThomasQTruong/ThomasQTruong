@@ -329,15 +329,16 @@ body.no-scroll {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: calc(100dvh - var(--nav-height));
-  position: absolute;
-  right: -100%;
+  position: fixed;
   top: var(--nav-height);
+  bottom: 0;
+  right: -100%;
+  width: 100%;
   z-index: 10;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition: right 0.3s ease-in-out;
+  background-color: red;
 }
 
 #nav-list.show {
