@@ -441,7 +441,8 @@ body.light-mode .nav-divider {
 }
 
 .hero .headshot {
-  flex: 0 1 20rem;
+  flex: 1 1 16rem;
+  max-width: 24rem;
   margin: auto;
 }
 
