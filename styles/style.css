@@ -76,7 +76,6 @@ body.light-mode {
 main {
   display: flex;
   flex-direction: column;
-  max-width: 90em;
   width: 100%;
   margin: 0 auto;
 }
@@ -423,6 +422,12 @@ body.light-mode .nav-divider {
 
 /* SECTION 1: Hero */
 .hero {
+  width: 100vw;
+  min-height: 100svh;
+}
+
+.hero-container {
+  max-width: 90em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -574,7 +579,7 @@ body.light-mode .nav-divider {
   }
 
   /* SECTION 1: Hero */
-  .hero {
+  .hero-container {
     flex-flow: wrap;
     flex-direction: row;
     gap: 2rem;
