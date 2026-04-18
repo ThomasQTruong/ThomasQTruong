@@ -66,6 +66,10 @@ body {
   background-color: rgb(var(--background-color));
   width: 100%;
   transition: color 0.2s ease, background-color 0.2s ease;
+
+  /* Font smoothing for Mac/iOS and Firefox. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.light-mode {
@@ -98,6 +102,12 @@ main section {
   background: transparent;
 }
 
+.y-scrollable {
+  /* For Firefox. */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0 / 20%) transparent;
+}
+
 .y-scrollable::-webkit-scrollbar-thumb {
   background: rgb(0 0 0 / 20%);
   border-radius: 10px;
@@ -126,9 +136,15 @@ header {
 }
 
 header.slidedown {
-  background-color: rgb(var(--primary-color));
   position: fixed;
   animation: slidedown .4s forwards;
+
+  /* Glassy effect. */
+  background-color: rgb(var(--primary-color) / 70%);
+  backdrop-filter: blur(10px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(var(--text-color) / 5%);
 }
 
 /* Animation starting from -100% of the nav bar to 0. */
