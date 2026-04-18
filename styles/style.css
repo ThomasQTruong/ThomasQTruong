@@ -63,7 +63,6 @@ body {
   color: rgb(var(--text-color));
   overflow-x: hidden;
   position: relative;
-  background-color: rgb(var(--background-color));
   width: 100%;
   transition: color 0.2s ease, background-color 0.2s ease;
 
@@ -88,6 +87,12 @@ main {
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
+
+  /* Gradient background. */
+  background: linear-gradient(to bottom,
+      rgb(var(--primary-color)),
+      rgb(var(--background-color)) 40%);
+  background-attachment: fixed;
 }
 
 main section {
