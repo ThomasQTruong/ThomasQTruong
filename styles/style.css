@@ -7,12 +7,16 @@
   */
 
   /* === COLORS === */
-  --text-color: white;
-  --background-color: #3C3C3C;
-  --primary-color: #252526;
-  --secondary-color: #4F4F4F;
-  --tertiary-color: #363636;
-  --hover-color: paleturquoise;
+  --text-color: 255 255 255;
+  --background-color: 60 60 60;
+  --background-gradient-1: 2 6 23;
+  --background-gradient-2: 56 57 58;
+  --primary-color: 37 37 38;
+  --secondary-color: 79 79 79;
+  --tertiary-color: 54 54 54;
+  --nav-hover-color: 175 238 238;
+  --sun-color: 238 218 104;
+  --moon-color: 123 104 238;
 
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
@@ -56,21 +60,23 @@ html {
 
 body {
   font-family: Poppins, sans-serif;
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   overflow-x: hidden;
   position: relative;
-  background-color: var(--background-color);
+  background-color: rgb(var(--background-color));
   width: 100%;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 body.light-mode {
-  --text-color: black;
-  --background-color: white;
-  --primary-color: paleturquoise;
-  --secondary-color: azure;
-  --tertiary-color: lightcyan;
-  --hover-color: #00CED1;
+  --text-color: 0 0 0;
+  --background-color: 255 255 255;
+  --background-gradient-1: 90 209 241;
+  --background-gradient-2: 219 220 221;
+  --primary-color: 175 238 238;
+  --secondary-color: 240 255 255;
+  --tertiary-color: 224 255 255;
+  --nav-hover-color: 123 104 238;
 }
 
 main {
@@ -120,7 +126,7 @@ header {
 }
 
 header.slidedown {
-  background-color: var(--primary-color);
+  background-color: rgb(var(--primary-color));
   position: fixed;
   animation: slidedown .4s forwards;
 }
@@ -157,12 +163,12 @@ nav li {
 nav a {
   display: flex;
   text-decoration: none;
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   transition: background-color 0.2s ease;
 }
 
 nav button {
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   background: none;
   border: none;
   cursor: pointer;
@@ -193,7 +199,7 @@ nav button {
 }
 
 .nav-item:focus-visible {
-  color: var(--hover-color);
+  color: rgb(var(--nav-hover-color));
 }
 
 .nav-item i {
@@ -209,7 +215,7 @@ nav button {
 .nav-divider {
   width: 1px;
   height: var(--step-1);
-  background-color: var(--text-color);
+  background-color: rgb(var(--text-color));
   opacity: 0.15;
   margin-left: 1.5rem;
   margin-right: 0.5rem;
@@ -218,7 +224,7 @@ nav button {
 }
 
 .nav-item.nav-cta {
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   background-color: transparent;
   padding: 0;
   border-radius: 0;
@@ -231,7 +237,7 @@ nav button {
 }
 
 .projects-list a {
-  background-color: var(--secondary-color);
+  background-color: rgb(var(--secondary-color));
   min-height: 44px;
   display: flex;            /* Display each link vertically. */
   justify-content: center;  /* Horizontally align. */
@@ -254,7 +260,7 @@ nav button {
 }
 
 .sidebar-btn i {
-  color: var(--text-color);
+  color: rgb(var(--text-color));
   font-size: var(--step-icon);
   position: absolute;  /* Stack icons. */
   top: 50%;
@@ -264,7 +270,7 @@ nav button {
 }
 
 .sidebar-btn:focus-visible i {
-  color: var(--hover-color);
+  color: rgb(var(--nav-hover-color));
 }
 
 .nav-hamburger {
@@ -300,7 +306,7 @@ nav button {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition: right 0.3s ease-in-out;
-  background-color: var(--tertiary-color);
+  background-color: rgb(var(--tertiary-color));
 }
 
 .nav-list.show {
@@ -344,15 +350,15 @@ nav button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--text-color);
+  outline: 2px solid rgb(var(--text-color));
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 .projects-list a:focus-visible {
   outline: none;
-  color: var(--background-color);
-  background-color: var(--hover-color);
+  color: rgb(var(--background-color));
+  background-color: rgb(var(--nav-hover-color));
 }
 
 /* Mobile: general. */
@@ -369,12 +375,12 @@ body.no-scroll {
 }
 
 .theme-btn .fa-sun {
-  color: #eeda68;
+  color: rgb(var(--sun-color));
 }
 
 .theme-btn .fa-moon {
   position: absolute;
-  color: mediumslateblue;
+  color: rgb(var(--moon-color));
   opacity: 0;
 }
 
@@ -411,22 +417,24 @@ body.no-scroll {
 .projects-list.show {
   max-height: 60vh;
   pointer-events: auto;
-  color: var(--hover-color);
+  color: rgb(var(--nav-hover-color));
 }
 
 /* Global: Light mode settings. */
 body.light-mode .nav-divider {
-  background-color: var(--text-color);
+  background-color: rgb(var(--text-color));
   opacity: 0.2;
 }
 
 /* SECTION 1: Hero */
 .hero {
   width: 100%;
-  height: 100svh;
-  background: linear-gradient(135deg,
-      black 0%,
-      var(--background-color) 100%);
+  min-height: 100svh;
+  background: radial-gradient(circle at center,
+      rgb(var(--background-gradient-2)),
+      rgb(var(--background-gradient-1)));
+  box-shadow: 0 1rem 2rem rgb(var(--text-color) / 20%);
+  z-index: 5;
 }
 
 .hero-container {
@@ -465,8 +473,8 @@ body.light-mode .nav-divider {
 
 .hero .links a {
   text-decoration: none;
-  color: var(--text-color);
-  border: 2px solid var(--text-color);
+  color: rgb(var(--text-color));
+  border: 2px solid rgb(var(--text-color));
   border-radius: 0.5rem;
   padding: 0.15em 0.25em;
 }
@@ -474,15 +482,15 @@ body.light-mode .nav-divider {
 /* Mobile: tap effects. */
 @media (pointer: coarse) {
   .nav-item:active {
-    color: var(--hover-color);
+    color: rgb(var(--nav-hover-color));
   }
 
   .sidebar-btn:active i {
-    color: var(--hover-color);
+    color: rgb(var(--nav-hover-color));
   }
 
   .projects-list a:active {
-    color: var(--hover-color);
+    color: rgb(var(--nav-hover-color));
   }
 }
 
@@ -491,27 +499,28 @@ body.light-mode .nav-divider {
   .projects-container:hover .projects-list {
     max-height: 60vh;
     pointer-events: auto;
+    box-shadow: 0 2px 8px rgb(var(--text-color) / 20%);
   }
 
   .nav-item:not(.nav-cta, .theme-btn):hover {
-    color: var(--hover-color);
+    color: rgb(var(--nav-hover-color));
 
     /* Add hover background color for mobile-size screens. */
-    background-color: var(--background-color);
+    background-color: rgb(var(--background-color));
   }
 
   .nav-item.nav-cta:hover {
-    color: var(--background-color);
-    background-color: var(--hover-color);
+    color: rgb(var(--background-color));
+    background-color: rgb(var(--nav-hover-color));
   }
 
   .sidebar-btn:hover i {
-    color: var(--hover-color);
+    color: rgb(var(--nav-hover-color));
   }
 
   .projects-list a:hover {
-    color: var(--background-color);
-    background-color: var(--hover-color);
+    color: rgb(var(--background-color));
+    background-color: rgb(var(--nav-hover-color));
   }
 
   .projects-btn:hover .dropdown-icon-up {
@@ -602,8 +611,8 @@ body.light-mode .nav-divider {
   }
 
   .nav-item.nav-cta {
-    color: var(--background-color);
-    background-color: var(--text-color);
+    color: rgb(var(--background-color));
+    background-color: rgb(var(--text-color));
     padding: 0.3125rem 0.9375rem;
     border-radius: 5px;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -611,7 +620,7 @@ body.light-mode .nav-divider {
 
   .nav-item.nav-cta:focus-visible {
     outline: none;
-    color: var(--background-color);
-    background-color: var(--hover-color);
+    color: rgb(var(--background-color));
+    background-color: rgb(var(--nav-hover-color));
   }
 }
