@@ -39,6 +39,7 @@
   --nav-padding-mobile: 1.5625rem;
   --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
+  --headshot-size-fluid: clamp(16rem, 11.8261rem + 13.913vw, 24rem);
 }
 
 /* Global: general. */
@@ -472,7 +473,7 @@ body.light-mode .nav-divider {
 
 .hero .headshot {
   flex: 1 1 16rem;
-  max-width: 24rem;
+  max-width: var(--headshot-size-fluid);
   margin: auto;
 }
 
@@ -481,6 +482,9 @@ body.light-mode .nav-divider {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .hero .text {
