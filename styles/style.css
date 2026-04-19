@@ -73,7 +73,7 @@ body {
 
 body.light-mode {
   --text-color: 0 0 0;
-  --background-color: 255 255 255;
+  --background-color: 238 239 241;
   --background-gradient-1: 90 209 241;
   --background-gradient-2: 219 220 221;
   --primary-color: 175 238 238;
@@ -87,11 +87,12 @@ main {
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-
-  /* Gradient background. */
-  background: linear-gradient(to bottom,
-      rgb(var(--primary-color)),
-      rgb(var(--background-color)) 40%);
+  background-color: rgb(var(--background-color));
+  background-image: 
+    radial-gradient(ellipse 80% 30% at 50% 0%, rgb(var(--text-color) / 10%) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 20% at 50% 100%, rgb(var(--text-color) / 4%) 0%, transparent 70%),
+    radial-gradient(rgb(var(--text-color) / 5%) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px;
   background-attachment: fixed;
 }
 
