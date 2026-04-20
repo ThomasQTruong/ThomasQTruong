@@ -75,9 +75,9 @@ body {
 body.light-mode {
   --text-color: 0 0 0;
   --background-color: 238 239 241;
-  --background-gradient-1: 90 209 241;
-  --background-gradient-2: 219 220 221;
-  --primary-color: 175 238 238;
+  --background-gradient-1: 190 192 202;
+  --background-gradient-2: 244 244 244;
+  --primary-color: 210 212 222;
   --secondary-color: 240 255 255;
   --tertiary-color: 224 255 255;
   --nav-hover-color: 123 104 238;
