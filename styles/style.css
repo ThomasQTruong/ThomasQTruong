@@ -488,6 +488,7 @@ body.light-mode .nav-divider {
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border: 8px solid rgb(115 197 255);
 }
 
 .hero .text {
@@ -624,7 +625,7 @@ body.light-mode .nav-divider {
   .hero-container {
     flex-flow: wrap;
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--nav-padding-fluid);
     justify-content: space-between;
   }
 }
