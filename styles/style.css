@@ -11,9 +11,9 @@
   --background-color: 60 60 60;
   --background-gradient-1: 2 6 23;
   --background-gradient-2: 56 57 58;
-  --primary-color: 37 37 38;
-  --secondary-color: 79 79 79;
-  --tertiary-color: 54 54 54;
+  --nav-bar-color: 37 37 38;
+  --projects-menu-color: 79 79 79;
+  --nav-menu-color: 54 54 54;
   --nav-hover-color: 175 238 238;
   --sun-color: 238 218 104;
   --moon-color: 123 104 238;
@@ -77,9 +77,9 @@ body.light-mode {
   --background-color: 238 239 241;
   --background-gradient-1: 190 192 202;
   --background-gradient-2: 244 244 244;
-  --primary-color: 210 212 222;
-  --secondary-color: 240 255 255;
-  --tertiary-color: 224 255 255;
+  --nav-bar-color: 162 163 168;
+  --projects-menu-color: 194 195 202;
+  --nav-menu-color: 184 185 192;
   --nav-hover-color: 123 104 238;
 }
 
@@ -142,12 +142,21 @@ header {
   z-index: 1000;
 }
 
+header:has(.nav-list.show) {
+  /* Glassy effect. */
+  background-color: rgb(var(--nav-bar-color) / 70%);
+  backdrop-filter: blur(10px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(var(--text-color) / 5%);
+}
+
 header.slidedown {
   position: fixed;
   animation: slidedown .4s forwards;
 
   /* Glassy effect. */
-  background-color: rgb(var(--primary-color) / 70%);
+  background-color: rgb(var(--nav-bar-color) / 70%);
   backdrop-filter: blur(10px);
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-backdrop-filter: blur(10px);
@@ -260,7 +269,7 @@ nav button {
 }
 
 .projects-list a {
-  background-color: rgb(var(--secondary-color));
+  background-color: rgb(var(--projects-menu-color));
   min-height: 44px;
   display: flex;            /* Display each link vertically. */
   justify-content: center;  /* Horizontally align. */
@@ -329,7 +338,7 @@ nav button {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition: right 0.3s ease-in-out;
-  background-color: rgb(var(--tertiary-color));
+  background-color: rgb(var(--nav-menu-color));
 }
 
 .nav-list.show {
@@ -571,6 +580,14 @@ body.light-mode .nav-divider {
 
   main section {
     padding: 0 var(--nav-padding-fluid);
+  }
+
+  header:not(.slidedown):has(.nav-list.show) {
+    background-color: transparent;
+    backdrop-filter: none;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
   }
 
   nav {
