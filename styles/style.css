@@ -39,7 +39,7 @@
   --nav-padding-mobile: 1.5625rem;
   --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
-  --headshot-size-fluid: clamp(16rem, 11.8261rem + 13.913vw, 24rem);
+  --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
 }
 
 /* Global: general. */
@@ -451,6 +451,9 @@ body.light-mode .nav-divider {
 
 /* SECTION 1: Hero */
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 100svh;
   background: radial-gradient(circle at center,
@@ -478,7 +481,7 @@ body.light-mode .nav-divider {
 }
 
 .hero .headshot img {
-  max-width: 24rem;
+  max-width: 32rem;
   width: 100%;
   height: auto;
   display: block;
