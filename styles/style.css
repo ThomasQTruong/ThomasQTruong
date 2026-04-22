@@ -57,6 +57,9 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+
+  /* For mobile safe-areas. */
+  background-color: rgb(var(--background-gradient-1));
 }
 
 body {
@@ -140,6 +143,7 @@ header {
   position: absolute;
   top: 0;
   z-index: 1000;
+  padding-top: env(safe-area-inset-top, 0);
 }
 
 header:has(.nav-list.show) {
