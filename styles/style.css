@@ -1,3 +1,16 @@
+/* Section 1: Hero gradient colors. */
+@property --background-gradient-1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgb(2 6 23);
+}
+
+@property --background-gradient-2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgb(56 57 58);
+}
+
 :root {
   /*
     === BREAKPOINTS (Reference only) ===
@@ -9,14 +22,14 @@
   /* === COLORS === */
   --text-color: 255 255 255;
   --background-color: 60 60 60;
-  --background-gradient-1: 2 6 23;
-  --background-gradient-2: 56 57 58;
   --nav-bar-color: 37 37 38;
   --projects-list-color: 79 79 79;
   --nav-list-color: 54 54 54;
   --nav-hover-color: 175 238 238;
   --sun-color: 238 218 104;
   --moon-color: 123 104 238;
+  --background-gradient-1: rgb(2 6 23);
+  --background-gradient-2: rgb(56 57 58);
 
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
@@ -42,6 +55,17 @@
   --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
 }
 
+:root.light-mode {
+  --text-color: 0 0 0;
+  --background-color: 238 239 241;
+  --nav-bar-color: 162 163 168;
+  --projects-list-color: 194 195 202;
+  --nav-list-color: 184 185 192;
+  --nav-hover-color: 123 104 238;
+  --background-gradient-1: rgb(190 192 202);
+  --background-gradient-2: rgb(244 244 244);
+}
+
 /* Global: general. */
 * {
   margin: 0;
@@ -58,8 +82,13 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 
-  /* For mobile safe-areas. */
-  background-color: rgb(var(--background-gradient-1));
+  /* For mobile insets. */
+  background-color: var(--background-gradient-1);
+}
+
+html:has(:root.light-mode) {
+  /* For mobile insets. */
+  background-color: var(--background-gradient-1);
 }
 
 body {
@@ -68,22 +97,11 @@ body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease;
 
   /* Font smoothing for Mac/iOS and Firefox. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body.light-mode {
-  --text-color: 0 0 0;
-  --background-color: 238 239 241;
-  --background-gradient-1: 190 192 202;
-  --background-gradient-2: 244 244 244;
-  --nav-bar-color: 162 163 168;
-  --projects-list-color: 194 195 202;
-  --nav-list-color: 184 185 192;
-  --nav-hover-color: 123 104 238;
 }
 
 main {
@@ -98,11 +116,14 @@ main {
     radial-gradient(rgb(var(--text-color) / 5%) 1px, transparent 1px);
   background-size: auto, auto, 24px 24px;
   background-attachment: fixed;
+  transition: background-color 0.2s ease;
 }
 
 main section {
   width: 100%;
   min-height: 32rem;
+
+  /* Use normal padding or padding for mobile insets. */
   padding: 0 max(var(--nav-padding-mobile), env(safe-area-inset-left));
 }
 
@@ -143,6 +164,8 @@ header {
   position: absolute;
   top: 0;
   z-index: 1000;
+
+  /* Use inset padding or no padding. */
   padding-top: env(safe-area-inset-top, 0);
 }
 
@@ -185,9 +208,11 @@ nav {
   width: 100%;
   align-items: center;
   height: var(--nav-height);
-  padding: 0 max(var(--nav-padding-mobile), env(safe-area-inset-left));
   margin: 0 auto;
   position: relative;
+
+  /* Use normal padding or padding for mobile insets. */
+  padding: 0 max(var(--nav-padding-mobile), env(safe-area-inset-left));
 }
 
 nav li {
@@ -472,10 +497,11 @@ body.light-mode .nav-divider {
   width: 100%;
   min-height: 100svh;
   background: radial-gradient(circle at center,
-      rgb(var(--background-gradient-2)),
-      rgb(var(--background-gradient-1)));
+      var(--background-gradient-2),
+      var(--background-gradient-1));
   box-shadow: 0 1rem 2rem rgb(var(--text-color) / 20%);
   z-index: 5;
+  transition: --background-gradient-1 0.2s ease, --background-gradient-2 0.2s ease;
 }
 
 .hero-container {

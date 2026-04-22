@@ -181,7 +181,7 @@ function closeProjects() {
  * @returns {void}
  */
 function toggleTheme() {
-  const isLightMode = document.body.classList.toggle("light-mode");
+  const isLightMode = document.documentElement.classList.toggle("light-mode");
 
   themeBtn.setAttribute("aria-pressed", String(isLightMode));
 }
