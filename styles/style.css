@@ -49,9 +49,9 @@
   box-sizing: border-box;
 }
 
-.resize-animation-stopper * {
-  transition: none !important;
+.no-animate * {
   animation: none !important;
+  transition: none !important;
 }
 
 html {
@@ -396,7 +396,8 @@ nav button {
 /* Mobile: general. */
 body.no-scroll {
   overflow: hidden;
-  height: 100dvh;
+  height: 100svh;
+  overscroll-behavior: none;
 }
 
 /* Global: Theme button. */

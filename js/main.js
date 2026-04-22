@@ -12,14 +12,18 @@ navBtn.addEventListener("click", toggleSideBar);
 projectsBtn.addEventListener("click", toggleProjects);
 themeBtn.addEventListener("click", toggleTheme);
 
-// Listen to page size changes and update accordingly.
+// Variables.
+let scrollPosition = 0;
+let sidebarIsOpen = false;
 const media = window.matchMedia("(width >= 32em)");
 let isLargeScreen = media.matches;
 let resizeTimer;
+
+// Listen to page size changes and update accordingly.
 updateScreen(); // Initialize inert state.
 media.addEventListener("change", (e) => {
   // Stop all animations while resizing.
-  document.body.classList.add("resize-animation-stopper");
+  document.body.classList.add("no-animate");
 
   isLargeScreen = e.matches;
   updateScreen();
@@ -27,11 +31,16 @@ media.addEventListener("change", (e) => {
   // Debounce: Remove the stopper once resizing stops.
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
+    document.body.classList.remove("no-animate");
   }, 400);
 });
 
+// Enable floating navbar when scrolled past a distance.
 window.addEventListener("scroll", function () {
+  if (sidebarIsOpen) {
+    return;
+  }
+
   if (window.scrollY > 200) {
     header.classList.add("slidedown");
   } else {
@@ -80,16 +89,34 @@ projectsContainer.addEventListener("mouseleave", () => {
  * @returns {void}
  */
 function toggleSideBar() {
-  const isOpen = navList.classList.toggle("show");
-  navBtn.classList.toggle("show");
-  // Prevent scrolling page when sidebar is open.
-  document.body.classList.toggle("no-scroll");
+  sidebarIsOpen = !sidebarIsOpen;
 
-  if (isOpen) {
-    // Update ARIA and inert.
-    navBtn.setAttribute("aria-expanded", "true");
-    navList.inert = false;
+  // Toggle show on since it doesn't contain show class.
+  if (!navList.classList.contains("show")) {
+    navList.classList.add("show");
+    navBtn.classList.add("show");
+
+    // Wait for open/close animation.
+    setTimeout(() => {
+      // Remember position on page.
+      scrollPosition = window.scrollY;
+      // document.body.style.top = `-${scrollPosition}px`;
+
+      // Update ARIA and inert.
+      navBtn.setAttribute("aria-expanded", "true");
+      navList.inert = false;
+
+      // Prevent scrolling page when sidebar is open.
+      document.body.classList.add("no-scroll");
+    }, 400);
   } else {
+    // Prevent scrolling page when sidebar is open.
+    document.body.classList.remove("no-scroll");
+    header.classList.add("no-animate");
+
+    // 4. Immediately jump back to where they were
+    window.scrollTo({ left: 0, top: scrollPosition, behavior: "instant" });
+
     // Nav bar was closed, make sure projects is closed too.
     closeProjects();
     // Update ARIA and inert.
@@ -98,6 +125,16 @@ function toggleSideBar() {
       // User is on mobile, add inert.
       navList.inert = true;
     }
+
+    // Ensure animations have finished before re-enabling animations.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        header.classList.remove("no-animate");
+        // Close nav bar with animations.
+        navList.classList.remove("show");
+        navBtn.classList.remove("show");
+      });
+    });
   }
 }
 
