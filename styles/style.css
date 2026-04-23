@@ -28,6 +28,7 @@
   --nav-hover-color: 175 238 238;
   --sun-color: 238 218 104;
   --moon-color: 123 104 238;
+  --theme-color: 115 197 255;
   --background-gradient-1: rgb(2 6 23);
   --background-gradient-2: rgb(56 57 58);
 
@@ -516,9 +517,15 @@ body.light-mode .nav-divider {
 }
 
 .hero .headshot {
+  display: flex;
   flex: 1 1 16rem;
   max-width: var(--headshot-size-fluid);
   margin: auto;
+  border-radius: 50%;
+  border: 6px solid rgb(var(--theme-color));
+  box-shadow: 0 0 15px rgb(var(--theme-color) / 30%), 
+              0 0 30px rgb(var(--theme-color) / 20%);
+  overflow: hidden;
 }
 
 .hero .headshot img {
@@ -529,11 +536,15 @@ body.light-mode .nav-divider {
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 8px solid rgb(115 197 255);
 }
 
 .hero .text {
   flex: 1 1 16rem;
+}
+
+.hero .job-title {
+  color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
 }
 
 .hero .links {
@@ -676,6 +687,16 @@ body.light-mode .nav-divider {
     flex-direction: row;
     gap: var(--nav-padding-fluid);
     justify-content: space-between;
+  }
+
+  .hero .headshot {
+    border-width: 8px;
+    box-shadow: 0 0 20px rgb(var(--theme-color) / 50%), 
+                0 0 40px rgb(var(--theme-color) / 30%);
+  }
+
+  .hero .job-title {
+    text-shadow: 0 0 8px rgb(var(--theme-color) / 45%);
   }
 }
 
