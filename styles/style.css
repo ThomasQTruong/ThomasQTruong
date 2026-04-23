@@ -439,12 +439,14 @@ body.no-scroll {
 
 .theme-btn .fa-sun {
   color: rgb(var(--sun-color));
+  text-shadow: 0 0 10px rgb(var(--sun-color) / 60%);
 }
 
 .theme-btn .fa-moon {
   position: absolute;
   color: rgb(var(--moon-color));
   opacity: 0;
+  text-shadow: 0 0 10px rgb(var(--moon-color) / 60%);
 }
 
 .theme-btn[aria-pressed="true"] .fa-sun {
@@ -559,6 +561,27 @@ body.light-mode .nav-divider {
   border: 2px solid rgb(var(--text-color));
   border-radius: 0.5rem;
   padding: 0.15em 0.25em;
+}
+
+.content-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgb(255 255 255 / 3%);
+  backdrop-filter: blur(15px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgb(255 255 255 / 1%); 
+  box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
+}
+
+.light-mode .content-card {
+  background: rgb(0 0 0 / 5%);
+  border: 1px solid rgb(0 0 0 / 10%);
+  backdrop-filter: blur(12px) saturate(180%);
+}
+
+.light-mode .job-title {
+  text-shadow: 0 0 4px rgb(var(--theme-color) / 30%);
 }
 
 /* Mobile: tap effects. */
@@ -681,6 +704,14 @@ body.light-mode .nav-divider {
     display: none;
   }
 
+  .theme-btn .fa-sun {
+    text-shadow: 0 0 20px rgb(var(--sun-color) / 80%);
+  }
+
+  .theme-btn .fa-moon {
+    text-shadow: 0 0 20px rgb(var(--moon-color) / 80%);
+  }
+
   /* SECTION 1: Hero */
   .hero-container {
     flex-flow: wrap;
@@ -691,8 +722,8 @@ body.light-mode .nav-divider {
 
   .hero .headshot {
     border-width: 8px;
-    box-shadow: 0 0 20px rgb(var(--theme-color) / 50%), 
-                0 0 40px rgb(var(--theme-color) / 30%);
+    box-shadow: 0 0 20px rgb(var(--theme-color) / 40%), 
+                0 0 40px rgb(var(--theme-color) / 20%);
   }
 
   .hero .job-title {
