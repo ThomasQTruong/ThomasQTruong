@@ -551,7 +551,7 @@ body.light-mode .nav-divider {
 
 .hero .links {
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   gap: 1rem;
 }
 
@@ -572,6 +572,13 @@ body.light-mode .nav-divider {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgb(255 255 255 / 1%); 
   box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
+}
+
+.content-card .links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .light-mode .content-card {
@@ -596,6 +603,14 @@ body.light-mode .nav-divider {
 
   .projects-list a:active {
     color: rgb(var(--nav-hover-color));
+  }
+
+  .content-card .links a:active {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
+                0 0 10px rgb(var(--theme-color) / 20%);
   }
 }
 
@@ -634,6 +649,14 @@ body.light-mode .nav-divider {
 
   .projects-btn:hover .dropdown-icon-down {
     opacity: 0;
+  }
+
+  .content-card .links a:hover {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
+                0 0 10px rgb(var(--theme-color) / 20%);
   }
 }
 
