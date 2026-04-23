@@ -1,6 +1,12 @@
-> ## Cal Poly Pomona CS Alumni
+### Software Engineer
 
-### Hi there 👋
+# Hi, I'm Thomas
+
+I have been most at home in front of a computer for as long as I can remember. That early interest led me through a series of high school computer classes—from <b>Game Design and Web Design to Java and Robotics</b>—and eventually to <b>Cal Poly Pomona</b>, where I earned my degree in <b>Computer Science</b>.
+
+I build software that I personally want to use or that my friends and family are looking for. My most notable project is the <b>[Cobblemon Breeding](https://github.com/ThomasQTruong/VeryScuffedCobblemonBreeding)</b> mod, which has reached over <b>200,000 downloads</b>. To build it, I had to dive into the deep end of the modding community—reading through the Kotlin source code of the official Cobblemon API and manually refactoring complex file structures to ship a core feature the community was missing.
+
+I am a "hardcore" user who is most at home at my desk. Whether I am navigating complex file structures in <b>WSL Ubuntu</b> or troubleshooting hardware, I am at my best when I have a specific problem to solve. I am currently looking for an <b>entry-level Software Engineering role</b>, ideally in a remote-first environment, though I am open to local opportunities or relocating for the right challenge.
 
 <!--
 **ThomasQTruong/ThomasQTruong** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
