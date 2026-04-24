@@ -550,6 +550,8 @@ body.light-mode .nav-divider {
 
 .hero .links {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   gap: 1rem;
 }
