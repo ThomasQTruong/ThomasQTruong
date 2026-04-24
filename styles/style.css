@@ -571,7 +571,7 @@ body.light-mode .nav-divider {
   backdrop-filter: blur(15px);
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgb(255 255 255 / 1%); 
+  border: 1px solid rgb(255 255 255 / 1%);
   box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
 }
 
@@ -590,6 +590,13 @@ body.light-mode .nav-divider {
 
 .light-mode .job-title {
   text-shadow: 0 0 4px rgb(var(--theme-color) / 30%);
+}
+
+/* SECTION 2: Experience. */
+.experience {
+  padding-top: var(--nav-height);
+  max-width: 900px;
+  margin: auto;
 }
 
 /* Mobile: tap effects. */
