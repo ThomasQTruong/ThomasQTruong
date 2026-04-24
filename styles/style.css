@@ -613,13 +613,16 @@ body.light-mode .nav-divider {
 
 .timeline-card-header {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
+  gap: 0 0.5rem;
 }
 
 .timeline-card-header h3 {
   color: rgb(var(--theme-color));
-  margin-right: auto;
+  margin: 0;
 }
 
 .timeline-card-date {
