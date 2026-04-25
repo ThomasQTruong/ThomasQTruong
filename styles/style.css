@@ -820,7 +820,8 @@ body.light-mode .nav-divider {
   }
 
   main section {
-    padding: 0 var(--nav-padding-fluid);
+    padding-left: var(--nav-padding-fluid);
+    padding-right: var(--nav-padding-fluid);
   }
 
   header:not(.slidedown):has(.nav-list.show) {
