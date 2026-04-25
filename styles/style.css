@@ -596,8 +596,6 @@ body.light-mode .nav-divider {
 .experience {
   display: flex;
   flex-direction: column;
-  padding-top: var(--nav-height);
-  padding-bottom: var(--nav-height);
   margin: auto;
   gap: 1rem;
   max-width: 80rem;
@@ -802,6 +800,8 @@ body.light-mode .nav-divider {
 
   main section {
     padding: 0 var(--nav-padding-fluid);
+    padding-top: 2rem;
+    scroll-margin-top: var(--nav-height);
   }
 
   header:not(.slidedown):has(.nav-list.show) {
