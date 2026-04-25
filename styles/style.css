@@ -674,6 +674,7 @@ body.light-mode .nav-divider {
 .timeline-card-header h3 {
   color: rgb(var(--theme-color));
   margin: 0;
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
 }
 
 .timeline-card-date {
