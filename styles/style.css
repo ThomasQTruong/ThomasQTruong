@@ -124,9 +124,11 @@ main {
 main section {
   width: 100%;
   min-height: 32rem;
+  scroll-margin-top: var(--nav-height);
 
   /* Use normal padding or padding for mobile insets. */
   padding: 0 max(var(--nav-padding-mobile), env(safe-area-inset-left));
+  padding-top: 2rem;
 }
 
 /* Global: Customzie scrollbar. */
@@ -831,8 +833,6 @@ body.light-mode .nav-divider {
 
   main section {
     padding: 0 var(--nav-padding-fluid);
-    padding-top: 2rem;
-    scroll-margin-top: var(--nav-height);
   }
 
   header:not(.slidedown):has(.nav-list.show) {
