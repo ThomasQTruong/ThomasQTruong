@@ -597,9 +597,21 @@ body.light-mode .nav-divider {
   display: flex;
   flex-direction: column;
   padding-top: var(--nav-height);
+  padding-bottom: var(--nav-height);
   margin: auto;
   gap: 1rem;
   max-width: 80rem;
+  height: max-content;
+}
+
+/* Vertical timeline line. */
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  background-color: rgb(var(--theme-color) / 60%);
+  left: 2rem;
 }
 
 .timeline-container {
@@ -609,11 +621,45 @@ body.light-mode .nav-divider {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-left: 2rem;
+  padding-left: 4rem;
 }
 
-.experience .timeline-card {
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-dot {
+  background-color: rgb(var(--theme-color));
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  
+  /* 2rem = (.timeline-container padding-left/2); 2px = (.timeline-card border-radius/2). */
+  left: calc(-2rem + 2px);
+
+  /* Make circle grow in the center instead of top-left default. */
+  transform: translate(-50%, -50%);
+}
+
+.timeline-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 2px;
+  width: calc(2rem - 4px);
+  background-color: rgb(var(--text-color) / 20%);
+}
+
+.content-card.timeline-card {
+  position: relative;
   border: 4px solid rgb(var(--theme-color) / 20%);
+  z-index: 3;
 }
 
 .timeline-card-header {
@@ -842,6 +888,10 @@ body.light-mode .nav-divider {
 
   .content-card {
     min-width: 30em;
+  }
+
+  .content-card.timeline-card {
+    min-width: 26em;
   }
 }
 
