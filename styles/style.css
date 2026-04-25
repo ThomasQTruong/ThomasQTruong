@@ -658,6 +658,9 @@ body.light-mode .nav-divider {
   height: 2px;
   width: calc(2rem - 8px);
   background-color: rgb(var(--text-color) / 20%);
+  
+  /* Use the line's center for vertical positioning. */
+  transform: translateY(-50%);
 }
 
 .timeline-item:hover .timeline-dot {
