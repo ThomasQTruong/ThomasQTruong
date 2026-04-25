@@ -594,12 +594,17 @@ body.light-mode .nav-divider {
 
 /* SECTION 2: Experience. */
 .experience {
+  display: flex;
+  flex-direction: column;
   padding-top: var(--nav-height);
-  max-width: 900px;
   margin: auto;
+  gap: 1rem;
+  max-width: 80rem;
 }
 
 .timeline-container {
+  max-width: 64rem;
+  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
