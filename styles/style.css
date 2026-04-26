@@ -552,6 +552,11 @@ body.light-mode .nav-divider {
   text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
 }
 
+.hero .degree {
+  color: rgb(var(--text-color) / 50%);
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 25%);
+}
+
 .hero .links {
   display: flex;
   justify-content: center;
