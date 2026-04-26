@@ -606,6 +606,10 @@ body.light-mode .nav-divider {
   height: max-content;
 }
 
+.mobile-hidden {
+  display: none;
+}
+
 /* Vertical timeline line. */
 .timeline-container::before {
   content: "";
@@ -916,6 +920,10 @@ body.light-mode .nav-divider {
 
   .content-card.timeline-card {
     min-width: 26em;
+  }
+
+  .mobile-hidden {
+    display: inline;
   }
 }
 
