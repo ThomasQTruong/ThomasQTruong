@@ -10,6 +10,7 @@
 - [How to create sticky navbar | Sticky navbar on scroll using HTML CSS & Javascript](https://www.youtube.com/watch?v=0s9e2JfV010&list=PLu-PQA1gogYIvYjh-RX7CLTjCw2wR65ci)
 - [Understanding env() Safe Area Insets in CSS: From Basics to React and Tailwind](https://medium.com/@developerr.ayush/understanding-env-safe-area-insets-in-css-from-basics-to-react-and-tailwind-a0b65811a8ab)
 - [Learn CSS Pseudo-Elements in 4 Minutes (::before & ::after)](https://www.youtube.com/watch?v=Bm-Y6bnJBN8)
+- [CSS Grid Course - The Only Grid Tutorial You'll Ever Need!](https://www.youtube.com/watch?v=JYfiaSKeYhE)
 
 # Tools
 
