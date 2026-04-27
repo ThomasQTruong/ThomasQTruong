@@ -133,33 +133,6 @@ main section {
   padding-top: 2rem;
 }
 
-/* Global: Customzie scrollbar. */
-.y-scrollable::-webkit-scrollbar {
-  width: 8px;
-  background: transparent;
-}
-
-.y-scrollable {
-  /* For Firefox. */
-  scrollbar-width: thin;
-  scrollbar-color: rgb(0 0 0 / 20%) transparent;
-}
-
-.y-scrollable::-webkit-scrollbar-thumb {
-  background: rgb(0 0 0 / 20%);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-.y-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgb(0 0 0 / 40%);
-}
-
-.y-scrollable::-webkit-scrollbar-button {
-  display: none;
-}
-
 /* Global: nav bar. */
 header {
   display: flex;
@@ -297,25 +270,6 @@ nav button {
   border-radius: 0;
 }
 
-.projects-container {
-  position: relative;  /* https://i.ytimg.com/vi/F0ifZxhlTUI/maxresdefault.jpg */
-  display: flex;
-  flex-direction: column;
-}
-
-.projects-list a {
-  background-color: rgb(var(--projects-list-color));
-  min-height: 44px;
-  display: flex;            /* Display each link vertically. */
-  justify-content: center;  /* Horizontally align. */
-  align-items: center;      /* Vertically align. */
-  margin: 0;
-  font-size: var(--step-n1);
-  font-weight: 400;
-  width: 100%;
-  padding: 0.5rem 1rem;
-}
-
 /* Mobile: nav sidebar toggle. */
 .sidebar-btn {
   display: inline-block;
@@ -380,37 +334,6 @@ nav button {
   right: 0;
 }
 
-/* Global: Projects dropdown icon. */
-.projects-btn .dropdown-icons {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects-btn .dropdown-icons i {
-  font-size: var(--step-n2);
-  transition: opacity 0.4s ease;
-}
-
-.dropdown-icon-up {
-  opacity: 0;
-}
-
-.dropdown-icon-down {
-  position: absolute;
-  left: 0;
-  opacity: 1;
-}
-
-.projects-btn[aria-expanded="true"] .dropdown-icon-up {
-  opacity: 1;
-}
-
-.projects-btn[aria-expanded="true"] .dropdown-icon-down {
-  opacity: 0;
-}
-
 /* Global: focus. */
 :focus {
   outline: none;
@@ -420,12 +343,6 @@ nav button {
   outline: 2px solid rgb(var(--text-color));
   outline-offset: 4px;
   border-radius: 4px;
-}
-
-.projects-list a:focus-visible {
-  outline: none;
-  color: rgb(var(--background-color));
-  background-color: rgb(var(--nav-hover-color));
 }
 
 /* Mobile: general. */
@@ -462,33 +379,9 @@ body.no-scroll {
   opacity: 1;
 }
 
-
-/* Mobile: projects menu. */
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  position: static;
-  top: auto;
-  left: auto;
-  z-index: 10;
-  width: 100%;
-  max-height: 0;
-  pointer-events: none;
-  overflow-y: hidden;
-  box-shadow: 0 0 0 rgb(0 0 0 / 0%);
-  transition: max-height 0.4s ease-in-out, color 0.2s ease, box-shadow 0.4s ease;
-}
-
 /* Mobile: Right side buttons (menu/theme). */
 .nav-right-btns {
   display: flex;
-}
-
-/* Global: tap/click to expand. */
-.projects-list.show {
-  max-height: 60vh;
-  pointer-events: auto;
-  color: rgb(var(--nav-hover-color));
 }
 
 /* Global: Light mode settings. */
@@ -810,10 +703,6 @@ body.light-mode .nav-divider {
     color: rgb(var(--nav-hover-color));
   }
 
-  .projects-list a:active {
-    color: rgb(var(--nav-hover-color));
-  }
-
   .content-card .links a:active {
     transform: translateY(-3px);
     border-color: rgb(var(--theme-color));
@@ -829,12 +718,6 @@ body.light-mode .nav-divider {
 
 /* PC / Mouse: Hover and expand effects. */
 @media (hover: hover) and (pointer: fine) {
-  .projects-container:hover .projects-list {
-    max-height: 60vh;
-    pointer-events: auto;
-    box-shadow: 0 2px 8px rgb(var(--text-color) / 20%);
-  }
-
   .nav-item:not(.nav-cta, .theme-btn):hover {
     color: rgb(var(--nav-hover-color));
 
@@ -849,19 +732,6 @@ body.light-mode .nav-divider {
 
   .sidebar-btn:hover i {
     color: rgb(var(--nav-hover-color));
-  }
-
-  .projects-list a:hover {
-    color: rgb(var(--background-color));
-    background-color: rgb(var(--nav-hover-color));
-  }
-
-  .projects-btn:hover .dropdown-icon-up {
-    opacity: 1;
-  }
-
-  .projects-btn:hover .dropdown-icon-down {
-    opacity: 0;
   }
 
   .content-card .links a:hover {
@@ -932,13 +802,6 @@ body.light-mode .nav-divider {
   .nav-divider {
     display: inline-block;
     align-self: center;
-  }
-
-  .projects-list {
-    width: 10em;
-    position: absolute;
-    top: 100%;
-    left: 0;
   }
 
   .sidebar-btn {

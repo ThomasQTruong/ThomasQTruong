@@ -3,13 +3,9 @@ const header = document.getElementById("header");
 const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
 const navBtn = document.getElementById("sidebar-btn");
-const projectsList = document.getElementById("projects-list");
-const projectsBtn = document.getElementById("projects-btn");
-const projectsContainer = document.getElementById("projects-container");
 
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
-projectsBtn.addEventListener("click", toggleProjects);
 themeBtn.addEventListener("click", toggleTheme);
 
 // Variables.
@@ -59,29 +55,6 @@ navLinks.forEach((link) => {
   });
 });
 
-// Add listener to each project button.
-const projectLinks = document.querySelectorAll("projects-list a");
-projectLinks.forEach((link) => {
-  // User clicked link and projects list is shown, hide projects list.
-  link.addEventListener("click", () => {
-    if (projectsList.classList.contains("show")) {
-      closeProjects();
-    }
-  });
-});
-
-// Add listener for hovering Projects menu, hover = no inert.
-projectsContainer.addEventListener("mouseenter", () => {
-  projectsList.inert = false;
-});
-
-// Add listener for when user stops hovering Projects menu, no hover = inert.
-projectsContainer.addEventListener("mouseleave", () => {
-  if (!projectsList.classList.contains("show")) {
-    projectsList.inert = true;
-  }
-});
-
 /**
  * Toggles the visibility of the mobile navigation sidebar.
  * Updates ARIA and inert attributes, toggles the "show" class,
@@ -117,8 +90,6 @@ function toggleSideBar() {
     // 4. Immediately jump back to where they were
     window.scrollTo({ left: 0, top: scrollPosition, behavior: "instant" });
 
-    // Nav bar was closed, make sure projects is closed too.
-    closeProjects();
     // Update ARIA and inert.
     navBtn.setAttribute("aria-expanded", "false");
     if (!isLargeScreen) {
@@ -139,44 +110,6 @@ function toggleSideBar() {
 }
 
 /**
- * Toggles the visibility of the Projects dropdown menu.
- * Updates ARIA and inert attributes and toggles the "show" class.
- * @returns {void}
- */
-function toggleProjects() {
-  const isOpen = projectsList.classList.toggle("show");
-
-  // Projects is open.
-  if (isOpen) {
-    // Remove listener first to prevent ghost listeners.
-    document.removeEventListener("click", closeProjects);
-    // Add listener for when user clicks away.
-    setTimeout(() => document.addEventListener("click", closeProjects), 0);
-    // Update ARIA and inert.
-    projectsBtn.setAttribute("aria-expanded", "true");
-    projectsList.inert = false;
-  } else {
-    // Close the project since user toggled it off.
-    closeProjects();
-  }
-}
-
-/**
- * Closes the projects dropdown menu depending on event.
- * Hides the Projects menu, updates ARIA attributes, and enables inert
- * if the user clicked outside of the menu OR if no event was passed.
- * @returns {void}
- */
-function closeProjects() {
-  projectsList.classList.remove("show");
-  document.removeEventListener("click", closeProjects);
-
-  // Update ARIA and inert.
-  projectsBtn.setAttribute("aria-expanded", "false");
-  projectsList.inert = true;
-}
-
-/**
  * Toggles the theme (light/dark mode).
  * @returns {void}
  */
@@ -187,7 +120,7 @@ function toggleTheme() {
 }
 
 /**
- * Synchronizes Nav and Project menu accessibility states
+ * Synchronizes Nav accessibility states
  * based on current viewport size and visibility.
  * @returns {void}
  */
@@ -196,7 +129,4 @@ function updateScreen() {
   const isHidden = !isLargeScreen && !navList.classList.contains("show");
 
   navList.inert = isHidden;
-  if (isHidden) {
-    closeProjects();
-  }
 }
