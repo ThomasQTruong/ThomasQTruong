@@ -123,14 +123,12 @@ main {
 
 main section {
   width: 100%;
-  min-height: 32rem;
 
   /* When clicking hrefs to go to sections, stop above the section. */
   scroll-margin-top: var(--nav-height);
 
   /* Use normal padding or padding for mobile insets. */
-  padding: 0 max(var(--nav-padding-mobile), env(safe-area-inset-left));
-  padding-top: 2rem;
+  padding: 2rem max(var(--nav-padding-mobile), env(safe-area-inset-left));
 }
 
 /* Global: nav bar. */
@@ -390,6 +388,10 @@ body.light-mode .nav-divider {
   opacity: 0.2;
 }
 
+.mobile-hidden {
+  display: none;
+}
+
 /* SECTION 1: Hero */
 .hero {
   display: flex;
@@ -502,10 +504,6 @@ body.light-mode .nav-divider {
   gap: 1rem;
   max-width: 80rem;
   height: max-content;
-}
-
-.mobile-hidden {
-  display: none;
 }
 
 /* Vertical timeline line. */
@@ -642,7 +640,6 @@ body.light-mode .nav-divider {
 
 /* Section 3: Skills. */
 .skills {
-  width: 100%;
   max-width: 80rem;
   margin: auto;
 }
@@ -657,6 +654,7 @@ body.light-mode .nav-divider {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1rem;
+  justify-content: center;
 }
 
 .content-card.skill-card {
@@ -691,6 +689,34 @@ body.light-mode .nav-divider {
 
 .skill-card li {
   line-height: 1.6;
+}
+
+/* Section 4: Projects. */
+.projects {
+  max-width: 80rem;
+  margin: auto;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 16rem);
+  gap: 1rem;
+  justify-content: center;
+}
+
+.content-card.projects-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 16rem;
+  padding: 1rem;
+  border: 3px solid rgb(var(--theme-color) / 20%);
+  transition: all 0.3s ease;
 }
 
 /* Mobile: tap effects. */
