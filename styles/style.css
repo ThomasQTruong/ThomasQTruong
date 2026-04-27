@@ -705,7 +705,7 @@ body.light-mode .nav-divider {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 16rem);
+  grid-template-columns: 1fr;
   gap: 1rem;
   justify-content: center;
 }
@@ -713,7 +713,7 @@ body.light-mode .nav-divider {
 .content-card.projects-card {
   display: flex;
   flex-direction: column;
-  min-width: 16rem;
+  min-width: 10rem;
   padding: 1rem;
   border: 3px solid rgb(var(--theme-color) / 20%);
   transition: all 0.3s ease;
@@ -873,6 +873,19 @@ body.light-mode .nav-divider {
   .mobile-hidden {
     display: inline;
   }
+
+  /* Section 4: Projects. */
+  .projects-grid {
+    grid-template:
+      "project1 project1 project2 project2" 1fr
+      "project1 project1 project3 project4" 1fr
+      / 1fr 1fr 1fr 1fr;
+  }
+
+  .projects-card:nth-child(1) { grid-area: project1; }
+  .projects-card:nth-child(2) { grid-area: project2; }
+  .projects-card:nth-child(3) { grid-area: project3; }
+  .projects-card:nth-child(4) { grid-area: project4; }
 }
 
 /* Format: Desktops. */
