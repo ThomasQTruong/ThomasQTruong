@@ -464,11 +464,15 @@ body.light-mode .nav-divider {
 }
 
 .hero .links a {
+  display: flex;
   text-decoration: none;
   color: rgb(var(--text-color));
   border: 2px solid rgb(var(--theme-color) / 70%);
   border-radius: 0.5rem;
   padding: 0.15em 0.25em;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .content-card {
@@ -862,6 +866,11 @@ body.light-mode .nav-divider {
 
   .hero .job-title {
     text-shadow: 0 0 8px rgb(var(--theme-color) / 45%);
+  }
+
+  .hero .links a {
+    min-height: auto;
+    gap: 0.25rem;
   }
 
   .content-card {
