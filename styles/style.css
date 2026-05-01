@@ -429,13 +429,16 @@ body.light-mode .nav-divider {
   box-shadow: 0 0 15px rgb(var(--theme-color) / 30%), 
               0 0 30px rgb(var(--theme-color) / 20%);
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero .headshot img {
+.hero .headshot img.loaded {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
+  display: block;
 }
 
 .hero .text {
