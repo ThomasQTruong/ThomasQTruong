@@ -466,7 +466,7 @@ body.light-mode .nav-divider {
 .hero .links a {
   text-decoration: none;
   color: rgb(var(--text-color));
-  border: 2px solid rgb(var(--text-color));
+  border: 2px solid rgb(var(--theme-color) / 70%);
   border-radius: 0.5rem;
   padding: 0.15em 0.25em;
 }
