@@ -721,6 +721,14 @@ body.light-mode .nav-divider {
   transition: all 0.3s ease;
 }
 
+.projects-card:hover {
+  transform: translateY(-3px);
+  border-color: rgb(var(--theme-color) / 75%);
+  background: rgb(var(--theme-color) / 5%);
+  box-shadow: 0 0 20px rgb(var(--theme-color) / 10%), 
+              0 0 40px rgb(var(--theme-color) / 5%);
+}
+
 .project-title {
   display: flex;
   justify-content: center;
