@@ -760,6 +760,10 @@ body.light-mode .nav-divider {
   height: 50%;
 }
 
+.project-body {
+  margin: 0 1.5rem;
+}
+
 /* Mobile: tap effects. */
 @media (pointer: coarse) {
   .nav-item:active {
