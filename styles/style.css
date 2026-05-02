@@ -455,7 +455,7 @@ body.light-mode .nav-divider {
   text-shadow: 0 0 6px rgb(var(--theme-color) / 25%);
 }
 
-.hero .links {
+.links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -463,16 +463,18 @@ body.light-mode .nav-divider {
   gap: 1rem;
 }
 
-.hero .links a {
-  display: flex;
+.links a {
+  display: inline-flex;
   text-decoration: none;
   color: rgb(var(--text-color));
   border: 2px solid rgb(var(--theme-color) / 70%);
   border-radius: 0.5rem;
   padding: 0.15em 0.25em;
   justify-content: center;
+  align-items: center;
   min-width: 44px;
   min-height: 44px;
+  transition: all 0.3s ease;
 }
 
 .content-card {
@@ -484,13 +486,6 @@ body.light-mode .nav-divider {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgb(255 255 255 / 1%);
   box-shadow: 0 10px 40px rgb(0 0 0 / 20%);
-}
-
-.content-card .links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
 }
 
 .light-mode .content-card {
@@ -774,7 +769,7 @@ body.light-mode .nav-divider {
     color: rgb(var(--nav-hover-color));
   }
 
-  .content-card .links a:active {
+  .links a:active {
     transform: translateY(-3px);
     border-color: rgb(var(--theme-color));
     background: rgb(var(--theme-color) / 10%);
@@ -805,7 +800,7 @@ body.light-mode .nav-divider {
     color: rgb(var(--nav-hover-color));
   }
 
-  .content-card .links a:hover {
+  .links a:hover {
     transform: translateY(-3px);
     border-color: rgb(var(--theme-color));
     background: rgb(var(--theme-color) / 10%);
@@ -906,7 +901,7 @@ body.light-mode .nav-divider {
     text-shadow: 0 0 8px rgb(var(--theme-color) / 45%);
   }
 
-  .hero .links a {
+  .links a {
     min-height: auto;
     gap: 0.25rem;
   }
