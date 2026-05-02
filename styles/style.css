@@ -737,30 +737,26 @@ body.light-mode .nav-divider {
 
 .project-tags {
   display: flex;
-  gap: 0 1rem;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  gap: 0 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(var(--text-color) / 10%);
 }
 
 .project-tag {
   position: relative;
-  color: rgb(var(--text-color) / 70%);
-  font-size: 0.8rem;
+  background: rgb(var(--text-color) / 10%);
+  color: rgb(var(--text-color) / 80%);
+  border: 1px solid rgb(var(--text-color) / 30%);
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.project-tag:not(:first-child)::before {
-  content: "";
-  position: absolute;
-  left: -0.5rem;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(var(--text-color) / 100%);
-  width: 2px;
-  height: 50%;
+  transition: transform 0.2s ease;
 }
 
 .project-body {
@@ -786,6 +782,10 @@ body.light-mode .nav-divider {
   }
   
   .experience-tag:active {
+    transform: scale(1.1);
+  }
+
+  .project-tag:active {
     transform: scale(1.1);
   }
 }
@@ -817,6 +817,10 @@ body.light-mode .nav-divider {
   }
 
   .experience-tag:hover {
+    transform: scale(1.1);
+  }
+
+  .project-tag:hover {
     transform: scale(1.1);
   }
 }
