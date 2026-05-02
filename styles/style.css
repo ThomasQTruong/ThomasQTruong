@@ -679,6 +679,7 @@ body.light-mode .nav-divider {
 
 .skill-card h3 {
   color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
 }
 
 .skill-card ul {
@@ -733,6 +734,7 @@ body.light-mode .nav-divider {
   display: flex;
   justify-content: center;
   color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
 }
 
 .project-tags {
