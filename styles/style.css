@@ -761,8 +761,23 @@ body.light-mode .nav-divider {
   transition: transform 0.2s ease;
 }
 
+.project-thumbnail {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+
+.projects .project-thumbnail img.loaded {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-height: 16rem;
+}
+
 .project-body {
   margin: 0 1.5rem;
+  margin-top: auto;
 }
 
 /* Mobile: tap effects. */
