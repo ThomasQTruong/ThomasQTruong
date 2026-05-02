@@ -606,7 +606,7 @@ body.light-mode .nav-divider {
   font-size: 0.9rem;
 }
 
-.tag-container {
+.experience-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -615,7 +615,7 @@ body.light-mode .nav-divider {
   border-top: 1px solid rgb(var(--text-color) / 10%);
 }
 
-.tag {
+.experience-tag {
   background: rgb(var(--theme-color) / 10%);
   color: rgb(var(--theme-color));
   border: 1px solid rgb(var(--theme-color) / 30%);
@@ -785,7 +785,7 @@ body.light-mode .nav-divider {
                 0 0 10px rgb(var(--theme-color) / 20%);
   }
   
-  .tag:active {
+  .experience-tag:active {
     transform: scale(1.1);
   }
 }
@@ -816,7 +816,7 @@ body.light-mode .nav-divider {
                 0 0 10px rgb(var(--theme-color) / 20%);
   }
 
-  .tag:hover {
+  .experience-tag:hover {
     transform: scale(1.1);
   }
 }
