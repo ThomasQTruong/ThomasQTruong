@@ -60,20 +60,39 @@ navLinks.forEach((link) => {
 
 // Add a listener for each slider.
 sliders.forEach((slider) => {
-  // When the user stops scrolling.
-  slider.addEventListener("scrollend", () => {
-    // Calculate current index.
-    const index = Math.round(slider.scrollLeft / slider.clientWidth);
+  const slides = slider.children;
+  const sliderDots = slider.parentElement.querySelectorAll(".slider-dot");
 
-    // Set proper active state on dots.
-    const wrapper = slider.closest(".slider-wrapper");
-    const siblingDots = wrapper.querySelectorAll(".slider-dot");
-    if (siblingDots.length > 0) {
-      siblingDots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
+  // Flag to lock the slider to prevent over-animating slider dots.
+  slider.dataset.isLocked = "false";
+
+  // Observes the imgs to see if the user scrolls past 50% of the image.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Slider is locked, do not over-animate the slider dots.
+      if (slider.dataset.isLocked === "true") return;
+
+      // For each image.
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Obtain img's index.
+          const index = Array.from(slides).indexOf(entry.target);
+
+          // Set proper dot states.
+          const activeDot = sliderDots[index];
+          if (activeDot) {
+            sliderDots.forEach((dot) => {
+              dot.classList.remove("active");
+            });
+            activeDot.classList.add("active");
+          }
+        }
       });
-    }
-  });
+    },
+    { root: slider, threshold: 0.5 },
+  );
+
+  Array.from(slides).forEach((slide) => observer.observe(slide));
 });
 
 // Add listener to each project slider's dot.
@@ -97,16 +116,6 @@ dots.forEach((dot) => {
         inline: "start",
       });
     }
-
-    // Remove the active class from the sibling dots.
-    const wrapper = clickedDot.closest(".slider-wrapper");
-    const siblingDots = wrapper.querySelectorAll(".slider-dot");
-    if (siblingDots.length > 0) {
-      siblingDots.forEach((dot) => dot.classList.remove("active"));
-
-      // Add active to the clicked dot.
-      clickedDot.classList.add("active");
-    }
   });
 });
 
@@ -114,10 +123,11 @@ dots.forEach((dot) => {
 sliderImgs.forEach((img) => {
   img.addEventListener("click", (e) => {
     const clickedImg = e.currentTarget;
-    let nextImg = clickedImg.nextElementSibling;
+    const nextImg = clickedImg.nextElementSibling;
     // At the end or no other image to scroll through, cycle to the first.
     if (!nextImg) {
-      nextImg = clickedImg.parentElement.firstElementChild;
+      sliderGoToStart(clickedImg.parentElement);
+      return;
     }
 
     // Scroll to the image.
@@ -127,16 +137,6 @@ sliderImgs.forEach((img) => {
       block: "nearest",
       inline: "start",
     });
-
-    // Remove the active class from the sibling dots.
-    const wrapper = clickedImg.closest(".slider-wrapper");
-    const siblingDots = wrapper.querySelectorAll(".slider-dot");
-    if (siblingDots.length > 0) {
-      siblingDots.forEach((d) => d.classList.remove("active"));
-
-      // Add active to the related dot.
-      siblingDots[nextImg.getAttribute("index")].classList.add("active");
-    }
   });
 });
 
@@ -214,4 +214,31 @@ function updateScreen() {
   const isHidden = !isLargeScreen && !navList.classList.contains("show");
 
   navList.inert = isHidden;
+}
+
+/**
+ * Moves the specific slider to the starting image while locking the slider
+ * so that it does not over-animate the slider dots.
+ * @param {HTMLElement} slider - the slider being interacted with.
+ */
+function sliderGoToStart(slider) {
+  // Lock the slider nav from animating.
+  slider.dataset.isLocked = "true";
+
+  // Set proper dot active states.
+  const sliderDots = slider.parentElement.querySelectorAll(".slider-dot");
+  sliderDots.forEach((dot) => {
+    dot.classList.remove("active");
+  });
+  if (sliderDots.length > 0) {
+    sliderDots[0].classList.add("active");
+  }
+
+  // Scroll to the start.
+  slider.scrollTo({ left: 0, behavior: "smooth" });
+
+  // Enable slider nav to animate again.
+  setTimeout(() => {
+    slider.dataset.isLocked = "false";
+  }, 200);
 }
