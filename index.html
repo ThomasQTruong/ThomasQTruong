@@ -103,11 +103,13 @@
             </p>
 
             <div class="links">
-              <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Thomas's GitHub in a new tab">
                 <i class="fa-brands fa-github" aria-hidden="true"></i>
                 <span class="mobile-hidden">GitHub</span>
               </a>
-              <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Thomas's LinkedIn in a new tab">
                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <span class="mobile-hidden">LinkedIn</span>
               </a>
@@ -278,27 +280,34 @@
                 </div>
               </div>
               <div class="slider-wrapper">
-                <div class="slider">
-                  <button class="slider-img" index="0">
+                <div class="slider" tabindex="-1" aria-hidden="true">
+                  <button class="slider-img" index="0" tabindex="-1" aria-hidden="true">
                     <img id="cb-img1" src="assets/cb-img-selection.webp"
-                      alt="Cobblemon Breeding Select Cobblemons"
-                      onload="this.classList.add('loaded')">
+                        alt="Cobblemon Breeding Select Cobblemons"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="1">
+                  <button class="slider-img" index="1" tabindex="-1" aria-hidden="true">
                     <img id="cb-img2" src="assets/cb-img-navigation.webp"
-                      alt="Cobblemon Breeding Navigate Pokeboxes"
-                      onload="this.classList.add('loaded')">
+                        alt="Cobblemon Breeding Navigate Pokeboxes"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="2">
+                  <button class="slider-img" index="2" tabindex="-1" aria-hidden="true">
                     <img id="cb-img3" src="assets/cb-img-confirmation.webp"
-                      alt="Cobblemon Breeding Confirm Breed"
-                      onload="this.classList.add('loaded')">
+                        alt="Cobblemon Breeding Confirm Breed"
+                        onload="this.classList.add('loaded')">
                   </button>
                 </div>
                 <div class="slider-nav">
-                  <button class="slider-dot active" data-target="cb-img1"></button>
-                  <button class="slider-dot" data-target="cb-img2"></button>
-                  <button class="slider-dot" data-target="cb-img3"></button>
+                  <button class="slider-dot active" data-target="cb-img1"
+                      aria-label="Go to Cobblemon Breeding: Select Cobblemons Img"
+                      aria-current="true">
+                  </button>
+                  <button class="slider-dot" data-target="cb-img2"
+                      aria-label="Go to Cobblemon Breeding: Navigate Pokeboxes Img">
+                  </button>
+                  <button class="slider-dot" data-target="cb-img3"
+                      aria-label="Go to Cobblemon Breeding: Confirm Breed Img">
+                  </button>
                 </div>
               </div>
               <ul class="project-body">
@@ -310,15 +319,18 @@
                   stability.</li>
               </ul>
               <div class="links">
-                <a href="https://github.com/ThomasQTruong/VeryScuffedCobblemonBreeding" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ThomasQTruong/VeryScuffedCobblemonBreeding" target="_blank"
+                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding source code on GitHub in a new Tab">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                   <span class="mobile-hidden">Source</span>
                 </a>
-                <a href="https://modrinth.com/mod/veryscuffedcobblemonbreeding" target="_blank" rel="noopener noreferrer">
+                <a href="https://modrinth.com/mod/veryscuffedcobblemonbreeding" target="_blank"
+                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding releases on Modrinth in a new Tab">
                   <i class="fa-solid fa-cube" aria-hidden="true"></i>
                   <span class="mobile-hidden">Modrinth</span>
                 </a>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/veryscuffedcobblemonbreeding" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.curseforge.com/minecraft/mc-mods/veryscuffedcobblemonbreeding" target="_blank"
+                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding releases on CurseForge in a new Tab">
                   <i class="fa-solid fa-fire" aria-hidden="true"></i>
                   <span class="mobile-hidden">CurseForge</span>
                 </a>
@@ -337,27 +349,34 @@
                 </div>
               </div>
               <div class="slider-wrapper">
-                <div class="slider">
-                  <button class="slider-img" index="0">
+                <div class="slider" tabindex="-1" aria-hidden="true">
+                  <button class="slider-img" index="0" tabindex="-1" aria-hidden="true">
                     <img id="ps-img1" src="assets/stamper-main.webp"
-                      alt="PDF Stamper UI"
-                      onload="this.classList.add('loaded')">
+                        alt="PDF Stamper Main UI"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="0">
+                  <button class="slider-img" index="1" tabindex="-1" aria-hidden="true">
                     <img id="ps-img2" src="assets/stamper-output.webp"
-                      alt="PDF Stamper Run"
-                      onload="this.classList.add('loaded')">
+                        alt="PDF Stamper Output"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="0">
+                  <button class="slider-img" index="2" tabindex="-1" aria-hidden="true">
                     <img id="ps-img3" src="assets/stamper-example.webp"
-                      alt="PDF Stamper Example"
-                      onload="this.classList.add('loaded')">
+                        alt="PDF Stamper Stamped Example"
+                        onload="this.classList.add('loaded')">
                   </button>
                 </div>
                 <div class="slider-nav">
-                  <button class="slider-dot active" data-target="ps-img1"></button>
-                  <button class="slider-dot" data-target="ps-img2"></button>
-                  <button class="slider-dot" data-target="ps-img3"></button>
+                  <button class="slider-dot active" data-target="ps-img1"
+                      aria-label="Go to PDF Stamper: Main UI Img"
+                      aria-current="true">
+                  </button>
+                  <button class="slider-dot" data-target="ps-img2"
+                      aria-label="Go to PDF Stamper: Output Img">
+                  </button>
+                  <button class="slider-dot" data-target="ps-img3"
+                      aria-label="Go to PDF Stamper: Stamped Example">
+                  </button>
                 </div>
               </div>
               <ul class="project-body">
@@ -368,9 +387,15 @@
                   structures</b>.</li>
               </ul>
               <div class="links">
-                <a href="https://github.com/ThomasQTruong/DiscordMessageRelaySelfBot" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ThomasQTruong/pdf-stamper" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open PDF Stamper source code on GitHub in a new Tab">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                   <span class="mobile-hidden">Source</span>
+                </a>
+                <a href="https://github.com/ThomasQTruong/pdf-stamper/releases" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open PDF Stamper releases on GitHub in a new Tab">
+                  <i class="fa-solid fa-download" aria-hidden="true"></i>
+                  <span class="mobile-hidden">Releases</span>
                 </a>
               </div>
             </div>
@@ -385,27 +410,34 @@
                 </div>
               </div>
               <div class="slider-wrapper">
-                <div class="slider">
-                  <button class="slider-img" index="0">
+                <div class="slider" tabindex="-1" aria-hidden="true">
+                  <button class="slider-img" index="0" tabindex="-1" aria-hidden="true">
                     <img id="atd-img1" src="assets/animals-td.webp"
-                      alt="AnimalsTD Shop Shown"
-                      onload="this.classList.add('loaded')">
+                        alt="AnimalsTD Shop Shown"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="1">
+                  <button class="slider-img" index="1" tabindex="-1" aria-hidden="true">
                     <img id="atd-img2" src="assets/atd-upgrades.webp"
-                      alt="AnimalsTD Upgrades Shown"
-                      onload="this.classList.add('loaded')">
+                        alt="AnimalsTD Upgrades Shown"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="2">
+                  <button class="slider-img" index="2" tabindex="-1" aria-hidden="true">
                     <img id="atd-img3" src="assets/atd-selector.webp"
-                      alt="AnimalsTD Upgrades Shown"
-                      onload="this.classList.add('loaded')">
+                        alt="AnimalsTD Difficulty Selector"
+                        onload="this.classList.add('loaded')">
                   </button>
                 </div>
                 <div class="slider-nav">
-                  <button class="slider-dot active" data-target="atd-img1"></button>
-                  <button class="slider-dot" data-target="atd-img2"></button>
-                  <button class="slider-dot" data-target="atd-img3"></button>
+                  <button class="slider-dot active" data-target="atd-img1"
+                      aria-label="Go to AnimalsTD: Shop UI Img"
+                      aria-current="true">
+                  </button>
+                  <button class="slider-dot" data-target="atd-img2"
+                      aria-label="Go to AnimalsTD Upgrades UI Img">
+                  </button>
+                  <button class="slider-dot" data-target="atd-img3"
+                      aria-label="Go to AnimalsTD Difficulty Selector Img">
+                  </button>
                 </div>
               </div>
               <ul class="project-body">
@@ -417,11 +449,13 @@
                   difficulty scaling.</li>
               </ul>
               <div class="links">
-                <a href="https://github.com/ThomasQTruong/AnimalsTD" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ThomasQTruong/AnimalsTD" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open AnimalsTD source code on GitHub in a new Tab">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                   <span class="mobile-hidden">Source</span>
                 </a>
-                <a href="https://thomasqtruong.github.io/AnimalsTD/Builds/WebGL/" target="_blank" rel="noopener noreferrer">
+                <a href="https://thomasqtruong.github.io/AnimalsTD/Builds/WebGL/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open AnimalsTD demo on GitHub Pages in a new Tab">
                   <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
                   <span class="mobile-hidden">Demo</span>
                 </a>
@@ -438,27 +472,31 @@
                 </div>
               </div>
               <div class="slider-wrapper">
-                <div class="slider">
-                  <button class="slider-img" index="0">
+                <div class="slider" tabindex="-1" aria-hidden="true">
+                  <button class="slider-img" index="0" tabindex="-1" aria-hidden="true">
                     <img id="extfix-img1" src="assets/extfix-menu.webp"
-                      alt="extfix UI"
-                      onload="this.classList.add('loaded')">
+                        alt="extfix Main UI"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="0">
+                  <button class="slider-img" index="1" tabindex="-1" aria-hidden="true">
                     <img id="extfix-img2" src="assets/extfix-directory.webp"
-                      alt="extfix Output"
-                      onload="this.classList.add('loaded')">
+                        alt="extfix Output"
+                        onload="this.classList.add('loaded')">
                   </button>
-                  <button class="slider-img" index="0">
+                  <button class="slider-img" index="2" tabindex="-1" aria-hidden="true">
                     <img id="extfix-img3" src="assets/extfix-output.webp"
-                      alt="extfix Output"
-                      onload="this.classList.add('loaded')">
+                        alt="extfix Output"
+                        onload="this.classList.add('loaded')">
                   </button>
                 </div>
                 <div class="slider-nav">
-                  <button class="slider-dot active" data-target="extfix-img1"></button>
-                  <button class="slider-dot" data-target="extfix-img2"></button>
-                  <button class="slider-dot" data-target="extfix-img3"></button>
+                  <button class="slider-dot active" data-target="extfix-img1"
+                      aria-label="Go to extfix: Main UI Img"
+                      aria-current="true"></button>
+                  <button class="slider-dot" data-target="extfix-img2"
+                      aria-label="Go to extfix: Directory Selector Img"></button>
+                  <button class="slider-dot" data-target="extfix-img3"
+                      aria-label="Go to extfix: Output Img"></button>
                 </div>
               </div>
               <ul class="project-body">
@@ -469,11 +507,13 @@
                   users.</li>
               </ul>
               <div class="links">
-                <a href="https://github.com/ThomasQTruong/extfix" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ThomasQTruong/extfix" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open extfix source code on GitHub in a new Tab">
                   <i class="fa-brands fa-github" aria-hidden="true"></i>
                   <span class="mobile-hidden">Source</span>
                 </a>
-                <a href="https://github.com/ThomasQTruong/extfix/releases" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ThomasQTruong/extfix/releases" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open extfix releases on GitHub in a new Tab">
                   <i class="fa-solid fa-download" aria-hidden="true"></i>
                   <span class="mobile-hidden">Releases</span>
                 </a>
@@ -484,7 +524,70 @@
       </section>
 
       <!-- Section 5: Contact. -->
-      <section id="contact" class="contact"></section>
+      <section id="contact" class="contact">
+        <h1 class="section-title">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          <span>Contact</span>
+        </h1>
+        <div class="contact-container">
+          <div class="contact-content">
+            <h2 class="contact-title">Get in Touch</h2>
+            <div class="contacts">
+              <div class="contact-item">
+                <div class="contact-header">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <span>Phone</span>
+                </div>
+                <div class="contact-value">
+                  <a href="tel:+16264788992" aria-label="Call Thomas at 626-478-8992">
+                    +1 (626) 478-8992
+                  </a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-header">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <span>Email</span>
+                </div>
+                <div class="contact-value">
+                  <a href="mailto:TruongThomasQ@gmail.com" aria-label="Send an email to Thomas">
+                    TruongThomasQ@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-header">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <span>Location</span>
+                </div>
+                <div class="contact-value">
+                  <span>California, United States</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h2 class="contact-title">Contact Me</h2>
+            <!--
+            <form>
+              <div class="contact-entries">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                
+                <label for="content">Content</label>
+                <textarea id="content" rows="10"></textarea>
+              </div>
+              <div class="contact-submit">
+                <button type="submit">Send Email</button>
+              </div>
+            </form>
+            -->
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -83,8 +83,10 @@ sliders.forEach((slider) => {
           if (activeDot) {
             sliderDots.forEach((dot) => {
               dot.classList.remove("active");
+              dot.ariaCurrent = "false";
             });
             activeDot.classList.add("active");
+            activeDot.ariaCurrent = "true";
           }
         }
       });
@@ -229,9 +231,11 @@ function sliderGoToStart(slider) {
   const sliderDots = slider.parentElement.querySelectorAll(".slider-dot");
   sliderDots.forEach((dot) => {
     dot.classList.remove("active");
+    dot.ariaCurrent = "false";
   });
   if (sliderDots.length > 0) {
     sliderDots[0].classList.add("active");
+    sliderDots[0].ariaCurrent = "true";
   }
 
   // Scroll to the start.

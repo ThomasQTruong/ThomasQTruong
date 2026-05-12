@@ -837,6 +837,86 @@ body.light-mode .nav-divider {
   margin-top: auto;
 }
 
+/* Section 5: Contact */
+.contact {
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 8rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-content,
+.contact-form {
+  flex: 1 1 0;
+  min-width: 14rem;
+  max-width: 38rem;
+}
+
+.contact-title {
+  color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
+  margin-bottom: 0.5rem;
+}
+
+.contact-container .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contacts .contact-header {
+  font-size: 1.25rem;
+}
+
+.contact-item .contact-value a {
+  color: rgb(var(--text-color) / 75%);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.contact-item .contact-value a:hover {
+  text-decoration: underline;
+}
+
+.contact-container .contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form .contact-entries {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form .contact-entries input:focus-visible {
+  outline: 2px solid rgb(var(--text-color));
+  border-radius: 4px;
+}
+
+.contact-entries label {
+  display: flex;
+  gap: 10rem;
+}
+
 /* Mobile: tap effects. */
 @media (pointer: coarse) {
   .nav-item:active {
