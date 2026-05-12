@@ -36,6 +36,9 @@
 - Avoid using onclick() for buttons use addEventListener() instead.
 - Transitions should usually be in the base CSS selector (not in i.e. `:hover`).
 - Use `class` for styling and `id` for behaviors.
+- Convert images to `.webp` for better loading.
+  - `cwebp -q 80 INPUT.png -o OUTPUT.webp`
+  - OR: `for f in assets/*.png; do cwebp -q 80 "$f" -o "${f%.png}.webp"; done`
 
 ### Responsive Techniques
 
