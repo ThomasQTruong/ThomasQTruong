@@ -890,15 +890,15 @@ body.light-mode .nav-divider {
 }
 
 .contact-item .contact-value a::after {
-  width: 0;
-  height: 0;
-}
-
-.contact-item .contact-value a::after:hover {
   content: "";
-  width: 100%;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  transform: translateX(-50%);
   height: 1px;
   position: absolute;
+  background-color: rgb(var(--text-color) / 75%);
+  transition: width 0.2s ease;
 }
 
 .contact-form-wrapper form {
@@ -989,6 +989,10 @@ form .contact-submit button {
     box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
                 0 0 10px rgb(var(--theme-color) / 20%);
   }
+
+  .contact-item .contact-value a:active::after {
+    width: 100%;
+  }
 }
 
 /* PC / Mouse: Hover and expand effects. */
@@ -1035,6 +1039,10 @@ form .contact-submit button {
     background: rgb(var(--theme-color) / 10%);
     box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
                 0 0 10px rgb(var(--theme-color) / 20%);
+  }
+
+  .contact-item .contact-value a:hover::after {
+    width: 100%;
   }
 }
 

@@ -4,9 +4,9 @@
 async function loadConfig() {
   try {
     const response = await fetch("js/config.js");
-    // Check if its OK AND if its actually a JS file.
     const contentType = response.headers.get("Content-Type");
 
+    // Check if its OK AND if its actually a JS file.
     if (
       response.ok &&
       contentType &&
