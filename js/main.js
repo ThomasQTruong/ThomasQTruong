@@ -39,6 +39,7 @@ const sliders = document.querySelectorAll(".slider");
 const sliderImgs = document.querySelectorAll(".slider-img");
 const dots = document.querySelectorAll(".slider-dot");
 const contactForm = document.getElementById("contact-form");
+const contactSubmitBtn = document.getElementById("contact-submit-btn");
 
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
@@ -171,6 +172,11 @@ sliderImgs.forEach((img) => {
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  const textSpan = contactSubmitBtn.lastElementChild;
+  const btnText = textSpan.textContent;
+  contactSubmitBtn.disabled = true;
+  textSpan.textContent = "Sending...";
+
   // Parse data.
   const data = new FormData(contactForm);
   const queryString = new URLSearchParams(data).toString();
@@ -197,10 +203,14 @@ contactForm.addEventListener("submit", (e) => {
     .then(() => {
       alert("Message sent! I'll get back to you soon.");
       contactForm.reset();
+      contactSubmitBtn.disabled = false;
+      textSpan.textContent = btnText;
     })
     .catch((err) => {
       alert("Something went wrong in sending the message, please try again.");
       console.error("Error sending message:", err);
+      contactSubmitBtn.disabled = false;
+      textSpan.textContent = btnText;
     });
 });
 
