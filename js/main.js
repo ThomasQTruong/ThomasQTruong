@@ -1,3 +1,20 @@
+/**
+ * Loads the secret API key if exists for local testing.
+ */
+async function loadConfig() {
+  try {
+    const response = await fetch("js/config.js");
+    if (response.ok) {
+      const script = document.createElement("script");
+      script.src = "js/config.js";
+      document.head.appendChild(script);
+    }
+  } catch {
+    // Silent error.
+  }
+}
+loadConfig();
+
 // Variables.
 let scrollPosition = 0;
 let sidebarIsOpen = false;
@@ -147,12 +164,21 @@ sliderImgs.forEach((img) => {
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // Parse data and retrieve API key.
   const data = new FormData(contactForm);
-
   const queryString = new URLSearchParams(data).toString();
+  const G_SCRIPT_URL = window.G_SCRIPT_URL_LOCAL || "API_URL_PLACEHOLDER";
 
-  const G_SCRIPT_URL = "API_URL_PLACEHOLDER";
+  // If the placeholder hasnt been replaced, stop here.
+  if (G_SCRIPT_URL === "API_URL_PLACEHOLDER") {
+    console.error("API URL not configured.");
+    alert(
+      "Something went wrong in sending the message, please try again later.",
+    );
+    return;
+  }
 
+  // Send the information to the API.
   fetch(`${G_SCRIPT_URL}?${queryString}`, {
     method: "GET",
     mode: "no-cors",
