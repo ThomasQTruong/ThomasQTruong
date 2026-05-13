@@ -4,7 +4,14 @@
 async function loadConfig() {
   try {
     const response = await fetch("js/config.js");
-    if (response.ok) {
+    // Check if its OK AND if its actually a JS file.
+    const contentType = response.headers.get("Content-Type");
+
+    if (
+      response.ok &&
+      contentType &&
+      contentType.includes("application/javascript")
+    ) {
       const script = document.createElement("script");
       script.src = "js/config.js";
       document.head.appendChild(script);
@@ -164,13 +171,17 @@ sliderImgs.forEach((img) => {
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Parse data and retrieve API key.
+  // Parse data.
   const data = new FormData(contactForm);
   const queryString = new URLSearchParams(data).toString();
-  const G_SCRIPT_URL = window.G_SCRIPT_URL_LOCAL || "API_URL_PLACEHOLDER";
 
-  // If the placeholder hasnt been replaced, stop here.
-  if (G_SCRIPT_URL === "API_URL_PLACEHOLDER") {
+  // Retrieve API key.
+  const G_SCRIPT_URL = window.G_SCRIPT_URL_LOCAL
+    ? window.G_SCRIPT_URL_LOCAL
+    : "API_URL_PLACEHOLDER";
+
+  // If the placeholder hasnt been replaced, try local.
+  if (G_SCRIPT_URL === "API_URL" + "_PLACEHOLDER") {
     console.error("API URL not configured.");
     alert(
       "Something went wrong in sending the message, please try again later.",
