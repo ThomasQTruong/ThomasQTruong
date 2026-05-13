@@ -14,6 +14,7 @@ const navLinks = document.querySelectorAll("nav a");
 const sliders = document.querySelectorAll(".slider");
 const sliderImgs = document.querySelectorAll(".slider-img");
 const dots = document.querySelectorAll(".slider-dot");
+const contactForm = document.getElementById("contact-form");
 
 // Event listeners.
 navBtn.addEventListener("click", toggleSideBar);
@@ -140,6 +141,30 @@ sliderImgs.forEach((img) => {
       inline: "start",
     });
   });
+});
+
+// Add listener to when the user submits the contact form.
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = new FormData(contactForm);
+
+  const queryString = new URLSearchParams(data).toString();
+
+  const G_SCRIPT_URL = "API_URL_PLACEHOLDER";
+
+  fetch(`${G_SCRIPT_URL}?${queryString}`, {
+    method: "GET",
+    mode: "no-cors",
+  })
+    .then(() => {
+      alert("Message sent! I'll get back to you soon.");
+      contactForm.reset();
+    })
+    .catch((err) => {
+      alert("Something went wrong in sending the message, please try again.");
+      console.error("Error sending message:", err);
+    });
 });
 
 /**

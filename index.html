@@ -564,25 +564,28 @@
               </div>
             </div>
           </div>
-          <div class="contact-form">
+          <div class="contact-form-wrapper">
             <h2 class="contact-title">Contact Me</h2>
-            <!--
-            <form>
+            <form id="contact-form" action="API_URL_PLACEHOLDER" method="GET">
               <div class="contact-entries">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                 <label for="name">Name</label>
-                <input type="text" id="name">
+                <input type="text" name="name" id="name" required>
 
                 <label for="email">Email</label>
-                <input type="text" id="email">
+                <input type="text" name="email" id="email" required>
                 
                 <label for="content">Content</label>
-                <textarea id="content" rows="10"></textarea>
+                <textarea id="content" name="content" rows="10" required></textarea>
               </div>
               <div class="contact-submit">
-                <button type="submit">Send Email</button>
+                <button type="submit">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Send Email</span>
+                </button>
               </div>
             </form>
-            -->
           </div>
         </div>
       </section>
