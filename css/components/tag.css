@@ -1,0 +1,32 @@
+/* Tag component (Experience & Projects). */
+.tag {
+  display: inline-block;
+  background: rgb(var(--theme-color) / 10%);
+  color: rgb(var(--theme-color));
+  border: 1px solid rgb(var(--theme-color) / 30%);
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tag--alt {
+  background: rgb(var(--text-color) / 10%);
+  color: rgb(var(--text-color) / 80%);
+  border: 1px solid rgb(var(--text-color) / 30%);
+}
+
+@media (pointer: coarse) {
+  .tag:active {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,9 +1,8 @@
 /* Section Header Component */
 .section-header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  align-items: baseline;
+  gap: 0 0.5rem;
   color: rgb(var(--text-color));
 }
 
