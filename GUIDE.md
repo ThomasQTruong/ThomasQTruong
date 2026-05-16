@@ -39,6 +39,8 @@
 - Convert images to `.webp` for better loading.
   - `cwebp -q 80 INPUT.png -o OUTPUT.webp`
   - OR: `for f in assets/*.png; do cwebp -q 80 "$f" -o "${f%.png}.webp"; done`
+- Modularize CSS styles into different .css files.
+- Use BEM naming convention for css styles for easier readability.
 
 ### Responsive Techniques
 
