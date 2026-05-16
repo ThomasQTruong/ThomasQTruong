@@ -78,6 +78,11 @@ main section {
   display: none;
 }
 
+.u-theme-heading {
+  color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
+}
+
 .u-list-stack {
   display: flex;
   flex-direction: column;

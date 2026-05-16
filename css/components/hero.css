@@ -46,18 +46,9 @@
   flex: 1 1 16rem;
 }
 
-.hero .hero__job-title {
-  color: rgb(var(--theme-color));
-  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
-}
-
 .hero .hero__degree {
   color: rgb(var(--text-color) / 50%);
   text-shadow: 0 0 6px rgb(var(--theme-color) / 25%);
-}
-
-html.is-light-mode .hero__job-title {
-  text-shadow: 0 0 4px rgb(var(--theme-color) / 30%);
 }
 
 @media screen and (width >= 32em) {

@@ -15,11 +15,6 @@ html.is-light-mode .card {
   backdrop-filter: blur(12px) saturate(180%);
 }
 
-.card .card-heading {
-  color: rgb(var(--theme-color));
-  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
-}
-
 .card--interactive {
   transition: all 0.3s ease;
 }
