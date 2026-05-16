@@ -50,6 +50,7 @@
   height: 2px;
   width: calc(2rem - 8px);
   background-color: rgb(var(--text-color) / 20%);
+  transition: background-color 0.2s ease;
 
   /* Use the line's center for vertical positioning. */
   transform: translateY(-50%);
