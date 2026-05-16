@@ -27,7 +27,7 @@
 }
 
 .contact__list .contact__item-header {
-  font-size: 1.25rem;
+  font-size: var(--step-0);
 }
 
 .contact__item .contact__item-value a {

@@ -37,11 +37,6 @@
   transition: margin 0.2s ease;
 }
 
-.navbar__logo-wrapper a {
-  font-size: var(--step-1);
-  font-weight: 600;
-}
-
 .navbar__item {
   min-width: 44px;
   min-height: 44px;

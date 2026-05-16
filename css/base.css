@@ -95,6 +95,38 @@ main section {
   line-height: 1.6;
 }
 
+/* Typography. */
+.text--interactive,
+.text--interactive span {
+  font-size: var(--step-n1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text--head,
+.text--head span {
+  font-size: var(--step-0);
+  line-height: 1.2;
+}
+
+.text--body,
+.text--body span {
+  font-size: var(--step-n1);
+  line-height: 1.6;
+}
+
+.heading--primary,
+.heading--primary span {
+  font-size: var(--step-2);
+  line-height: 1.2;
+}
+
+.heading--secondary,
+.heading--secondary span {
+  font-size: var(--step-1);
+  line-height: 1.2;
+}
+
 @media screen and (width >= 32em) {
   body.is-no-scroll {
     overflow: visible;
