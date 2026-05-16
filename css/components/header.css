@@ -1,0 +1,57 @@
+/* Header block (site chrome above navbar). */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+
+  /* Use inset padding or no padding. */
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+header:has(.navbar__list.is-visible) {
+  /* Glassy effect. */
+  background-color: rgb(var(--nav-bar-color) / 70%);
+  backdrop-filter: blur(10px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(var(--text-color) / 5%);
+}
+
+header.header--sticky {
+  position: fixed;
+  animation: slidedown .4s forwards;
+
+  /* Glassy effect. */
+  background-color: rgb(var(--nav-bar-color) / 70%);
+  backdrop-filter: blur(10px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(var(--text-color) / 5%);
+}
+
+/* Animation starting from -100% of the nav bar to 0. */
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+  }
+}
+
+@media screen and (width >= 32em) {
+  header:not(.header--sticky):has(.navbar__list.is-visible) {
+    background-color: transparent;
+    backdrop-filter: none;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,66 @@
+/* Shared outline button pattern (hero links, project links, contact submit). */
+.hero__social-links,
+.projects__links {
+  margin-top: 1rem;
+}
+
+.hero__social-links a,
+.projects__links a,
+.contact__form-actions button {
+  display: inline-flex;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: rgb(var(--text-color));
+  border: 2px solid rgb(var(--theme-color) / 70%);
+  border-radius: 0.5rem;
+  padding: 0.15em 0.25em;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: all 0.3s ease;
+}
+
+.contact__form-actions button {
+  gap: 0.25em;
+  background-color: transparent;
+  padding: 0.75em 1em;
+  cursor: pointer;
+}
+
+@media (pointer: coarse) {
+  .hero__social-links a:active,
+  .projects__links a:active,
+  .contact__form-actions button:active {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%),
+                0 0 10px rgb(var(--theme-color) / 20%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero__social-links a:hover,
+  .projects__links a:hover,
+  .contact__form-actions button:hover {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%),
+                0 0 10px rgb(var(--theme-color) / 20%);
+  }
+}
+
+@media screen and (width >= 32em) {
+  .hero__social-links a,
+  .projects__links a {
+    min-height: auto;
+    gap: 0.25rem;
+  }
+
+  .contact__form-actions button {
+    min-width: auto;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,12 @@
+/* Section Header Component */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: rgb(var(--text-color));
+}
+
+.section-header i {
+  color: rgb(var(--text-color));
+}

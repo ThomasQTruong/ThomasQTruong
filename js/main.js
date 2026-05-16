@@ -35,9 +35,9 @@ const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
 const navBtn = document.getElementById("sidebar-btn");
 const navLinks = document.querySelectorAll("nav a");
-const sliders = document.querySelectorAll(".slider");
-const sliderImgs = document.querySelectorAll(".slider-img");
-const dots = document.querySelectorAll(".slider-dot");
+const sliders = document.querySelectorAll(".slider__track");
+const sliderImgs = document.querySelectorAll(".slider__slide");
+const dots = document.querySelectorAll(".slider__dot");
 const contactForm = document.getElementById("contact-form");
 const contactSubmitBtn = document.getElementById("contact-submit-btn");
 
@@ -49,7 +49,7 @@ themeBtn.addEventListener("click", toggleTheme);
 updateScreen(); // Initialize inert state.
 media.addEventListener("change", (e) => {
   // Stop all animations while resizing.
-  document.body.classList.add("no-animate");
+  document.body.classList.add("u-no-animate");
 
   isLargeScreen = e.matches;
   updateScreen();
@@ -57,7 +57,7 @@ media.addEventListener("change", (e) => {
   // Debounce: Remove the stopper once resizing stops.
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    document.body.classList.remove("no-animate");
+    document.body.classList.remove("u-no-animate");
   }, 400);
 });
 
@@ -68,9 +68,9 @@ window.addEventListener("scroll", function () {
   }
 
   if (window.scrollY > 200) {
-    header.classList.add("slidedown");
+    header.classList.add("header--sticky");
   } else {
-    header.classList.remove("slidedown");
+    header.classList.remove("header--sticky");
   }
 });
 
@@ -78,7 +78,7 @@ window.addEventListener("scroll", function () {
 navLinks.forEach((link) => {
   // User clicked link and sidebar is shown, hide sidebar.
   link.addEventListener("click", () => {
-    if (navList.classList.contains("show")) {
+    if (navList.classList.contains("is-visible")) {
       toggleSideBar();
     }
   });
@@ -87,7 +87,7 @@ navLinks.forEach((link) => {
 // Add a listener for each slider.
 sliders.forEach((slider) => {
   const slides = slider.children;
-  const sliderDots = slider.parentElement.querySelectorAll(".slider-dot");
+  const sliderDots = slider.parentElement.querySelectorAll(".slider__dot");
 
   // Flag to lock the slider to prevent over-animating slider dots.
   slider.dataset.isLocked = "false";
@@ -108,10 +108,10 @@ sliders.forEach((slider) => {
           const activeDot = sliderDots[index];
           if (activeDot) {
             sliderDots.forEach((dot) => {
-              dot.classList.remove("active");
+              dot.classList.remove("is-active");
               dot.ariaCurrent = "false";
             });
-            activeDot.classList.add("active");
+            activeDot.classList.add("is-active");
             activeDot.ariaCurrent = "true";
           }
         }
@@ -129,7 +129,7 @@ dots.forEach((dot) => {
     const clickedDot = e.target;
 
     // The image is already active.
-    if (clickedDot.classList.contains("active")) {
+    if (clickedDot.classList.contains("is-active")) {
       return;
     }
 
@@ -224,9 +224,9 @@ function toggleSideBar() {
   sidebarIsOpen = !sidebarIsOpen;
 
   // Toggle show on since it doesn't contain show class.
-  if (!navList.classList.contains("show")) {
-    navList.classList.add("show");
-    navBtn.classList.add("show");
+  if (!navList.classList.contains("is-visible")) {
+    navList.classList.add("is-visible");
+    navBtn.classList.add("is-visible");
 
     // Wait for open/close animation.
     setTimeout(() => {
@@ -239,12 +239,12 @@ function toggleSideBar() {
       navList.inert = false;
 
       // Prevent scrolling page when sidebar is open.
-      document.body.classList.add("no-scroll");
+      document.body.classList.add("is-no-scroll");
     }, 400);
   } else {
     // Prevent scrolling page when sidebar is open.
-    document.body.classList.remove("no-scroll");
-    header.classList.add("no-animate");
+    document.body.classList.remove("is-no-scroll");
+    header.classList.add("u-no-animate");
 
     // 4. Immediately jump back to where they were
     window.scrollTo({ left: 0, top: scrollPosition, behavior: "instant" });
@@ -259,10 +259,10 @@ function toggleSideBar() {
     // Ensure animations have finished before re-enabling animations.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        header.classList.remove("no-animate");
+        header.classList.remove("u-no-animate");
         // Close nav bar with animations.
-        navList.classList.remove("show");
-        navBtn.classList.remove("show");
+        navList.classList.remove("is-visible");
+        navBtn.classList.remove("is-visible");
       });
     });
   }
@@ -273,7 +273,7 @@ function toggleSideBar() {
  * @returns {void}
  */
 function toggleTheme() {
-  const isLightMode = document.documentElement.classList.toggle("light-mode");
+  const isLightMode = document.documentElement.classList.toggle("is-light-mode");
 
   themeBtn.setAttribute("aria-pressed", String(isLightMode));
 }
@@ -285,7 +285,7 @@ function toggleTheme() {
  */
 function updateScreen() {
   // User"s screen size is mobile AND navList is hidden.
-  const isHidden = !isLargeScreen && !navList.classList.contains("show");
+  const isHidden = !isLargeScreen && !navList.classList.contains("is-visible");
 
   navList.inert = isHidden;
 }
@@ -300,13 +300,13 @@ function sliderGoToStart(slider) {
   slider.dataset.isLocked = "true";
 
   // Set proper dot active states.
-  const sliderDots = slider.parentElement.querySelectorAll(".slider-dot");
+  const sliderDots = slider.parentElement.querySelectorAll(".slider__dot");
   sliderDots.forEach((dot) => {
-    dot.classList.remove("active");
+    dot.classList.remove("is-active");
     dot.ariaCurrent = "false";
   });
   if (sliderDots.length > 0) {
-    sliderDots[0].classList.add("active");
+    sliderDots[0].classList.add("is-active");
     sliderDots[0].ariaCurrent = "true";
   }
 

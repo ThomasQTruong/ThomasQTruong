@@ -1,0 +1,11 @@
+/* Skills block. */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skills__card h3 {
+  margin: 0;
+}

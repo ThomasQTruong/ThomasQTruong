@@ -1,0 +1,74 @@
+/* Slider block (project image carousel). */
+.slider {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 100%;
+  max-height: 16rem;
+}
+
+.slider__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* Smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider__slide {
+  display: flex;
+  flex: 1 0 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  scroll-snap-align: start;
+  justify-content: center;
+  align-items: center;
+  color: rgb(var(--text-color));
+  width: 100%;
+  height: auto;
+  max-height: 16rem;
+}
+
+.slider__track .slider__slide img.is-loaded {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__nav {
+  column-gap: 1rem;
+  margin-top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider__nav button,
+.slider__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(var(--text-color) / 40%);
+  border: none;
+  transition: background-color ease 0.2s;
+  cursor: pointer;
+}
+
+.slider__nav button.is-active,
+.slider__dot.is-active {
+  background-color: rgb(var(--text-color) / 75%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .slider__nav button:hover,
+  .slider__dot:hover {
+    background-color: rgb(var(--text-color));
+  }
+}

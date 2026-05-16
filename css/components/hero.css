@@ -1,0 +1,79 @@
+/* Hero block. */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100svh;
+  background: radial-gradient(circle at center,
+      var(--background-gradient-2),
+      var(--background-gradient-1));
+  box-shadow: 0 1rem 2rem rgb(var(--text-color) / 20%);
+  z-index: 5;
+  transition: --background-gradient-1 0.2s ease, --background-gradient-2 0.2s ease;
+}
+
+.hero__container {
+  max-width: 90em;
+  width: 100%;
+  margin: var(--nav-height) auto;
+}
+
+.hero .hero__headshot {
+  display: flex;
+  max-width: var(--headshot-size-fluid);
+  min-width: 16rem;
+  margin: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 6px solid rgb(var(--theme-color));
+  box-shadow: 0 0 15px rgb(var(--theme-color) / 30%),
+              0 0 30px rgb(var(--theme-color) / 20%);
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .hero__headshot img.is-loaded {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero .hero__content {
+  flex: 1 1 16rem;
+}
+
+.hero .hero__job-title {
+  color: rgb(var(--theme-color));
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 30%);
+}
+
+.hero .hero__degree {
+  color: rgb(var(--text-color) / 50%);
+  text-shadow: 0 0 6px rgb(var(--theme-color) / 25%);
+}
+
+html.is-light-mode .hero__job-title {
+  text-shadow: 0 0 4px rgb(var(--theme-color) / 30%);
+}
+
+@media screen and (width >= 32em) {
+  .hero__container {
+    gap: var(--nav-padding-fluid);
+    justify-content: space-between;
+  }
+
+  .hero .hero__headshot {
+    min-width: 22rem;
+    border-width: 8px;
+    box-shadow: 0 0 20px rgb(var(--theme-color) / 40%),
+                0 0 40px rgb(var(--theme-color) / 20%);
+  }
+
+  .hero .hero__job-title {
+    text-shadow: 0 0 8px rgb(var(--theme-color) / 45%);
+  }
+}

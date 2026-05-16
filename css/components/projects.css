@@ -1,0 +1,103 @@
+/* Projects block. */
+.projects__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.projects__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects__title {
+  display: flex;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.projects__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(var(--text-color) / 10%);
+}
+
+.projects__tag {
+  position: relative;
+  background: rgb(var(--text-color) / 10%);
+  color: rgb(var(--text-color) / 80%);
+  border: 1px solid rgb(var(--text-color) / 30%);
+  border-radius: 4px;
+  padding: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+}
+
+.projects__description {
+  margin: 0 1.5rem;
+}
+
+.projects__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.projects__links a {
+  display: inline-flex;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: rgb(var(--text-color));
+  border: 2px solid rgb(var(--theme-color) / 70%);
+  border-radius: 0.5rem;
+  padding: 0.15em 0.25em;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  transition: all 0.3s ease;
+}
+
+@media (pointer: coarse) {
+  .projects__tag:active {
+    transform: scale(1.1);
+  }
+
+  .projects__links a:active {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
+                0 0 10px rgb(var(--theme-color) / 20%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__tag:hover {
+    transform: scale(1.1);
+  }
+
+  .projects__links a:hover {
+    transform: translateY(-3px);
+    border-color: rgb(var(--theme-color));
+    background: rgb(var(--theme-color) / 10%);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 30%), 
+                0 0 10px rgb(var(--theme-color) / 20%);
+  }
+}
+
+@media screen and (width >= 32em) {
+  .projects__grid {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  }
+}

@@ -1,0 +1,107 @@
+/* Global reset & document layout. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.u-no-animate * {
+  animation: none !important;
+  transition: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  /* For mobile insets. */
+  background-color: var(--background-gradient-1);
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: rgb(var(--text-color));
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  transition: color 0.2s ease;
+
+  /* Font smoothing for Mac/iOS and Firefox. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.is-no-scroll {
+  overflow: hidden;
+  height: 100svh;
+  overscroll-behavior: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(var(--background-color));
+  background-image:
+    radial-gradient(ellipse 80% 30% at 50% 0%, rgb(var(--text-color) / 10%) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 20% at 50% 100%, rgb(var(--text-color) / 4%) 0%, transparent 70%),
+    radial-gradient(rgb(var(--text-color) / 5%) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px;
+  background-attachment: fixed;
+  transition: background-color 0.2s ease;
+}
+
+main section {
+  width: 100%;
+
+  /* When clicking hrefs to go to sections, stop above the section. */
+  scroll-margin-top: var(--nav-height);
+
+  /* Use normal padding or padding for mobile insets. */
+  padding: 2rem max(var(--nav-padding-mobile), env(safe-area-inset-left));
+}
+
+/* Focus styles. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--text-color));
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Utilities. */
+.u-mobile-hidden {
+  display: none;
+}
+
+.u-list-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.u-list-stack li {
+  line-height: 1.6;
+}
+
+@media screen and (width >= 32em) {
+  body.is-no-scroll {
+    overflow: visible;
+    height: auto;
+  }
+
+  main section {
+    padding-left: var(--nav-padding-fluid);
+    padding-right: var(--nav-padding-fluid);
+  }
+
+  .u-mobile-hidden {
+    display: inline;
+  }
+}

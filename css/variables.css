@@ -1,0 +1,66 @@
+/* Hero gradient colors (animatable). */
+@property --background-gradient-1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgb(2 6 23);
+}
+
+@property --background-gradient-2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgb(56 57 58);
+}
+
+:root {
+  /*
+    === BREAKPOINTS (Reference only) ===
+    Mobile: width < 32em
+    Tablet/Laptop: width >= 32em
+    Desktop: width >= 64em
+  */
+
+  /* === COLORS === */
+  --text-color: 255 255 255;
+  --background-color: 60 60 60;
+  --nav-bar-color: 37 37 38;
+  --nav-list-color: 54 54 54;
+  --nav-hover-color: 175 238 238;
+  --sun-color: 238 218 104;
+  --moon-color: 123 104 238;
+  --theme-color: 115 197 255;
+  --background-gradient-1: rgb(2 6 23);
+  --background-gradient-2: rgb(56 57 58);
+
+  /*
+    === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
+    --step-n1: Small text (nav texts / projects texts).
+    --step-1: Big text (nav page logo).
+    --step-icon: Icon sizing.
+  */
+  --step-n2: clamp(0.7813rem, 0.7297rem + 0.1717vw, 0.88rem);
+  --step-n1: clamp(0.9375rem, 0.8527rem + 0.2826vw, 1.1rem);
+  --step-0: clamp(1.125rem, 0.9946rem + 0.4348vw, 1.375rem);
+  --step-1: clamp(1.35rem, 1.1576rem + 0.6413vw, 1.7188rem);
+  --step-2: clamp(1.62rem, 1.3443rem + 0.919vw, 2.1484rem);
+  --step-3: clamp(1.944rem, 1.5571rem + 1.2896vw, 2.6855rem);
+  --step-4: clamp(2.3328rem, 1.7985rem + 1.7811vw, 3.3569rem);
+  --step-5: clamp(2.7994rem, 2.0706rem + 2.4292vw, 4.1962rem);
+  --step-icon: clamp(1.125rem, 1.3152rem + -0.2174vw, 1.25rem);
+
+  /* --- SPACING & UI --- */
+  --nav-padding-mobile: 1.5625rem;
+  --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
+  --nav-height: 5rem;
+  --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
+}
+
+html.is-light-mode {
+  --text-color: 0 0 0;
+  --background-color: 238 239 241;
+  --nav-bar-color: 162 163 168;
+  --nav-list-color: 184 185 192;
+  --nav-hover-color: 75 170 255;
+  --theme-color: 80 160 250;
+  --background-gradient-1: rgb(190 192 202);
+  --background-gradient-2: rgb(244 244 244);
+}
