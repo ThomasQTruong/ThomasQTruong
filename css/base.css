@@ -59,7 +59,7 @@ main section {
   scroll-margin-top: var(--nav-height);
 
   /* Use normal padding or padding for mobile insets. */
-  padding: 2rem max(var(--nav-padding-mobile), env(safe-area-inset-left));
+  padding: 2.5rem max(var(--nav-padding-mobile), env(safe-area-inset-left));
 }
 
 /* Focus styles. */

@@ -50,6 +50,11 @@
   color: rgb(var(--text-color) / 50%);
   text-shadow: 0 0 6px rgb(var(--theme-color) / 25%);
   transition: color 0.2s ease, text-shadow 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+.hero__greet {
+  margin-bottom: 0.75rem;
 }
 
 @media screen and (width >= 32em) {
