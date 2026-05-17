@@ -17,6 +17,8 @@
 - [Clamp Calculator](https://utopia.fyi/type/calculator/)
 - [What Unit To Use](https://whatunit.com/)
 - [Responsive Tester](https://responsivetesttool.com/)
+- [AI/Company Icons](https://lobehub.com/icons?q=)
+- [Language Icons](https://icons8.com/icons/)
 
 # Portfolio Examples
 

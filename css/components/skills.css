@@ -27,7 +27,7 @@
 }
 
 .skills__card-head i {
-  color: rgb(var(--text-color) / 50%);
+  color: rgb(var(--text-color) / 25%);
 }
 
 .skills__list {
@@ -39,6 +39,10 @@
   align-items: center;
   gap: 0.5rem;
   transition: transform 0.2s ease;
+}
+
+.skills__list img {
+  width: 1rem;
 }
 
 @media (hover: hover) and (pointer: fine) {

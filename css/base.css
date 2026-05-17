@@ -88,6 +88,18 @@ main section {
   line-height: 1.6;
 }
 
+.u-saturate-light {
+  filter: saturate(250%);
+}
+
+.u-saturate-medium {
+  filter: saturate(500%);
+}
+
+.u-saturate-heavy {
+  filter: saturate(1000%);
+}
+
 /* Typography. */
 .text--interactive,
 .text--interactive span {
