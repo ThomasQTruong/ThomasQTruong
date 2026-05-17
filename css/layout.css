@@ -41,6 +41,14 @@
   flex-direction: column;
 }
 
+.layout-hsplit {
+  display: flex;
+}
+
+.layout-hsplit__right {
+  margin-left: auto;
+}
+
 @media screen and (width >= 32em) {
   .layout--column-to-row {
     flex-direction: row;

@@ -6,6 +6,24 @@
   justify-content: center;
 }
 
-.skills__card h3 {
+.skills__card-head {
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  gap: 0.5rem;
+}
+
+.skills__card-head i {
+  color: rgb(var(--text-color) / 50%);
+}
+
+.skills__list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

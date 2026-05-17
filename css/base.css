@@ -99,6 +99,7 @@ main section {
 .text--head,
 .text--head span {
   font-size: var(--step-0);
+  font-weight: 600;
   line-height: 1.2;
 }
 
