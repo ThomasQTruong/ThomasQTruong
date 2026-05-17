@@ -31,6 +31,7 @@ let resizeTimer;
 
 // DOM element selectors.
 const header = document.getElementById("header");
+const sections = document.querySelectorAll("section");
 const themeBtn = document.getElementById("theme-btn");
 const navList = document.getElementById("nav-list");
 const navBtn = document.getElementById("sidebar-btn");
@@ -82,6 +83,45 @@ navLinks.forEach((link) => {
       toggleSideBar();
     }
   });
+});
+
+// Add a listener for every section to update the aria-current attribute.
+sections.forEach(() => {
+  // Create an observer that listens for intersection.
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // If the sidebar is open and user is on mobile.
+        if (sidebarIsOpen && !isLargeScreen) {
+          return;
+        }
+
+        // Intersecting with the section.
+        if (entry.isIntersecting) {
+          // Obtain the section's ID.
+          const id = entry.target.getAttribute("id");
+
+          // For each navbar link.
+          navLinks.forEach((link) => {
+            // Remove the aria-current.
+            link.removeAttribute("aria-current");
+
+            // If navbar link is the intersected section, set ariaCurrent.
+            if (link.getAttribute("href") === `#${id}`) {
+              link.ariaCurrent = "page";
+            }
+          });
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "-20% 0px -79% 0px",
+      threshold: 0,
+    },
+  );
+
+  Array.from(sections).forEach((section) => observer.observe(section));
 });
 
 // Add a listener for each slider.
@@ -273,7 +313,8 @@ function toggleSideBar() {
  * @returns {void}
  */
 function toggleTheme() {
-  const isLightMode = document.documentElement.classList.toggle("is-light-mode");
+  const isLightMode =
+    document.documentElement.classList.toggle("is-light-mode");
 
   themeBtn.setAttribute("aria-pressed", String(isLightMode));
 }
