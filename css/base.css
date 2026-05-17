@@ -42,13 +42,6 @@ main {
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  background-color: rgb(var(--background-color));
-  background-image:
-    radial-gradient(ellipse 80% 30% at 50% 0%, rgb(var(--text-color) / 10%) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 20% at 50% 100%, rgb(var(--text-color) / 4%) 0%, transparent 70%),
-    radial-gradient(rgb(var(--text-color) / 5%) 1px, transparent 1px);
-  background-size: auto, auto, 24px 24px;
-  background-attachment: fixed;
   transition: background-color 0.2s ease;
 }
 
@@ -125,6 +118,31 @@ main section {
 .heading--secondary span {
   font-size: var(--step-1);
   line-height: 1.2;
+}
+
+/* Backgrounds. */
+.bg--glassy {
+  background: rgb(255 255 255 / 3%);
+  backdrop-filter: blur(15px);
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.bg--dots {
+  background-color: rgb(var(--background-color));
+  background-image:
+    radial-gradient(ellipse 80% 30% at 50% 0%, rgb(var(--text-color) / 10%) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 20% at 50% 100%, rgb(var(--text-color) / 4%) 0%, transparent 70%),
+    radial-gradient(rgb(var(--text-color) / 5%) 1px, transparent 1px);
+  background-size: auto, auto, 24px 24px;
+  background-attachment: fixed;
+}
+
+.bg--gradient {
+  background: radial-gradient(circle at center,
+      var(--background-gradient-2),
+      var(--background-gradient-1));
+  box-shadow: 0 1rem 2rem rgb(var(--text-color) / 20%);
 }
 
 @media screen and (width >= 32em) {

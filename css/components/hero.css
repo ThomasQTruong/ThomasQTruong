@@ -5,10 +5,6 @@
   align-items: center;
   width: 100%;
   min-height: 100svh;
-  background: radial-gradient(circle at center,
-      var(--background-gradient-2),
-      var(--background-gradient-1));
-  box-shadow: 0 1rem 2rem rgb(var(--text-color) / 20%);
   z-index: 5;
   transition: --background-gradient-1 0.2s ease, --background-gradient-2 0.2s ease;
 }
@@ -33,6 +29,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  transition: border-color 0.2s ease;
 }
 
 .hero .hero__headshot img.is-loaded {

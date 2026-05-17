@@ -24,13 +24,15 @@
 }
 
 .projects__cta a {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border-width: 3px;
 }
 
 .contact__form-actions button {
-  gap: 0.25em;
+  gap: 0.25rem;
   background-color: transparent;
-  padding: 0.75em 1em;
+  border-width: 3px;
+  padding: 0.75rem 1rem;
   cursor: pointer;
 }
 
