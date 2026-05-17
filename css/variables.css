@@ -34,6 +34,7 @@
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
     Settings: 320w 18px 1.2 | 1240w 20px 1.333
+    --step-n2: Small text (text--tag).
     --step-n1: Normal text (text--interactive, text--body).
     --step-0: Element header texts (text--head).
     --step-1: Big text (heading--secondary).
@@ -56,8 +57,8 @@
   --nav-padding-mobile: 1.5625rem;
   --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
-  --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
   --nav-item-gap: clamp(0.1875rem, -0.625rem + 2.5391vw, 1rem);
+  --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
 }
 
 html.is-light-mode {
