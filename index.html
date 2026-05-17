@@ -1,676 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    <!-- Site Title and Icon. -->
-    <title>Thomas Truong</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/head/favicon.svg">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/head/favicon-48x48.png">
-    <link rel="apple-touch-icon" href="/assets/head/favicon-apple.png">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
 
-    <!-- Open Graph Preview. -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:title" name="twitter:title" content="Thomas Truong | Software Engineer">
-    <meta property="og:description" name="twitter:description" content="2025 CS grad from Cal Poly Pomona specializing in Java and Python. Creator of the Cobblemon Breeding mod (200k+ downloads).">
-    <meta property="og:image" name="twitter:image" content="https://thomastruong.pages.dev/assets/head/og-preview.png">
-    <meta property="og:url" content="https://thomastruong.pages.dev">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#73C5FF">
-  </head>
-  <body>
-    <!-- Navigation bar. -->
-    <header id="header" class="header">
-      <nav class="navbar">
-        <div class="navbar__logo-wrapper">
-          <a href="#hero" aria-current="page" class="text--interactive heading--primary">Thomas Truong</a>
-        </div>
-        <ul id="nav-list" class="navbar__list text--interactive text--nav">
-          <li>
-            <a href="#experience" class="navbar__item">
-              <i class="fa-solid fa-user" aria-hidden="true"></i>
-              <span>Experience</span>
-            </a>
-          </li>
-          <li>
-            <a href="#skills" class="navbar__item">
-              <i class="fa-solid fa-code" aria-hidden="true"></i>
-              <span>Skills</span>
-            </a>
-          </li>
-          <li>
-            <a href="#projects" class="navbar__item">
-              <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-              <span>Projects</span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="navbar__item navbar__item--cta">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-              <span>Contact</span>
-            </a>
-          </li>
-        </ul>
-        <span class="navbar__divider"></span>
-        <div class="navbar__actions layout--row">
-          <button id="theme-btn" class="navbar__item navbar__theme-toggle"
-                  aria-label="Switch to light mode"
-                  aria-pressed="false">
-            <i class="fa-solid fa-sun" aria-hidden="true"></i>
-            <i class="fa-solid fa-moon" aria-hidden="true"></i>
-          </button>
-          <button id="sidebar-btn" class="navbar__menu-toggle"
-                  aria-label="Menu"
-                  aria-expanded="false"
-                  aria-controls="nav-list">
-            <i class="fa-solid fa-bars navbar__menu-icon--hamburger" aria-hidden="true"></i>
-            <i class="fa-solid fa-x navbar__menu-icon--close" aria-hidden="true"></i>
-          </button>
-        </div>
-      </nav>
-    </header>
+  <!-- Site Title and Icon. -->
+  <title>Thomas Truong</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/head/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/head/favicon-48x48.png">
+  <link rel="apple-touch-icon" href="/assets/head/favicon-apple.png">
 
-    <main class="bg--dots">
-      <!-- Section 1: Hero. -->
-      <section id="hero" class="hero bg--gradient">
-        <div class="hero__container layout--column layout--column-to-row-wrap layout--gap-sm layout--center">
-          <div class="hero__headshot">
-            <img src="assets/hero/hero-headshot.webp"
-                 alt="Thomas Truong Headshot"
-                 onload="this.classList.add('is-loaded')">
-          </div>
-          <div class="hero__content card bg--glassy">
-            <h3 class="hero__job-title u-theme-heading heading--secondary">Software Engineer</h3>
-            <h4 class="hero__degree u-transition-color-glow text--body">B.S. Computer Science, Cal Poly Pomona '25</h4>
-            <h1 class="heading--primary hero__greet">Hi, I'm Thomas</h1>
-            <p class="text--body">
-              I have been most at home in front of a computer for as long as I can remember.
-              That early interest led me through a series of high school computer classes—from
-              <b>Game Design and Web Design to Java and Robotics</b>—and eventually to <b>Cal Poly
-              Pomona</b>, where I earned my degree in <b>Computer Science</b>.
-            </p><br>
-            <p class="text--body">
-              I build software that I personally want to use or that my friends and family are
-              looking for. My most notable project is the "<b>Cobblemon Breeding</b>" mod, which has
-              reached over <b>200,000 downloads</b>. To build it, I had to dive into the deep end of
-              the modding community—reading through the Kotlin source code of the official Cobblemon
-              API and manually refactoring complex file structures to ship a core feature the
-              community was missing.
-            </p><br>
-            <p class="text--body">
-              I am a "hardcore" user who is most at home at my desk. Whether I am navigating complex
-              file structures in <b>WSL Ubuntu</b> or troubleshooting hardware, I am at my best when
-              I have a specific problem to solve. I am currently looking for an <b>entry-level
-              Software Engineering role</b>, ideally in a remote-first environment, though I am open
-              to local opportunities or relocating for the right challenge.
-            </p>
+  <!-- Open Graph Preview. -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" name="twitter:title" content="Thomas Truong | Software Engineer">
+  <meta property="og:description" name="twitter:description"
+    content="2025 CS grad from Cal Poly Pomona specializing in Java and Python. Creator of the Cobblemon Breeding mod (200k+ downloads).">
+  <meta property="og:image" name="twitter:image" content="https://thomastruong.pages.dev/assets/head/og-preview.png">
+  <meta property="og:url" content="https://thomastruong.pages.dev">
+  <meta property="og:type" content="website">
+</head>
 
-            <div class="hero__social-links layout--row layout--center layout--gap-sm">
-              <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer"
-              aria-label="Open Thomas's GitHub in a new tab" class="text--interactive">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                <span class="u-mobile-hidden">GitHub</span>
-              </a>
-              <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer"
-              aria-label="Open Thomas's LinkedIn in a new tab" class="text--interactive">
-                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                <span class="u-mobile-hidden">LinkedIn</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Experience. -->
-      <section id="experience" class="experience section--constrained layout--column layout--gap-sm">
-        <h1 class="section-header heading--primary">
-          <i class="fa-solid fa-user" aria-hidden="true"></i>
-          <span><span class="u-mobile-hidden">Technical </span>Experience</span>
-        </h1>
-        <div class="timeline layout--column layout--gap-md">
-          <div class="timeline__item">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card card card--interactive bg--glassy">
-              <div class="timeline__header">
-                <h3 class="u-theme-heading text--head">Lead Developer | Cobblemon Breeding</h3>
-                <span class="timeline__date">April 2023 - Feb. 2025</span>
-              </div>
-              <ul class="u-list-stack text--body">
-                <li>Maintained live mod with <strong>200,000+ total downloads</strong>, performing
-                  full software development lifecycle and critical maintenance.</li>
-                <li>Migrated codebase across major versions (v1.3.2 -&gt; v1.4 -&gt; v1.6.1),
-                  developing in Java analyzing Kotlin source to ensure API compatibility and
-                  stability.</li>
-                <li>Engineered complex features including shiny rate configs, VIP breeding
-                  cooldowns, and hidden ability inheritance systems.</li>
-              </ul>
-              <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
-                <span class="tag">Java</span>
-                <span class="tag">Gradle</span>
-                <span class="tag">Minecraft SDK</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__item">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card card card--interactive bg--glassy">
-              <div class="timeline__header">
-                <h3 class="u-theme-heading text--head">Technical Peer Tutor | Freelance & Collegiate</h3>
-                <span class="timeline__date">Aug. 2020 - Dec. 2024</span>
-              </div>
-              <ul class="u-list-stack text--body">
-                <li>Provided 1-on-1 technical guidance to CS peers, specializing in C++, Java,
-                  and Python.</li>
-                <li>Simplified abstract concepts like Object-Oriented Programming and Data
-                  Structures into actionable examples for coursework.</li>
-                <li>Mentored students on setting up and optimizing development environments,
-                  including <strong>WSL Ubuntu</strong> on Windows.</li>
-              </ul>
-              <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
-                <span class="tag">C++</span>
-                <span class="tag">Java</span>
-                <span class="tag">Python</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__item">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card card card--interactive bg--glassy">
-              <div class="timeline__header">
-                <h3 class="u-theme-heading text--head">Lead Developer | Flash Study</h3>
-                <span class="timeline__date">June 2023 - July 2023</span>
-              </div>
-              <ul class="u-list-stack text--body">
-                <li>Engineered a robust persistence layer utilizing Cloud Firestore for real-time
-                  synchronization and Sqflite for local SQL storage, ensuring data availability in
-                  offline environments.</li>
-                <li>Integrated Firebase Auth to manage secure user life-cycles, supporting account
-                  creation and personalized data syncing across multiple Android devices.</li>
-                <li>Leveraged Path Provider and File Picker to build a custom JSON serialization
-                  engine, enabling users to export and import study sets as physical files.</li>
-                <li>Utilized Settings UI and Google Fonts to implement a modern interface featuring
-                  a dynamic Dark Mode, progress tracking, and custom-branded launch icons.</li>
-              </ul>
-              <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
-                <span class="tag">Flutter</span>
-                <span class="tag">Firebase</span>
-                <span class="tag">SQL</span>
-                <span class="tag">Dart</span>
-                <span class="tag">JSON</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 3: Skills. -->
-      <section id="skills" class="skills section--constrained layout--column layout--gap-sm">
-          <h1 class="section-header heading--primary">
+<body>
+  <!-- Navigation bar. -->
+  <header id="header" class="header">
+    <nav class="navbar">
+      <div class="navbar__logo-wrapper">
+        <a href="#hero" aria-current="page" class="text--interactive heading--primary">Thomas Truong</a>
+      </div>
+      <ul id="nav-list" class="navbar__list text--interactive text--nav">
+        <li>
+          <a href="#experience" class="navbar__item">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <span>Experience</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="navbar__item">
             <i class="fa-solid fa-code" aria-hidden="true"></i>
-            <span><span class="u-mobile-hidden">Technical </span>Skills</span>
-          </h1>
-          <div class="skills__grid">
-            <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
-              <div class="skills__card-head layout-hsplit text--head">
-                <span class="u-theme-heading">Languages</span>
-                <i class="fa-solid fa-code layout-hsplit__right" aria-hidden="true"></i>
-              </div>
-              <ul class="skills__list u-list-stack text--body">
-                <li class="text--body">
-                  <img src="assets/icons/java.svg" class="u-saturate-medium" aria-hidden="true">
-                  <span>Java</span>
-                </li>
-                <li class="text--body">
-                  <img src="assets/icons/python.svg" aria-hidden="true">
-                  <span>Python</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-cplusplus-plain colored u-saturate-medium" aria-hidden="true"></i>
-                  <span>C/C++</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-html5-plain colored" aria-hidden="true"></i>
-                  <span>HTML/CSS</span>
-                </li>            
-                <li class="text--body">
-                  <img src="assets/icons/javascript.svg" aria-hidden="true">
-                  <span>JavaScript</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-csharp-plain colored u-saturate-light" aria-hidden="true"></i>
-                  <span>C#</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-dart-plain colored" aria-hidden="true"></i>
-                  <span>Dart</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
-              <div class="skills__card-head layout-hsplit text--head">
-                <span class="u-theme-heading">Frameworks/Engines</span>
-                <i class="fa-solid fa-gear layout-hsplit__right" aria-hidden="true"></i>
-              </div>
-              <ul class="skills__list u-list-stack text--body">
-                <li class="text--body">
-                  <i class="devicon-unity-plain" aria-hidden="true"></i>
-                  <span>Unity</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-flutter-plain colored" aria-hidden="true"></i>
-                  <span>Flutter</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
-              <div class="skills__card-head layout-hsplit text--head">
-                <span class="u-theme-heading">Databases/Cloud</span>
-                <i class="fa-solid fa-cloud layout-hsplit__right" aria-hidden="true"></i>
-              </div>
-              <ul class="skills__list u-list-stack text--body">
-                <li class="text--body">
-                  <img src="assets/icons/googlecloud-color.svg" aria-hidden="true">
-                  <span>GCP</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-firebase-plain colored" aria-hidden="true"></i>
-                  <span>Firebase</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i>
-                  <span>AWS</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-sqlite-plain colored" aria-hidden="true"></i>
-                  <span>SQLite</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
-              <div class="skills__card-head layout-hsplit text--head">
-                <span class="u-theme-heading">Developer Tools</span>
-                <i class="fa-solid fa-screwdriver-wrench layout-hsplit__right" aria-hidden="true"></i>
-              </div>
-              <ul class="skills__list u-list-stack text--body">
-                <li class="text--body">
-                  <i class="devicon-git-plain colored" aria-hidden="true"></i>
-                  <span>Git</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-ubuntu-plain colored" aria-hidden="true"></i>
-                  <span>Linux / WSL</span>
-                </li>
-                <li class="text--body">
-                  <img src="assets/icons/geminicli-color.svg" aria-hidden="true">
-                  <span>Gemini CLI</span>
-                </li>
-                <li class="text--body">
-                  <img src="assets/icons/cursor.svg" aria-hidden="true">
-                  <span>Cursor</span>
-                </li>
-                <li class="text--body">
-                  <i class="devicon-eslint-plain colored u-saturate-heavy" aria-hidden="true"></i>
-                  <span>ESLint / Prettier</span>
-                </li>
-                <li class="text--body">
-                  <img src="assets/icons/pylint.svg" aria-hidden="true">
-                  <span>Pylint / cpplint</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-      </section>
-
-      <!-- Section 4: Projects. -->
-      <section id="projects" class="projects section--constrained layout--column layout--gap-sm">
-          <h1 class="section-header heading--primary">
+            <span>Skills</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="navbar__item">
             <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
             <span>Projects</span>
-          </h1>
-          <div class="projects__grid">
-            <div class="card projects__card card--interactive bg--glassy layout--column">
-              <!-- Project 1: Cobblemon. -->
-              <div class="projects__header layout--column">
-                <h2 class="projects__title u-theme-heading text--head heading--secondary">Cobblemon Breeding</h2>
-                <div class="projects__tags text--tag layout--row-wrap">
-                  <span class="tag tag--alt">Java</span>
-                  <span class="tag tag--alt">Gradle</span>
-                  <span class="tag tag--alt">Minecraft SDK</span>
-                </div>
-              </div>
-              <div class="slider layout--column layout--center">
-                <div class="slider__track" tabindex="-1" aria-hidden="true">
-                  <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
-                    <img id="cb-img1" src="assets/project-thumbnails/cb-img-selection.webp"
-                        alt="Cobblemon Breeding Select Cobblemons"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
-                    <img id="cb-img2" src="assets/project-thumbnails/cb-img-navigation.webp"
-                        alt="Cobblemon Breeding Navigate Pokeboxes"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
-                    <img id="cb-img3" src="assets/project-thumbnails/cb-img-confirmation.webp"
-                        alt="Cobblemon Breeding Confirm Breed"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                </div>
-                <div class="slider__nav layout--row">
-                  <button class="slider__dot is-active" data-target="cb-img1"
-                      aria-label="Go to Cobblemon Breeding: Select Cobblemons Img"
-                      aria-current="true">
-                  </button>
-                  <button class="slider__dot" data-target="cb-img2"
-                      aria-label="Go to Cobblemon Breeding: Navigate Pokeboxes Img">
-                  </button>
-                  <button class="slider__dot" data-target="cb-img3"
-                      aria-label="Go to Cobblemon Breeding: Confirm Breed Img">
-                  </button>
-                </div>
-              </div>
-              <ul class="projects__description text--body">
-                <li><b>Achieved 200,000+ downloads</b>, serving as the primary community
-                  solution during the mod's fastest growth period.</li>
-                <li><b>Architected the first major breeding implementation</b> for Cobblemon to fill
-                  a critical gap in the official API.</li>
-                <li><b>Reverse-engineered Kotlin source</b> to ensure Java compatibility and
-                  stability.</li>
-              </ul>
-              <div class="projects__links layout--row layout--center layout--gap-sm">
-                <a href="https://github.com/ThomasQTruong/VeryScuffedCobblemonBreeding" target="_blank"
-                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding source code on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Source</span>
-                </a>
-                <a href="https://modrinth.com/mod/veryscuffedcobblemonbreeding" target="_blank"
-                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding releases on Modrinth in a new tab" class="text--interactive">
-                  <i class="fa-solid fa-cube" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Modrinth</span>
-                </a>
-                <a href="https://www.curseforge.com/minecraft/mc-mods/veryscuffedcobblemonbreeding" target="_blank"
-                      rel="noopener noreferrer" aria-label="Open Cobblemon Breeding releases on CurseForge in a new tab" class="text--interactive">
-                  <i class="fa-solid fa-fire" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">CurseForge</span>
-                </a>
-              </div>
-            </div>
-            <!-- Project 2: PDF Stamper. -->
-            <div class="card projects__card card--interactive bg--glassy layout--column">
-              <div class="projects__header layout--column">
-                <h2 class="projects__title u-theme-heading text--head heading--secondary">PDF Stamper</h2>
-                <div class="projects__tags text--tag layout--row-wrap">
-                  <span class="tag tag--alt">Python</span>
-                  <span class="tag tag--alt">PyMuPDF</span>
-                  <span class="tag tag--alt">CustomTkinter</span>
-                  <span class="tag tag--alt">MultiThreading</span>
-                  <span class="tag tag--alt">JSON</span>
-                </div>
-              </div>
-              <div class="slider layout--column layout--center">
-                <div class="slider__track" tabindex="-1" aria-hidden="true">
-                  <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
-                    <img id="ps-img1" src="assets/project-thumbnails/stamper-main.webp"
-                        alt="PDF Stamper Main UI"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
-                    <img id="ps-img2" src="assets/project-thumbnails/stamper-output.webp"
-                        alt="PDF Stamper Output"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
-                    <img id="ps-img3" src="assets/project-thumbnails/stamper-example.webp"
-                        alt="PDF Stamper Stamped Example"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                </div>
-                <div class="slider__nav layout--row">
-                  <button class="slider__dot is-active" data-target="ps-img1"
-                      aria-label="Go to PDF Stamper: Main UI Img"
-                      aria-current="true">
-                  </button>
-                  <button class="slider__dot" data-target="ps-img2"
-                      aria-label="Go to PDF Stamper: Output Img">
-                  </button>
-                  <button class="slider__dot" data-target="ps-img3"
-                      aria-label="Go to PDF Stamper: Stamped Example">
-                  </button>
-                </div>
-              </div>
-              <ul class="projects__description text--body">
-                <li><b>Automated escrow workflows</b> to save 5-10 minutes per package and 15-30 minutes of daily labor per employee.</li>
-                <li><b>Designed directional and full-page search algorithms</b> to dynamically stamp in blank areas if possible.</li>
-                <li><b>Built a CustomTkinter GUI</b> with JSON state management and manual overrides for non-technical staff.</li>
-              </ul>
-              <div class="projects__links layout--row layout--center layout--gap-sm">
-                <a href="https://github.com/ThomasQTruong/pdf-stamper" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open PDF Stamper source code on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Source</span>
-                </a>
-                <a href="https://github.com/ThomasQTruong/pdf-stamper/releases" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open PDF Stamper releases on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-solid fa-download" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Releases</span>
-                </a>
-              </div>
-            </div>
-            <!-- Project 3: AnimalsTD. -->
-            <div class="card projects__card card--interactive bg--glassy layout--column">
-              <div class="projects__header layout--column">
-                <h2 class="projects__title u-theme-heading text--head heading--secondary">Animals Tower Defense</h2>
-                <div class="projects__tags text--tag layout--row-wrap">
-                  <span class="tag tag--alt">C#</span>
-                  <span class="tag tag--alt">Unity</span>
-                  <span class="tag tag--alt">GitHub LFS</span>
-                </div>
-              </div>
-              <div class="slider layout--column layout--center">
-                <div class="slider__track" tabindex="-1" aria-hidden="true">
-                  <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
-                    <img id="atd-img1" src="assets/project-thumbnails/animals-td.webp"
-                        alt="AnimalsTD Shop Shown"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
-                    <img id="atd-img2" src="assets/project-thumbnails/atd-upgrades.webp"
-                        alt="AnimalsTD Upgrades Shown"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
-                    <img id="atd-img3" src="assets/project-thumbnails/atd-selector.webp"
-                        alt="AnimalsTD Difficulty Selector"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                </div>
-                <div class="slider__nav layout--row">
-                  <button class="slider__dot is-active" data-target="atd-img1"
-                      aria-label="Go to AnimalsTD: Shop UI Img"
-                      aria-current="true">
-                  </button>
-                  <button class="slider__dot" data-target="atd-img2"
-                      aria-label="Go to AnimalsTD Upgrades UI Img">
-                  </button>
-                  <button class="slider__dot" data-target="atd-img3"
-                      aria-label="Go to AnimalsTD Difficulty Selector Img">
-                  </button>
-                </div>
-              </div>
-              <ul class="projects__description text--body">
-                <li><b>Led a 3-person team</b> to deliver a playable release, refactoring
-                  pathfinding logic for precise waypoint movement.</li>
-                <li><b>Architected reusable entity templates</b> for maps, enemies, and
-                  towers to streamline content creation within Unity.</li>
-                <li><b>Engineered a multi-tier upgrade system</b> to dynamically manage unit stats and
-                  difficulty scaling.</li>
-              </ul>
-              <div class="projects__links layout--row layout--center layout--gap-sm">
-                <a href="https://github.com/ThomasQTruong/AnimalsTD" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open AnimalsTD source code on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Source</span>
-                </a>
-                <a href="https://thomasqtruong.github.io/AnimalsTD/Builds/WebGL/" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open AnimalsTD demo on GitHub Pages in a new tab" class="text--interactive">
-                  <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Demo</span>
-                </a>
-              </div>
-            </div>
-            <!-- Project 4: extfix. -->
-            <div class="card projects__card bg--glassy card--interactive layout--column">
-              <div class="projects__header layout--column">
-                <h2 class="projects__title u-theme-heading text--head heading--secondary">extfix</h2>
-                <div class="projects__tags text--tag layout--row-wrap">
-                  <span class="tag tag--alt">Python</span>
-                  <span class="tag tag--alt">CustomTkinter</span>
-                  <span class="tag tag--alt">PyInstaller</span>
-                </div>
-              </div>
-              <div class="slider layout--column layout--center">
-                <div class="slider__track" tabindex="-1" aria-hidden="true">
-                  <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
-                    <img id="extfix-img1" src="assets/project-thumbnails/extfix-menu.webp"
-                        alt="extfix Main UI"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
-                    <img id="extfix-img2" src="assets/project-thumbnails/extfix-directory.webp"
-                        alt="extfix Output"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                  <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
-                    <img id="extfix-img3" src="assets/project-thumbnails/extfix-output.webp"
-                        alt="extfix Output"
-                        onload="this.classList.add('is-loaded')">
-                  </button>
-                </div>
-                <div class="slider__nav layout--row">
-                  <button class="slider__dot is-active" data-target="extfix-img1"
-                      aria-label="Go to extfix: Main UI Img"
-                      aria-current="true"></button>
-                  <button class="slider__dot" data-target="extfix-img2"
-                      aria-label="Go to extfix: Directory Selector Img"></button>
-                  <button class="slider__dot" data-target="extfix-img3"
-                      aria-label="Go to extfix: Output Img"></button>
-                </div>
-              </div>
-              <ul class="projects__description text--body">
-                <li><b>Identified file organization issues</b> from bulk social media
-                  downloads where some files were missing extensions.</li>
-                <li><b>Built a Python CLI tool</b> to detect and fix specified file extensions.</li>
-                <li><b>Expanded into a GUI app</b> using <b>CustomTkinter</b> for non-technical
-                  users.</li>
-              </ul>
-              <div class="projects__links layout--row layout--center layout--gap-sm">
-                <a href="https://github.com/ThomasQTruong/extfix" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open extfix source code on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Source</span>
-                </a>
-                <a href="https://github.com/ThomasQTruong/extfix/releases" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open extfix releases on GitHub in a new tab" class="text--interactive">
-                  <i class="fa-solid fa-download" aria-hidden="true"></i>
-                  <span class="u-mobile-hidden">Releases</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="projects__links projects__cta text--interactive">
-            <a href="https://github.com/ThomasQTruong" target="_blank"
-                rel="noopener noreferrer" aria-label="Open GitHub in a new tab to view more" class="bg--glassy">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                <span>View more on GitHub</span>
-              <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="navbar__item navbar__item--cta">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span>Contact</span>
+          </a>
+        </li>
+      </ul>
+      <span class="navbar__divider"></span>
+      <div class="navbar__actions layout--row">
+        <button id="theme-btn" class="navbar__item navbar__theme-toggle" aria-label="Switch to light mode"
+          aria-pressed="false">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="sidebar-btn" class="navbar__menu-toggle" aria-label="Menu" aria-expanded="false"
+          aria-controls="nav-list">
+          <i class="fa-solid fa-bars navbar__menu-icon--hamburger" aria-hidden="true"></i>
+          <i class="fa-solid fa-x navbar__menu-icon--close" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="bg--dots">
+    <!-- Section 1: Hero. -->
+    <section id="hero" class="hero bg--gradient">
+      <div class="hero__container layout--column layout--column-to-row-wrap layout--gap-sm layout--center">
+        <div class="hero__headshot">
+          <img src="assets/hero/hero-headshot.webp" alt="Thomas Truong Headshot"
+            onload="this.classList.add('is-loaded')">
+        </div>
+        <div class="hero__content card bg--glassy">
+          <h3 class="hero__job-title u-theme-heading heading--secondary">Software Engineer</h3>
+          <h4 class="hero__degree u-transition-color-glow text--body">B.S. Computer Science, Cal Poly Pomona '25</h4>
+          <h1 class="heading--primary hero__greet">Hi, I'm Thomas</h1>
+          <p class="text--body">
+            I have been most at home in front of a computer for as long as I can remember.
+            That early interest led me through a series of high school computer classes—from
+            <b>Game Design and Web Design to Java and Robotics</b>—and eventually to <b>Cal Poly
+              Pomona</b>, where I earned my degree in <b>Computer Science</b>.
+          </p><br>
+          <p class="text--body">
+            I build software that I personally want to use or that my friends and family are
+            looking for. My most notable project is the "<b>Cobblemon Breeding</b>" mod, which has
+            reached over <b>200,000 downloads</b>. To build it, I had to dive into the deep end of
+            the modding community—reading through the Kotlin source code of the official Cobblemon
+            API and manually refactoring complex file structures to ship a core feature the
+            community was missing.
+          </p><br>
+          <p class="text--body">
+            I am a "hardcore" user who is most at home at my desk. Whether I am navigating complex
+            file structures in <b>WSL Ubuntu</b> or troubleshooting hardware, I am at my best when
+            I have a specific problem to solve. I am currently looking for an <b>entry-level
+              Software Engineering role</b>, ideally in a remote-first environment, though I am open
+            to local opportunities or relocating for the right challenge.
+          </p>
+
+          <div class="hero__social-links layout--row layout--center layout--gap-sm">
+            <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Thomas's GitHub in a new tab" class="text--interactive">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ThomasQTruong/" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Thomas's LinkedIn in a new tab" class="text--interactive">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">LinkedIn</span>
             </a>
           </div>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <!-- Section 5: Contact. -->
-      <section id="contact" class="contact section--constrained layout--column layout--gap-sm">
-        <h1 class="section-header heading--primary">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          <span>Contact</span>
-        </h1>
-        <div class="contact__layout layout--row-wrap layout--gap-md">
-          <div class="contact__info">
-            <h2 class="contact__title u-theme-heading heading--secondary">Get in Touch</h2>
-            <div class="contact__list layout--column layout--gap-md">
-              <div class="contact__item">
-                <div class="contact__item-header text--head">
-                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                  <span class="text--body">Phone</span>
-                </div>
-                <div class="contact__item-value">
-                  <a href="tel:+16264788992" aria-label="Call Thomas at 626-478-8992" class="text--body text--interactive">
-                    +1 (626) 478-8992
-                  </a>
-                </div>
+    <!-- Section 2: Experience. -->
+    <section id="experience" class="experience section--constrained layout--column layout--gap-sm">
+      <h1 class="section-header heading--primary">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span><span class="u-mobile-hidden">Technical </span>Experience</span>
+      </h1>
+      <div class="timeline layout--column layout--gap-md">
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card card card--interactive bg--glassy">
+            <div class="timeline__header">
+              <h3 class="u-theme-heading text--head">Lead Developer | Cobblemon Breeding</h3>
+              <span class="timeline__date">April 2023 - Feb. 2025</span>
+            </div>
+            <ul class="u-list-stack text--body">
+              <li>Maintained live mod with <strong>200,000+ total downloads</strong>, performing
+                full software development lifecycle and critical maintenance.</li>
+              <li>Migrated codebase across major versions (v1.3.2 -&gt; v1.4 -&gt; v1.6.1),
+                developing in Java analyzing Kotlin source to ensure API compatibility and
+                stability.</li>
+              <li>Engineered complex features including shiny rate configs, VIP breeding
+                cooldowns, and hidden ability inheritance systems.</li>
+            </ul>
+            <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
+              <span class="tag">Java</span>
+              <span class="tag">Gradle</span>
+              <span class="tag">Minecraft SDK</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card card card--interactive bg--glassy">
+            <div class="timeline__header">
+              <h3 class="u-theme-heading text--head">Technical Peer Tutor | Freelance & Collegiate</h3>
+              <span class="timeline__date">Aug. 2020 - Dec. 2024</span>
+            </div>
+            <ul class="u-list-stack text--body">
+              <li>Provided 1-on-1 technical guidance to CS peers, specializing in C++, Java,
+                and Python.</li>
+              <li>Simplified abstract concepts like Object-Oriented Programming and Data
+                Structures into actionable examples for coursework.</li>
+              <li>Mentored students on setting up and optimizing development environments,
+                including <strong>WSL Ubuntu</strong> on Windows.</li>
+            </ul>
+            <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
+              <span class="tag">C++</span>
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card card card--interactive bg--glassy">
+            <div class="timeline__header">
+              <h3 class="u-theme-heading text--head">Lead Developer | Flash Study</h3>
+              <span class="timeline__date">June 2023 - July 2023</span>
+            </div>
+            <ul class="u-list-stack text--body">
+              <li>Engineered a robust persistence layer utilizing Cloud Firestore for real-time
+                synchronization and Sqflite for local SQL storage, ensuring data availability in
+                offline environments.</li>
+              <li>Integrated Firebase Auth to manage secure user life-cycles, supporting account
+                creation and personalized data syncing across multiple Android devices.</li>
+              <li>Leveraged Path Provider and File Picker to build a custom JSON serialization
+                engine, enabling users to export and import study sets as physical files.</li>
+              <li>Utilized Settings UI and Google Fonts to implement a modern interface featuring
+                a dynamic Dark Mode, progress tracking, and custom-branded launch icons.</li>
+            </ul>
+            <div class="experience__tags layout--row-wrap layout--gap-xs text--tag">
+              <span class="tag">Flutter</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Dart</span>
+              <span class="tag">JSON</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Skills. -->
+    <section id="skills" class="skills section--constrained layout--column layout--gap-sm">
+      <h1 class="section-header heading--primary">
+        <i class="fa-solid fa-code" aria-hidden="true"></i>
+        <span><span class="u-mobile-hidden">Technical </span>Skills</span>
+      </h1>
+      <div class="skills__grid">
+        <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
+          <div class="skills__card-head layout-hsplit text--head">
+            <span class="u-theme-heading">Languages</span>
+            <i class="fa-solid fa-code layout-hsplit__right" aria-hidden="true"></i>
+          </div>
+          <ul class="skills__list u-list-stack text--body">
+            <li class="text--body">
+              <img src="assets/icons/java.svg" class="u-saturate-medium" aria-hidden="true">
+              <span>Java</span>
+            </li>
+            <li class="text--body">
+              <img src="assets/icons/python.svg" aria-hidden="true">
+              <span>Python</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-cplusplus-plain colored u-saturate-medium" aria-hidden="true"></i>
+              <span>C/C++</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+              <span>HTML/CSS</span>
+            </li>
+            <li class="text--body">
+              <img src="assets/icons/javascript.svg" aria-hidden="true">
+              <span>JavaScript</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-csharp-plain colored u-saturate-light" aria-hidden="true"></i>
+              <span>C#</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-dart-plain colored" aria-hidden="true"></i>
+              <span>Dart</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
+          <div class="skills__card-head layout-hsplit text--head">
+            <span class="u-theme-heading">Frameworks/Engines</span>
+            <i class="fa-solid fa-gear layout-hsplit__right" aria-hidden="true"></i>
+          </div>
+          <ul class="skills__list u-list-stack text--body">
+            <li class="text--body">
+              <i class="devicon-unity-plain" aria-hidden="true"></i>
+              <span>Unity</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-flutter-plain colored" aria-hidden="true"></i>
+              <span>Flutter</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
+          <div class="skills__card-head layout-hsplit text--head">
+            <span class="u-theme-heading">Databases/Cloud</span>
+            <i class="fa-solid fa-cloud layout-hsplit__right" aria-hidden="true"></i>
+          </div>
+          <ul class="skills__list u-list-stack text--body">
+            <li class="text--body">
+              <i class="devicon-sqlite-plain colored" aria-hidden="true"></i>
+              <span>SQLite</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-firebase-plain colored" aria-hidden="true"></i>
+              <span>Firebase</span>
+            </li>
+            <li class="text--body">
+              <img src="assets/icons/googlecloud-color.svg" aria-hidden="true">
+              <span>GCP</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i>
+              <span>AWS</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills__card card card--interactive bg--glassy layout--column layout--gap-xs">
+          <div class="skills__card-head layout-hsplit text--head">
+            <span class="u-theme-heading">Developer Tools</span>
+            <i class="fa-solid fa-screwdriver-wrench layout-hsplit__right" aria-hidden="true"></i>
+          </div>
+          <ul class="skills__list u-list-stack text--body">
+            <li class="text--body">
+              <img src="assets/icons/cursor.svg" aria-hidden="true">
+              <span>Cursor</span>
+            </li>
+            <li class="text--body">
+              <img src="assets/icons/geminicli-color.svg" aria-hidden="true">
+              <span>Gemini CLI</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-git-plain colored" aria-hidden="true"></i>
+              <span>Git</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-ubuntu-plain colored" aria-hidden="true"></i>
+              <span>Linux / WSL</span>
+            </li>
+            <li class="text--body">
+              <i class="devicon-eslint-plain colored u-saturate-heavy" aria-hidden="true"></i>
+              <span>ESLint / Prettier</span>
+            </li>
+            <li class="text--body">
+              <img src="assets/icons/pylint.svg" aria-hidden="true">
+              <span>Pylint / cpplint</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Projects. -->
+    <section id="projects" class="projects section--constrained layout--column layout--gap-sm">
+      <h1 class="section-header heading--primary">
+        <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+        <span>Projects</span>
+      </h1>
+      <div class="projects__grid">
+        <div class="card projects__card card--interactive bg--glassy layout--column">
+          <!-- Project 1: Cobblemon. -->
+          <div class="projects__header layout--column">
+            <h2 class="projects__title u-theme-heading text--head heading--secondary">Cobblemon Breeding</h2>
+            <div class="projects__tags text--tag layout--row-wrap">
+              <span class="tag tag--alt">Java</span>
+              <span class="tag tag--alt">Gradle</span>
+              <span class="tag tag--alt">Minecraft SDK</span>
+            </div>
+          </div>
+          <div class="slider layout--column layout--center">
+            <div class="slider__track" tabindex="-1" aria-hidden="true">
+              <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
+                <img id="cb-img1" src="assets/project-thumbnails/cb-img-selection.webp"
+                  alt="Cobblemon Breeding Select Cobblemons" onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
+                <img id="cb-img2" src="assets/project-thumbnails/cb-img-navigation.webp"
+                  alt="Cobblemon Breeding Navigate Pokeboxes" onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
+                <img id="cb-img3" src="assets/project-thumbnails/cb-img-confirmation.webp"
+                  alt="Cobblemon Breeding Confirm Breed" onload="this.classList.add('is-loaded')">
+              </button>
+            </div>
+            <div class="slider__nav layout--row">
+              <button class="slider__dot is-active" data-target="cb-img1"
+                aria-label="Go to Cobblemon Breeding: Select Cobblemons Img" aria-current="true">
+              </button>
+              <button class="slider__dot" data-target="cb-img2"
+                aria-label="Go to Cobblemon Breeding: Navigate Pokeboxes Img">
+              </button>
+              <button class="slider__dot" data-target="cb-img3"
+                aria-label="Go to Cobblemon Breeding: Confirm Breed Img">
+              </button>
+            </div>
+          </div>
+          <ul class="projects__description text--body">
+            <li><b>Achieved 200,000+ downloads</b>, serving as the primary community
+              solution during the mod's fastest growth period.</li>
+            <li><b>Architected the first major breeding implementation</b> for Cobblemon to fill
+              a critical gap in the official API.</li>
+            <li><b>Reverse-engineered Kotlin source</b> to ensure Java compatibility and
+              stability.</li>
+          </ul>
+          <div class="projects__links layout--row layout--center layout--gap-sm">
+            <a href="https://github.com/ThomasQTruong/VeryScuffedCobblemonBreeding" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Cobblemon Breeding source code on GitHub in a new tab"
+              class="text--interactive">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Source</span>
+            </a>
+            <a href="https://modrinth.com/mod/veryscuffedcobblemonbreeding" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Cobblemon Breeding releases on Modrinth in a new tab" class="text--interactive">
+              <i class="fa-solid fa-cube" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Modrinth</span>
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/veryscuffedcobblemonbreeding" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Cobblemon Breeding releases on CurseForge in a new tab"
+              class="text--interactive">
+              <i class="fa-solid fa-fire" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">CurseForge</span>
+            </a>
+          </div>
+        </div>
+        <!-- Project 2: PDF Stamper. -->
+        <div class="card projects__card card--interactive bg--glassy layout--column">
+          <div class="projects__header layout--column">
+            <h2 class="projects__title u-theme-heading text--head heading--secondary">PDF Stamper</h2>
+            <div class="projects__tags text--tag layout--row-wrap">
+              <span class="tag tag--alt">Python</span>
+              <span class="tag tag--alt">MultiThreading</span>
+              <span class="tag tag--alt">PyMuPDF</span>
+              <span class="tag tag--alt">CustomTkinter</span>
+            </div>
+          </div>
+          <div class="slider layout--column layout--center">
+            <div class="slider__track" tabindex="-1" aria-hidden="true">
+              <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
+                <img id="ps-img1" src="assets/project-thumbnails/stamper-main.webp" alt="PDF Stamper Main UI"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
+                <img id="ps-img2" src="assets/project-thumbnails/stamper-output.webp" alt="PDF Stamper Output"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
+                <img id="ps-img3" src="assets/project-thumbnails/stamper-example.webp" alt="PDF Stamper Stamped Example"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+            </div>
+            <div class="slider__nav layout--row">
+              <button class="slider__dot is-active" data-target="ps-img1" aria-label="Go to PDF Stamper: Main UI Img"
+                aria-current="true">
+              </button>
+              <button class="slider__dot" data-target="ps-img2" aria-label="Go to PDF Stamper: Output Img">
+              </button>
+              <button class="slider__dot" data-target="ps-img3" aria-label="Go to PDF Stamper: Stamped Example">
+              </button>
+            </div>
+          </div>
+          <ul class="projects__description text--body">
+            <li><b>Automated escrow workflows</b> to save 5-10 minutes per package and 15-30 minutes of daily labor per
+              employee.</li>
+            <li><b>Designed directional and full-page search algorithms</b> to dynamically stamp in blank areas if
+              possible.</li>
+            <li><b>Built a CustomTkinter GUI</b> with JSON state management and manual overrides for non-technical
+              staff.</li>
+          </ul>
+          <div class="projects__links layout--row layout--center layout--gap-sm">
+            <a href="https://github.com/ThomasQTruong/pdf-stamper" target="_blank" rel="noopener noreferrer"
+              aria-label="Open PDF Stamper source code on GitHub in a new tab" class="text--interactive">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Source</span>
+            </a>
+            <a href="https://github.com/ThomasQTruong/pdf-stamper/releases" target="_blank" rel="noopener noreferrer"
+              aria-label="Open PDF Stamper releases on GitHub in a new tab" class="text--interactive">
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Releases</span>
+            </a>
+          </div>
+        </div>
+        <!-- Project 3: AnimalsTD. -->
+        <div class="card projects__card card--interactive bg--glassy layout--column">
+          <div class="projects__header layout--column">
+            <h2 class="projects__title u-theme-heading text--head heading--secondary">Animals Tower Defense</h2>
+            <div class="projects__tags text--tag layout--row-wrap">
+              <span class="tag tag--alt">C#</span>
+              <span class="tag tag--alt">Unity</span>
+              <span class="tag tag--alt">GitHub LFS</span>
+            </div>
+          </div>
+          <div class="slider layout--column layout--center">
+            <div class="slider__track" tabindex="-1" aria-hidden="true">
+              <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
+                <img id="atd-img1" src="assets/project-thumbnails/animals-td.webp" alt="AnimalsTD Shop Shown"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
+                <img id="atd-img2" src="assets/project-thumbnails/atd-upgrades.webp" alt="AnimalsTD Upgrades Shown"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
+                <img id="atd-img3" src="assets/project-thumbnails/atd-selector.webp" alt="AnimalsTD Difficulty Selector"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+            </div>
+            <div class="slider__nav layout--row">
+              <button class="slider__dot is-active" data-target="atd-img1" aria-label="Go to AnimalsTD: Shop UI Img"
+                aria-current="true">
+              </button>
+              <button class="slider__dot" data-target="atd-img2" aria-label="Go to AnimalsTD Upgrades UI Img">
+              </button>
+              <button class="slider__dot" data-target="atd-img3" aria-label="Go to AnimalsTD Difficulty Selector Img">
+              </button>
+            </div>
+          </div>
+          <ul class="projects__description text--body">
+            <li><b>Led a 3-person team</b> to deliver a playable release, refactoring
+              pathfinding logic for precise waypoint movement.</li>
+            <li><b>Architected reusable entity templates</b> for maps, enemies, and
+              towers to streamline content creation within Unity.</li>
+            <li><b>Engineered a multi-tier upgrade system</b> to dynamically manage unit stats and
+              difficulty scaling.</li>
+          </ul>
+          <div class="projects__links layout--row layout--center layout--gap-sm">
+            <a href="https://github.com/ThomasQTruong/AnimalsTD" target="_blank" rel="noopener noreferrer"
+              aria-label="Open AnimalsTD source code on GitHub in a new tab" class="text--interactive">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Source</span>
+            </a>
+            <a href="https://thomasqtruong.github.io/AnimalsTD/Builds/WebGL/" target="_blank" rel="noopener noreferrer"
+              aria-label="Open AnimalsTD demo on GitHub Pages in a new tab" class="text--interactive">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Demo</span>
+            </a>
+          </div>
+        </div>
+        <!-- Project 4: extfix. -->
+        <div class="card projects__card bg--glassy card--interactive layout--column">
+          <div class="projects__header layout--column">
+            <h2 class="projects__title u-theme-heading text--head heading--secondary">extfix</h2>
+            <div class="projects__tags text--tag layout--row-wrap">
+              <span class="tag tag--alt">Python</span>
+              <span class="tag tag--alt">CustomTkinter</span>
+              <span class="tag tag--alt">PyInstaller</span>
+            </div>
+          </div>
+          <div class="slider layout--column layout--center">
+            <div class="slider__track" tabindex="-1" aria-hidden="true">
+              <button class="slider__slide" index="0" tabindex="-1" aria-hidden="true">
+                <img id="extfix-img1" src="assets/project-thumbnails/extfix-menu.webp" alt="extfix Main UI"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="1" tabindex="-1" aria-hidden="true">
+                <img id="extfix-img2" src="assets/project-thumbnails/extfix-directory.webp" alt="extfix Output"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+              <button class="slider__slide" index="2" tabindex="-1" aria-hidden="true">
+                <img id="extfix-img3" src="assets/project-thumbnails/extfix-output.webp" alt="extfix Output"
+                  onload="this.classList.add('is-loaded')">
+              </button>
+            </div>
+            <div class="slider__nav layout--row">
+              <button class="slider__dot is-active" data-target="extfix-img1" aria-label="Go to extfix: Main UI Img"
+                aria-current="true"></button>
+              <button class="slider__dot" data-target="extfix-img2"
+                aria-label="Go to extfix: Directory Selector Img"></button>
+              <button class="slider__dot" data-target="extfix-img3" aria-label="Go to extfix: Output Img"></button>
+            </div>
+          </div>
+          <ul class="projects__description text--body">
+            <li><b>Identified file organization issues</b> from bulk social media
+              downloads where some files were missing extensions.</li>
+            <li><b>Built a Python CLI tool</b> to detect and fix specified file extensions.</li>
+            <li><b>Expanded into a GUI app</b> using <b>CustomTkinter</b> for non-technical
+              users.</li>
+          </ul>
+          <div class="projects__links layout--row layout--center layout--gap-sm">
+            <a href="https://github.com/ThomasQTruong/extfix" target="_blank" rel="noopener noreferrer"
+              aria-label="Open extfix source code on GitHub in a new tab" class="text--interactive">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Source</span>
+            </a>
+            <a href="https://github.com/ThomasQTruong/extfix/releases" target="_blank" rel="noopener noreferrer"
+              aria-label="Open extfix releases on GitHub in a new tab" class="text--interactive">
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              <span class="u-mobile-hidden">Releases</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="projects__links projects__cta text--interactive">
+        <a href="https://github.com/ThomasQTruong" target="_blank" rel="noopener noreferrer"
+          aria-label="Open GitHub in a new tab to view more" class="bg--glassy">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>View more on GitHub</span>
+          <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: Contact. -->
+    <section id="contact" class="contact section--constrained layout--column layout--gap-sm">
+      <h1 class="section-header heading--primary">
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        <span>Contact</span>
+      </h1>
+      <div class="contact__layout layout--row-wrap layout--gap-md">
+        <div class="contact__info">
+          <h2 class="contact__title u-theme-heading heading--secondary">Get in Touch</h2>
+          <div class="contact__list layout--column layout--gap-md">
+            <div class="contact__item">
+              <div class="contact__item-header text--head">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span class="text--body">Phone</span>
               </div>
-              <div class="contact__item">
-                <div class="contact__item-header text--head">
-                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                  <span class="text--body">Email</span>
-                </div>
-                <div class="contact__item-value">
-                  <a href="mailto:TruongThomasQ@gmail.com" aria-label="Send an email to Thomas" class="text--body text--interactive">
-                    TruongThomasQ@gmail.com
-                  </a>
-                </div>
+              <div class="contact__item-value">
+                <a href="tel:+16264788992" aria-label="Call Thomas at 626-478-8992"
+                  class="text--body text--interactive">
+                  +1 (626) 478-8992
+                </a>
               </div>
-              <div class="contact__item">
-                <div class="contact__item-header text--head">
-                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                  <span class="text--body">Location</span>
-                </div>
-                <div class="contact__item-value">
-                  <span class="text--body">California, United States</span>
-                </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-header text--head">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span class="text--body">Email</span>
+              </div>
+              <div class="contact__item-value">
+                <a href="mailto:TruongThomasQ@gmail.com" aria-label="Send an email to Thomas"
+                  class="text--body text--interactive">
+                  TruongThomasQ@gmail.com
+                </a>
+              </div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-header text--head">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span class="text--body">Location</span>
+              </div>
+              <div class="contact__item-value">
+                <span class="text--body">California, United States</span>
               </div>
             </div>
           </div>
-          <div class="contact__form-container">
-            <h2 class="contact__title u-theme-heading heading--secondary">Contact Me</h2>
-            <form id="contact-form" class="layout--column layout--center" action="API_URL_PLACEHOLDER" method="GET">
-              <div class="contact__form-fields layout--column">
-                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required>
-
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" required>
-                
-                <label for="content">Content</label>
-                <textarea id="content" name="content" rows="10" required></textarea>
-              </div>
-              <div class="contact__form-actions bg--glassy">
-                <button id="contact-submit-btn" type="submit" class="text--interactive">
-                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                  <span>Send Email</span>
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
-      </section>
-    </main>
-  </body>
+        <div class="contact__form-container">
+          <h2 class="contact__title u-theme-heading heading--secondary">Contact Me</h2>
+          <form id="contact-form" class="layout--column layout--center" action="API_URL_PLACEHOLDER" method="GET">
+            <div class="contact__form-fields layout--column">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" required>
+
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" required>
+
+              <label for="content">Content</label>
+              <textarea id="content" name="content" rows="10" required></textarea>
+            </div>
+            <div class="contact__form-actions bg--glassy">
+              <button id="contact-submit-btn" type="submit" class="text--interactive">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                <span>Send Email</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
