@@ -23,6 +23,10 @@
   transition: all 0.3s ease;
 }
 
+.projects__cta a {
+  padding: 0.75rem 1.5rem;
+}
+
 .contact__form-actions button {
   gap: 0.25em;
   background-color: transparent;

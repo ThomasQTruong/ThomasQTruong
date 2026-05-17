@@ -59,12 +59,6 @@
   font-size: var(--step-icon);
 }
 
-.navbar__item span {
-  font-size: var(--step-n1);
-  font-weight: 400;
-  display: inline-block;
-}
-
 .navbar__divider {
   width: 1px;
   height: var(--step-1);
@@ -263,7 +257,7 @@ html.is-light-mode .navbar__divider {
 
 @media screen and (width >= 64em) {
   .navbar__list {
-    gap: 1.25em;
+    gap: 2rem;
   }
 
   .navbar__item span {
