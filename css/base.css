@@ -120,6 +120,16 @@ main section {
   line-height: 1.2;
 }
 
+.text--nav,
+.text--nav span {
+  font-size: var(--nav-text);
+}
+
+.text--tag,
+.text--tag span {
+  font-size: var(--step-n2);
+}
+
 /* Backgrounds. */
 .bg--glassy {
   background: rgb(255 255 255 / 3%);

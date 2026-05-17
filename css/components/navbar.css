@@ -64,10 +64,10 @@
   height: var(--step-1);
   background-color: rgb(var(--text-color));
   opacity: 0.15;
-  margin-left: 1.5rem;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem;
   display: none;
   vertical-align: middle;
+  transform: translateX(-50%);
 }
 
 .navbar__actions {
@@ -216,7 +216,7 @@ html.is-light-mode .navbar__divider {
     height: auto;
     right: 0;
     overflow-y: visible;
-    gap: 0.8em;
+    gap: var(--nav-item-gap);
     background-color: transparent;
   }
 
@@ -276,5 +276,10 @@ html.is-light-mode .navbar__divider {
     outline: none;
     color: rgb(var(--background-color));
     background-color: rgb(var(--nav-hover-color));
+  }
+
+  .navbar__divider {
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
   }
 }

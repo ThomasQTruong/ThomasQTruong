@@ -34,25 +34,30 @@
   /*
     === TYPOGRAPHY SCALE (Fluid via Utopia.fyi) ===
     Settings: 320w 18px 1.2 | 1240w 20px 1.333
-    --step-n1: Small text (nav texts / projects texts).
-    --step-1: Big text (nav page logo).
+    --step-n1: Normal text (text--interactive, text--body).
+    --step-0: Element header texts (text--head).
+    --step-1: Big text (heading--secondary).
+    --step-2: Bigger text (heading--primary).
     --step-icon: Icon sizing.
+    --nav-text: Nav item texts (16-18).
   */
   --step-n2: clamp(0.7035rem, 0.8083rem + -0.1353vw, 0.7813rem);
   --step-n1: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
-  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem); /* .text--body */
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   --step-1: clamp(1.35rem, 1.24rem + 0.55vw, 1.6663rem);
   --step-2: clamp(1.62rem, 1.4109rem + 1.0454vw, 2.2211rem);
-  --step-3: clamp(1.944rem, 1.5904rem + 1.7682vw, 2.9607rem); /* .heading--secondary */
+  --step-3: clamp(1.944rem, 1.5904rem + 1.7682vw, 2.9607rem);
   --step-4: clamp(2.3328rem, 1.7715rem + 2.8067vw, 3.9467rem);
-  --step-5: clamp(2.7994rem, 1.9432rem + 4.281vw, 5.2609rem); /* .heading--primary */
+  --step-5: clamp(2.7994rem, 1.9432rem + 4.281vw, 5.2609rem);
   --step-icon: clamp(1.125rem, 1.3152rem + -0.2174vw, 1.25rem);
+  --nav-text: clamp(1rem, 0.6923rem + 0.4808vw, 1.125rem);
 
   /* --- SPACING & UI --- */
   --nav-padding-mobile: 1.5625rem;
   --nav-padding-fluid: clamp(0.9375rem, -0.9926rem + 6.4338vw, 3.125rem);
   --nav-height: 5rem;
   --headshot-size-fluid: clamp(20rem, 15.8261rem + 20.8696vw, 32rem);
+  --nav-item-gap: clamp(0.1875rem, -0.625rem + 2.5391vw, 1rem);
 }
 
 html.is-light-mode {
